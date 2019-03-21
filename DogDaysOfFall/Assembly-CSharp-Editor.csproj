@@ -60,8 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Shijun\YarnSpinner\Code\Editor\YarnSpinnerEditorWindow.cs" />
-    <Compile Include="Assets\Shijun\YarnSpinner\Code\Editor\YarnSpinnerTests.cs" />
+    <Compile Include="Assets\Shijun\Scripts\YarnSpinner\Code\Editor\YarnSpinnerEditorWindow.cs" />
+    <Compile Include="Assets\Shijun\Scripts\YarnSpinner\Code\Editor\YarnSpinnerTests.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -314,6 +314,18 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Antlr4.Runtime.Standard">
+      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Shijun/Scripts/YarnSpinner/Code/Antlr4.Runtime.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper">
+      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Shijun/Scripts/YarnSpinner/Code/CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Shijun/Scripts/YarnSpinner/Code/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner">
+      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Shijun/Scripts/YarnSpinner/Code/YarnSpinner.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Library/PackageCache/com.unity.ads@2.3.1/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -334,18 +346,6 @@
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
-    </Reference>
-    <Reference Include="CsvHelper">
-      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Shijun/YarnSpinner/Code/CsvHelper.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr4.Runtime.Standard">
-      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Shijun/YarnSpinner/Code/Antlr4.Runtime.Standard.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Shijun/YarnSpinner/Code/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="YarnSpinner">
-      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Shijun/YarnSpinner/Code/YarnSpinner.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.0f2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

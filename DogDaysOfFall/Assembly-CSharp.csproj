@@ -60,18 +60,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Shijun\YarnSpinner\Code\DialogueRunner.cs" />
-    <Compile Include="Assets\Shijun\YarnSpinner\Examples\DemoScripts\CameraFollow.cs" />
-    <Compile Include="Assets\Shijun\YarnSpinner\Examples\DemoScripts\ExampleDialogueUI.cs" />
-    <Compile Include="Assets\Shijun\YarnSpinner\Examples\DemoScripts\ExampleVariableStorage.cs" />
-    <Compile Include="Assets\Shijun\YarnSpinner\Examples\DemoScripts\MobileOnly.cs" />
-    <Compile Include="Assets\Shijun\YarnSpinner\Examples\DemoScripts\NPC.cs" />
-    <Compile Include="Assets\Shijun\YarnSpinner\Examples\DemoScripts\PlayerCharacter.cs" />
-    <Compile Include="Assets\Shijun\YarnSpinner\Examples\DemoScripts\SpriteSwitcher.cs" />
-    <None Include="Assets\Shijun\YarnSpinner\Examples\DemoAssets\Space\Ship.yarn.txt" />
-    <None Include="Assets\Shijun\YarnSpinner\Examples\DemoAssets\SimpleExampleScript.yarn.txt" />
-    <None Include="Assets\Shijun\YarnSpinner\Examples\DemoAssets\Space\Sally.yarn.txt" />
-    <None Include="Assets\Shijun\YarnSpinner\README.txt" />
+    <Compile Include="Assets\Shijun\Scripts\DialogueManager.cs" />
+    <Compile Include="Assets\Shijun\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Shijun\Scripts\MenuManager.cs" />
+    <Compile Include="Assets\Shijun\Scripts\YarnSpinner\Code\DialogueRunner.cs" />
+    <Compile Include="Assets\Shijun\Scripts\YarnSpinner\Examples\DemoScripts\CameraFollow.cs" />
+    <Compile Include="Assets\Shijun\Scripts\YarnSpinner\Examples\DemoScripts\ExampleDialogueUI.cs" />
+    <Compile Include="Assets\Shijun\Scripts\YarnSpinner\Examples\DemoScripts\ExampleVariableStorage.cs" />
+    <Compile Include="Assets\Shijun\Scripts\YarnSpinner\Examples\DemoScripts\MobileOnly.cs" />
+    <Compile Include="Assets\Shijun\Scripts\YarnSpinner\Examples\DemoScripts\NPC.cs" />
+    <Compile Include="Assets\Shijun\Scripts\YarnSpinner\Examples\DemoScripts\PlayerCharacter.cs" />
+    <Compile Include="Assets\Shijun\Scripts\YarnSpinner\Examples\DemoScripts\SpriteSwitcher.cs" />
+    <None Include="Assets\Shijun\Scripts\YarnSpinner\Examples\DemoAssets\Space\Ship.yarn.txt" />
+    <None Include="Assets\Shijun\Scripts\YarnSpinner\Examples\DemoAssets\SimpleExampleScript.yarn.txt" />
+    <None Include="Assets\Shijun\Scripts\YarnSpinner\Examples\DemoAssets\TestScript.yarn.txt" />
+    <None Include="Assets\Shijun\Scripts\YarnSpinner\Examples\DemoAssets\Space\Sally.yarn.txt" />
+    <None Include="Assets\Shijun\Scripts\YarnSpinner\README.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -288,6 +292,18 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.0f2/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="Antlr4.Runtime.Standard">
+      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Shijun/Scripts/YarnSpinner/Code/Antlr4.Runtime.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper">
+      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Shijun/Scripts/YarnSpinner/Code/CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Shijun/Scripts/YarnSpinner/Code/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner">
+      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Shijun/Scripts/YarnSpinner/Code/YarnSpinner.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Advertisements">
       <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
@@ -302,18 +318,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="CsvHelper">
-      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Shijun/YarnSpinner/Code/CsvHelper.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr4.Runtime.Standard">
-      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Shijun/YarnSpinner/Code/Antlr4.Runtime.Standard.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Shijun/YarnSpinner/Code/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="YarnSpinner">
-      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Shijun/YarnSpinner/Code/YarnSpinner.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.0f2/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
