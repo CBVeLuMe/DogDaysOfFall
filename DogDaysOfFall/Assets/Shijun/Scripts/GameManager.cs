@@ -1,18 +1,25 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    //Create a Singleton
-    public static GameManager Instance;
+    //! What's this? (Create a Singleton)
+    public static GameManager instance;
+
+    public bool isTestMode;
+    // To-do: contain the test button for 
+    // Combat
+    // Stealth
     
     private void Awake()
     {
-        if (Instance == null)
+        //! What's this?
+        if (instance == null)
         {
-            Instance = this;
+            instance = this;
         }
-        else if(Instance != this)
+        else if(instance != this)
         {
             Destroy(gameObject);
         }
@@ -21,10 +28,4 @@ public class GameManager : MonoBehaviour
 
         Screen.orientation = ScreenOrientation.LandscapeLeft;
     }
-
-    private void Update()
-    {
-
-    }
-    
 }
