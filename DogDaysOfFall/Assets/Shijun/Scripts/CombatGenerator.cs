@@ -5,57 +5,51 @@ using UnityEngine.UI;
 
 public class CombatGenerator : MonoBehaviour
 {
-    // Initialize the objects for notes
-    public Button[] upperNotes;
-    public Button[] lowerNotes;
-    // Initialize the colors for notes
-    private Color[] notesColors = new Color[2];
+    // Initialize the nodes for the combat
+    public Button[] upperNodes;
+    public Button[] lowerNodes;
+    // Initialize the colors for the combat
+    private Color[] nodesColors = new Color[2];
     public Color promptColor, rightAnswerColor; // The wrong answer color is the original "Normal Color"
-    // Initialize the timer for generator
+    // Initialize the timer for the combat
     private float timer = 0.0f;
     public float firstTimeLeft = 0.5f;
     public float secondTimeLeft = 1.0f;
-    // Setup the checker for activation (3 effective status)
+    // Setup the activeting row for nodes status
+    private int targetRow;
+    // Setup the checkers for the nodes generator (for 3 effective status)
     private bool hasActivatedFirst = false;
     private bool hasActivatedSecond = false;
-    // Setup the activeting row for notes
-    private int targetRow;
-    // Setup the checker for results
-    //private bool isCorrect;
-    // Test Mode
+    // Setup the checkers for the nodes status
+    public bool hasStarted = false;
+    public bool hasEnded = false;
+    // (To-do) Test Mode
     public bool combatTestMode;
-
+    
     private void Start()
     {
-        // Setup the colors for the array
-        notesColors[0] = promptColor;
-        notesColors[1] = rightAnswerColor;
+        // Setup the colors for the colors array
+        nodesColors[0] = promptColor;
+        nodesColors[1] = rightAnswerColor;
     }
 
     private void Update()
     {
         SetupTimer();
-        CheckCombat();
+        InitializeCombat();
+        CheckCombatResult();
     }
 
-    private void CheckCombat()
+    private void InitializeCombat()
     {
-        // (Testing) Activate the Combat Generator
-        //if (combatTestMode && Input.GetKeyDown("space"))
-        //{
-        //    ActivateCombat(upperNotes, lowerNotes, notesColors);
-        //    hasActivatedFirst = true;
-        //    timer = firstTimeLeft;
-        //}
-
         if (!hasActivatedFirst)
         {
-            ActivateCombat(upperNotes, lowerNotes, notesColors);
+            ActivateCombat(upperNodes, lowerNodes, nodesColors);
             hasActivatedFirst = true;
             // (Testing) 两次生成之间的固定间隔时间
             // 但实际上应该是两次生成的间隔时间中点击就出现下一个
-            // 如果过了这个时间还没有点到变色的note，就判定失败
-            timer = 5.0f;
+            // 如果过了这个时间还没有点到变色的node，就判定失败
+            timer = 1.0f;
             if (hasActivatedFirst && timer > 0)
             {
 
@@ -69,14 +63,57 @@ public class CombatGenerator : MonoBehaviour
             //}
             if (hasActivatedFirst && timer < 0)
             {
-                ActivateCombat(upperNotes, lowerNotes, notesColors);
+                ActivateCombat(upperNodes, lowerNodes, nodesColors);
                 hasActivatedSecond = true;
             }
         }
     }
 
+    public void ActivateCombat(Button[] firstNodes, Button[] secondNodes, Color[] colors)
+    {
+        if (!hasActivatedFirst)
+        {
+            // Check the Consistency for the nodes
+            CheckNodesConsistency(firstNodes);
+            CheckNodesConsistency(secondNodes);
 
+            targetRow = Random.Range(0, 2);
 
+            // Setup the sequence for the nodes
+            switch (targetRow)
+            {
+                case 0:
+                    ActivateNode(firstNodes, colors);
+                    targetRow = 1;
+                    break;
+                case 1:
+                    ActivateNode(secondNodes, colors);
+                    targetRow = 0;
+                    break;
+            }
+        }
+        else if (hasActivatedFirst && !hasActivatedSecond)
+        {
+            switch (targetRow)
+            {
+                case 0:
+                    ActivateNode(firstNodes, colors);
+                    break;
+                case 1:
+                    ActivateNode(secondNodes, colors);
+                    break;
+            }
+        }
+        else if (!hasActivatedFirst && hasActivatedSecond)
+        {
+            Debug.LogError("Did not activate the first, but go into the second time.");
+        }
+        else
+        {
+            Debug.LogError("Did not activate the any nodes, but go into Activate Combat.");
+        }
+
+    }
 
     private void SetupTimer()
     {
@@ -97,119 +134,119 @@ public class CombatGenerator : MonoBehaviour
     //    }
     //}
 
-    public void ActivateCombat(Button[] firstNotes, Button[] secondNotes, Color[] colors)
+    private void CheckCombatResult()
+    {
+        if (hasStarted)
+        {
+            if (hasEnded)
+            {
+                Debug.Log("You kick the right nodes!!!");
+            }
+        }
+    }
+
+    // Switch the colors for the different nodes
+    // Setup the start and end points for the nodes
+    private void ActivateNode(Button[] nodes, Color[] colors)
     {
         if (!hasActivatedFirst)
         {
-            // Check the Consistency for the notes
-            CheckNotesConsistency(firstNotes);
-            CheckNotesConsistency(secondNotes);
-
-            targetRow = Random.Range(0, 2);
-
-            // Setup the sequence for the notes
-            switch (targetRow)
+            switch (Random.Range(0, 4))
             {
                 case 0:
-                    ActivateNote(firstNotes, colors);
-                    targetRow = 1;
+                    SetupStartPoint(nodes[0]);
+                    SetupNodesProperty(nodes[0], colors);
                     break;
                 case 1:
-                    ActivateNote(secondNotes, colors);
-                    targetRow = 0;
+                    SetupStartPoint(nodes[1]);
+                    SetupNodesProperty(nodes[1], colors);
+                    break;
+                case 2:
+                    SetupStartPoint(nodes[2]);
+                    SetupNodesProperty(nodes[2], colors);
+                    break;
+                case 3:
+                    SetupStartPoint(nodes[3]);
+                    SetupNodesProperty(nodes[3], colors);
+                    break;
+                default:
+                    Debug.Log("Cannot find the targetting upper nodes.");
                     break;
             }
         }
         else if (hasActivatedFirst && !hasActivatedSecond)
         {
-            switch (targetRow)
+            switch (Random.Range(0, 4))
             {
                 case 0:
-                    ActivateNote(firstNotes, colors);
+                    SetupEndPoint(nodes[0]);
+                    SetupNodesProperty(nodes[0], colors);
                     break;
                 case 1:
-                    ActivateNote(secondNotes, colors);
+                    SetupEndPoint(nodes[1]);
+                    SetupNodesProperty(nodes[1], colors);
+                    break;
+                case 2:
+                    SetupEndPoint(nodes[2]);
+                    SetupNodesProperty(nodes[2], colors);
+                    break;
+                case 3:
+                    SetupEndPoint(nodes[3]);
+                    SetupNodesProperty(nodes[3], colors);
+                    break;
+                default:
+                    Debug.Log("Cannot find the targetting upper nodes.");
                     break;
             }
         }
-        else if (!hasActivatedFirst && hasActivatedSecond)
-        {
-            Debug.LogError("Did not activate the first, but go into the second time.");
-        }
-        else
-        {
-            Debug.LogError("Did not activate the any notes, but go into Activate Combat.");
-        }
 
     }
 
-
-
-
-    // 激活一行中四个notes中的一个
-    private void ActivateNote(Button[] notes, Color[] colors)
+    // Save the original property and check if it is same(Colors)
+        // （todo）检查开关的一致性
+    private ColorBlock originalNodeColors;
+    private void CheckNodesConsistency(Button[] nodes)
     {
-        // Switch the color for targeting note
-        switch (Random.Range(0, 4))
+        int nodesCounter = 0;
+        foreach (Button node in nodes)
         {
-            case 0:
-                SetupNotesProperty(notes[0], colors);
-                break;
-            case 1:
-                SetupNotesProperty(notes[1], colors);
-                break;
-            case 2:
-                SetupNotesProperty(notes[2], colors);
-                break;
-            case 3:
-                SetupNotesProperty(notes[3], colors);
-                break;
-            default:
-                Debug.Log("Cannot find the targetting upper notes.");
-                break;
-        }
-    }
-
-    // 以下是颜色检查和更正（作为属性）
-
-    // 一开始检查Notes的颜色一致性
-    // （todo）检查开关iscorrectnote的一致性
-    private ColorBlock originalNoteColors;
-    private void CheckNotesConsistency(Button[] notes)
-    {
-        // Save the original property in the button (it is color)
-        // Make sure the original property in the buttons are same (it is color)
-        int notesCounter = 0;
-        foreach (Button note in notes)
-        {
-            if (notesCounter == 0)
+            if (nodesCounter == 0)
             {
-                originalNoteColors = note.colors;
-                notesCounter++;
+                originalNodeColors = node.colors;
+                nodesCounter++;
             }
-            if (originalNoteColors == note.colors)
+            if (originalNodeColors == node.colors)
             {
-                notesCounter++;
+                nodesCounter++;
             }
             else
             {
-                Debug.LogWarning("The Notes color did not same.");
+                Debug.LogWarning("The nodes color did not same.");
             }
         }
     }
 
-    // 改变notes的颜色，Normalcolor是提示玩家点击对应Note的颜色；
-    // highlight color 是提示玩家按下了正确的note的颜色
-    // 并且激活了对应note的检查开关
-    private void SetupNotesProperty(Button note, Color[] colors)
+    // Setup the property for the prompt nodes
+    // NormalColor is the prompt to click
+    // HighlightColor is the prompt for the right answer
+    private void SetupStartPoint(Button node)
+    {
+        NodeTrigger nodeTrigger = node.GetComponent<NodeTrigger>();
+        nodeTrigger.isStartNode = true;
+    }
+
+    private void SetupEndPoint(Button node)
+    {
+        NodeTrigger nodeTrigger = node.GetComponent<NodeTrigger>();
+        nodeTrigger.isEndNode = true;
+    }
+
+    private void SetupNodesProperty(Button node, Color[] colors)
     {
         ColorBlock colorBlock;
-        colorBlock = note.colors;
+        colorBlock = node.colors;
         colorBlock.normalColor = colors[0];
         colorBlock.highlightedColor = colors[1];
-        note.colors = colorBlock;
-
-        NoteTrigger noteTrigger = note.GetComponent<NoteTrigger>();
-        noteTrigger.isCorrectNote = true;
+        node.colors = colorBlock;
     }
 }
