@@ -1,85 +1,212 @@
-﻿using System.Collections;
+﻿/* Cambat System
+ * 面向整体
+ * The counters for the combat
+ * The checkers for the combat
+ * 
+ * 面向单次
+ * timer
+ * Checker for 单次
+ * 面向note
+ * note 盒子
+ * color
+ * checker for sequences
+ * Testmode
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CombatGenerator : MonoBehaviour
 {
-    // Initialize the nodes for the combat
+    // The Counters for the combat
+    public int toSucceedTimes; // The Times player needed to win
+    public int attemptsTimes; // The times player can try
+
+    private int combatCounter; // Count the times player played (+1 per turn)
+    private int attemptsCounter; // Count the times player still can try (-1 per turn)
+    private int succeededCounter; // Count the times player have successed
+
+    public GameObject combatText;
+    private TextTrigger textTrigger;
+
+    // The Timer for the combat
+    public float clickTime = 0.5f;
+    public float gapTime = 1.0f;
+
+    private float combatTimer;
+
+    // The Checkers to check the status for methods
+    private bool canGenerateCombat;
+    private bool canActivateCombat;
+    private bool canCheckCombat;
+    private bool shouldHaveGapTime;
+
+    // The Nodes for the combat
     public Button[] upperNodes;
     public Button[] lowerNodes;
-    // Initialize the colors for the combat
-    private Color[] nodesColors = new Color[2];
-    public Color promptColor, rightAnswerColor; // The wrong answer color is the original "Normal Color"
-    // Initialize the timer for the combat
-    private float timer = 0.0f;
-    public float firstTimeLeft = 0.5f;
-    public float secondTimeLeft = 1.0f;
-    // Setup the activeting row for nodes status
+    // The Colors for the nodes
+    public Color promptColor, rightAnswerColor; // The wrong answer color is the original "Normal Color"\
+
+    private Color[] nodesColors;
+
+    private bool canAssignOriginalColorBlock;
+    private ColorBlock originalColorBlock;
+    // The Checkers to define the sequence for nodes
     private int targetRow;
-    // Setup the checkers for the nodes generator (for 3 effective status)
-    private bool hasActivatedFirst = false;
-    private bool hasActivatedSecond = false;
-    // Setup the checkers for the nodes status
-    public bool hasStarted = false;
-    public bool hasEnded = false;
-    // (To-do) Test Mode
+    private bool hasActivatedFirstTime;
+    private bool hasActivatedSecondTime;
+    // The Checkers to check the status for combat
+    public bool hasStartedCombat;
+    public bool hasEndedCombat;
+
+    // (Todo) Test Mode for combat
     public bool combatTestMode;
-    
+
     private void Start()
     {
-        // Setup the colors for the colors array
-        nodesColors[0] = promptColor;
-        nodesColors[1] = rightAnswerColor;
+        InitializeCombat(combatCounter = 0);
     }
 
     private void Update()
     {
+        OutputCounter();
+        
+        if (canGenerateCombat)
+        {
+            GenerateCombat();
+            // (todo) canGenerateCombat = false;
+        }
+
         SetupTimer();
-        InitializeCombat();
-        CheckCombatResult();
+        CheckCombat();
     }
 
-    private void InitializeCombat()
+    // Set or reset the Counters, Timer and Checkers
+    private void InitializeCombat(int Counter)
     {
-        if (!hasActivatedFirst)
+        // Setup everything for a new combat
+        if (Counter == 0)
         {
-            ActivateCombat(upperNodes, lowerNodes, nodesColors);
-            hasActivatedFirst = true;
-            // (Testing) 两次生成之间的固定间隔时间
-            // 但实际上应该是两次生成的间隔时间中点击就出现下一个
-            // 如果过了这个时间还没有点到变色的node，就判定失败
-            timer = 1.0f;
-            if (hasActivatedFirst && timer > 0)
-            {
+            attemptsCounter = attemptsTimes;
+            succeededCounter = 0;
+            textTrigger = combatText.GetComponent<TextTrigger>();
+            combatTimer = 0.0f;
+            canGenerateCombat = true;
+            canActivateCombat = true;
+            canCheckCombat = false;
+            shouldHaveGapTime = true;
 
+            nodesColors = new Color[2];
+            nodesColors[0] = promptColor;
+            nodesColors[1] = rightAnswerColor;
+            canAssignOriginalColorBlock = true;
+
+            hasActivatedFirstTime = false;
+            hasActivatedSecondTime = false;
+            hasStartedCombat = false;
+            hasEndedCombat = false;
+        }
+        // Setup everything for a new turn
+        else if (Counter > 0)
+        {
+            canGenerateCombat = true;
+            canActivateCombat = true;
+            canCheckCombat = false;
+            shouldHaveGapTime = true;
+
+            hasActivatedFirstTime = false;
+            hasActivatedSecondTime = false;
+            hasStartedCombat = false;
+            hasEndedCombat = false;
+
+            foreach (Button node in upperNodes)
+            {
+                NodeTrigger nodeTrigger = node.GetComponent<NodeTrigger>();
+                nodeTrigger.isStartNode = false;
+                nodeTrigger.isEndNode = false;
+
+                node.colors = originalColorBlock;
+            }
+            foreach (Button node in lowerNodes)
+            {
+                NodeTrigger nodeTrigger = node.GetComponent<NodeTrigger>();
+                nodeTrigger.isStartNode = false;
+                nodeTrigger.isEndNode = false;
+
+                node.colors = originalColorBlock;
             }
         }
-        else if (!hasActivatedSecond)
+        else
         {
-            //if (hasActivatedFirst && timer > 0)
-            //{
-            //    Debug.Log("Success");
-            //}
-            if (hasActivatedFirst && timer < 0)
-            {
-                ActivateCombat(upperNodes, lowerNodes, nodesColors);
-                hasActivatedSecond = true;
-            }
+            Debug.LogError("The Counter could not be lees than 0.");
         }
     }
 
-    public void ActivateCombat(Button[] firstNodes, Button[] secondNodes, Color[] colors)
+    // Send the Counters to the UI text
+    private void OutputCounter()
     {
-        if (!hasActivatedFirst)
-        {
-            // Check the Consistency for the nodes
-            CheckNodesConsistency(firstNodes);
-            CheckNodesConsistency(secondNodes);
+        // (Todo) 更改text trigger 变量名
+        textTrigger.succeedingCounter = toSucceedTimes;
 
+        textTrigger.attemptsCounter = attemptsCounter;
+        textTrigger.succeededCounter = succeededCounter;
+    }
+
+    // (todo) Control the timer and checker for the combat 生成战斗说的是每次调用的时候确定变量和状态，开启检查
+    private void GenerateCombat()
+    {
+        // 生成cobat的过程中，最后一次以后有一个失败判定，而其他情况下要重新生成一些变量
+        switch (attemptsCounter - combatCounter)
+        {
+            // （todo)表示已经进行完了第三次，不存在机会了，强制检查结果。
+            // 如果在这个之前就已经成功了，我可以通过把counter拨进case 0 得到一样的检查；大概
+            //case -1:
+            //    Debug.Log("1");
+            //    break;
+            default:
+                // 生成的第一步要等一下，好让资源读取一番
+                if (shouldHaveGapTime)
+                {
+                    Debug.Log("2");
+                    combatTimer = gapTime;
+                    shouldHaveGapTime = false;
+                }
+                
+                if (combatTimer == 0 && !hasActivatedFirstTime && canActivateCombat)
+                {
+                    Debug.Log("3");
+                    canActivateCombat = false;
+                    // from here: if the timer == 0, you will lose this turn
+                    combatTimer = clickTime;
+                    // 所以可以开始检查结果了
+                    canCheckCombat = true;
+                    ActivateCombat(upperNodes, lowerNodes, nodesColors);
+                }
+                else if (hasActivatedFirstTime && !hasActivatedSecondTime && hasStartedCombat)
+                {
+                    combatTimer = gapTime;
+                    ActivateCombat(upperNodes, lowerNodes, nodesColors);
+                    canGenerateCombat = false;
+                    shouldHaveGapTime = true;
+                }
+                break;
+        }
+    }
+
+    // 激活战斗说的是确定首先在哪一行哪一个生成，然后到激活Node里生成确定的哪个node
+    private void ActivateCombat(Button[] firstNodes, Button[] secondNodes, Color[] colors)
+    {
+        combatCounter++;
+
+        if (!hasActivatedFirstTime)
+        {
+            // (todo) Check the Consistency for the nodes
+            //CheckNotes(firstNodes);
+            //CheckNotes(secondNodes);
+            
             targetRow = Random.Range(0, 2);
-
-            // Setup the sequence for the nodes
             switch (targetRow)
             {
                 case 0:
@@ -91,8 +218,11 @@ public class CombatGenerator : MonoBehaviour
                     targetRow = 0;
                     break;
             }
+
+            
+            hasActivatedFirstTime = true;
         }
-        else if (hasActivatedFirst && !hasActivatedSecond)
+        else if (hasActivatedFirstTime && hasStartedCombat)
         {
             switch (targetRow)
             {
@@ -103,8 +233,12 @@ public class CombatGenerator : MonoBehaviour
                     ActivateNode(secondNodes, colors);
                     break;
             }
+
+            hasActivatedSecondTime = true;
+
+            attemptsCounter--;
         }
-        else if (!hasActivatedFirst && hasActivatedSecond)
+        else if (!hasActivatedFirstTime && hasActivatedSecondTime)
         {
             Debug.LogError("Did not activate the first, but go into the second time.");
         }
@@ -112,36 +246,52 @@ public class CombatGenerator : MonoBehaviour
         {
             Debug.LogError("Did not activate the any nodes, but go into Activate Combat.");
         }
+    }
+
+    private void CheckCombat()
+    {
+
+        if (canCheckCombat)
+        {
+            if (combatTimer > 0)
+            {
+                if (hasStartedCombat && hasEndedCombat)
+                {
+                    Debug.Log("You kick the right nodes!!!");
+                    Debug.Log("You win this turn, congraduation!!!");
+                    canCheckCombat = false;
+
+                    succeededCounter++;
+
+                    InitializeCombat(combatCounter);
+                }
+            }
+            else if (combatTimer == 0)
+            {
+                Debug.Log("You Fool");
+                canCheckCombat = false;
+
+                if (shouldHaveGapTime)
+                {
+                    combatTimer = gapTime;
+                    shouldHaveGapTime = false;
+                    InitializeCombat(combatCounter);
+                }
+                
+            }
+        }
 
     }
 
     private void SetupTimer()
     {
-        timer -= Time.deltaTime;
-    }
-
-    //private bool CheckResult()
-    //{
-    //    if (timer > 0)
-    //    {
-    //        Debug.Log("Success");
-    //        return isCorrect = true;
-
-    //    }
-    //    else
-    //    {
-    //        return isCorrect = false;
-    //    }
-    //}
-
-    private void CheckCombatResult()
-    {
-        if (hasStarted)
+        if (combatTimer >= 0)
         {
-            if (hasEnded)
-            {
-                Debug.Log("You kick the right nodes!!!");
-            }
+            combatTimer -= Time.deltaTime;
+        }
+        else
+        {
+            combatTimer = 0;
         }
     }
 
@@ -149,24 +299,24 @@ public class CombatGenerator : MonoBehaviour
     // Setup the start and end points for the nodes
     private void ActivateNode(Button[] nodes, Color[] colors)
     {
-        if (!hasActivatedFirst)
+        if (!hasActivatedFirstTime)
         {
             switch (Random.Range(0, 4))
             {
                 case 0:
-                    SetupStartPoint(nodes[0]);
+                    SetupStartNode(nodes[0]);
                     SetupNodesProperty(nodes[0], colors);
                     break;
                 case 1:
-                    SetupStartPoint(nodes[1]);
+                    SetupStartNode(nodes[1]);
                     SetupNodesProperty(nodes[1], colors);
                     break;
                 case 2:
-                    SetupStartPoint(nodes[2]);
+                    SetupStartNode(nodes[2]);
                     SetupNodesProperty(nodes[2], colors);
                     break;
                 case 3:
-                    SetupStartPoint(nodes[3]);
+                    SetupStartNode(nodes[3]);
                     SetupNodesProperty(nodes[3], colors);
                     break;
                 default:
@@ -174,24 +324,24 @@ public class CombatGenerator : MonoBehaviour
                     break;
             }
         }
-        else if (hasActivatedFirst && !hasActivatedSecond)
+        else if (hasActivatedFirstTime && !hasActivatedSecondTime)
         {
             switch (Random.Range(0, 4))
             {
                 case 0:
-                    SetupEndPoint(nodes[0]);
+                    SetupEndNode(nodes[0]);
                     SetupNodesProperty(nodes[0], colors);
                     break;
                 case 1:
-                    SetupEndPoint(nodes[1]);
+                    SetupEndNode(nodes[1]);
                     SetupNodesProperty(nodes[1], colors);
                     break;
                 case 2:
-                    SetupEndPoint(nodes[2]);
+                    SetupEndNode(nodes[2]);
                     SetupNodesProperty(nodes[2], colors);
                     break;
                 case 3:
-                    SetupEndPoint(nodes[3]);
+                    SetupEndNode(nodes[3]);
                     SetupNodesProperty(nodes[3], colors);
                     break;
                 default:
@@ -202,10 +352,10 @@ public class CombatGenerator : MonoBehaviour
 
     }
 
-    // Save the original property and check if it is same(Colors)
-        // （todo）检查开关的一致性
+    // Save the original property and check if it is same (Colors)
+    // （todo）检查开关的一致性
     private ColorBlock originalNodeColors;
-    private void CheckNodesConsistency(Button[] nodes)
+    private void CheckNotes(Button[] nodes)
     {
         int nodesCounter = 0;
         foreach (Button node in nodes)
@@ -229,13 +379,13 @@ public class CombatGenerator : MonoBehaviour
     // Setup the property for the prompt nodes
     // NormalColor is the prompt to click
     // HighlightColor is the prompt for the right answer
-    private void SetupStartPoint(Button node)
+    private void SetupStartNode(Button node)
     {
         NodeTrigger nodeTrigger = node.GetComponent<NodeTrigger>();
         nodeTrigger.isStartNode = true;
     }
 
-    private void SetupEndPoint(Button node)
+    private void SetupEndNode(Button node)
     {
         NodeTrigger nodeTrigger = node.GetComponent<NodeTrigger>();
         nodeTrigger.isEndNode = true;
@@ -243,10 +393,20 @@ public class CombatGenerator : MonoBehaviour
 
     private void SetupNodesProperty(Button node, Color[] colors)
     {
+        if (canAssignOriginalColorBlock)
+        {
+            originalColorBlock = node.colors;
+            canAssignOriginalColorBlock = false;
+        }
+        
+
         ColorBlock colorBlock;
         colorBlock = node.colors;
+        
         colorBlock.normalColor = colors[0];
         colorBlock.highlightedColor = colors[1];
         node.colors = colorBlock;
     }
+
+
 }

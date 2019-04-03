@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class NodeTrigger : MonoBehaviour
 {
@@ -28,22 +26,21 @@ public class NodeTrigger : MonoBehaviour
         if (isPressingnode)
         {
             this.isInNode = true;
-
             if (isStartNode)
             {
-                combatGenerator.hasStarted = true;
+                combatGenerator.hasStartedCombat = true;
             }
             else
             {
-                combatGenerator.hasStarted = false;
+                combatGenerator.hasStartedCombat = false;
             }
-
             pressingTime = Time.time;
             //Debug.Log("Start to press a node.");
         }
         else if (pressingTime != 0)
         {
             this.isInNode = false;
+            combatGenerator.hasStartedCombat = false;
             pressingTime = 0;
             //Debug.Log("Cancel pressing a node.");
         }
@@ -58,11 +55,11 @@ public class NodeTrigger : MonoBehaviour
 
             if (isEndNode)
             {
-                combatGenerator.hasEnded = true;
+                combatGenerator.hasEndedCombat = true;
             }
             else
             {
-                combatGenerator.hasEnded = false;
+                combatGenerator.hasEndedCombat = false;
             }
 
             //Debug.Log("Detect a pointer on node.");
@@ -70,6 +67,7 @@ public class NodeTrigger : MonoBehaviour
         else if (!isDetectingPointer)
         {
             this.isOnNode = false;
+            combatGenerator.hasEndedCombat = false;
         }
     }
 }
