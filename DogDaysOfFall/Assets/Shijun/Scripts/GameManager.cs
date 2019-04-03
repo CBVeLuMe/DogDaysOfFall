@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     //! What's this? (Create a Singleton)
-    public static GameManager instance;
+    public static GameManager gameManager;
 
     public bool isTestMode;
     // To-do: contain the test button for 
@@ -15,11 +15,11 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         //! What's this?
-        if (instance == null)
+        if (gameManager == null)
         {
-            instance = this;
+            gameManager = this;
         }
-        else if(instance != this)
+        else if(gameManager != this)
         {
             Destroy(gameObject);
         }

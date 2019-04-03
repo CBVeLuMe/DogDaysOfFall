@@ -157,41 +157,29 @@ public class CombatGenerator : MonoBehaviour
     // (todo) Control the timer and checker for the combat 生成战斗说的是每次调用的时候确定变量和状态，开启检查
     private void GenerateCombat()
     {
+
         // 生成cobat的过程中，最后一次以后有一个失败判定，而其他情况下要重新生成一些变量
-        switch (attemptsCounter - combatCounter)
+        if (shouldHaveGapTime)
         {
-            // （todo)表示已经进行完了第三次，不存在机会了，强制检查结果。
-            // 如果在这个之前就已经成功了，我可以通过把counter拨进case 0 得到一样的检查；大概
-            //case -1:
-            //    Debug.Log("1");
-            //    break;
-            default:
-                // 生成的第一步要等一下，好让资源读取一番
-                if (shouldHaveGapTime)
-                {
-                    Debug.Log("2");
-                    combatTimer = gapTime;
-                    shouldHaveGapTime = false;
-                }
-                
-                if (combatTimer == 0 && !hasActivatedFirstTime && canActivateCombat)
-                {
-                    Debug.Log("3");
-                    canActivateCombat = false;
-                    // from here: if the timer == 0, you will lose this turn
-                    combatTimer = clickTime;
-                    // 所以可以开始检查结果了
-                    canCheckCombat = true;
-                    ActivateCombat(upperNodes, lowerNodes, nodesColors);
-                }
-                else if (hasActivatedFirstTime && !hasActivatedSecondTime && hasStartedCombat)
-                {
-                    combatTimer = gapTime;
-                    ActivateCombat(upperNodes, lowerNodes, nodesColors);
-                    canGenerateCombat = false;
-                    shouldHaveGapTime = true;
-                }
-                break;
+            combatTimer = gapTime;
+            shouldHaveGapTime = false;
+        }
+
+        if (combatTimer == 0 && !hasActivatedFirstTime && canActivateCombat)
+        {
+            canActivateCombat = false;
+            // from here: if the timer == 0, you will lose this turn
+            combatTimer = clickTime;
+            // 所以可以开始检查结果了
+            canCheckCombat = true;
+            ActivateCombat(upperNodes, lowerNodes, nodesColors);
+        }
+        else if (hasActivatedFirstTime && !hasActivatedSecondTime && hasStartedCombat)
+        {
+            combatTimer = gapTime;
+            ActivateCombat(upperNodes, lowerNodes, nodesColors);
+            canGenerateCombat = false;
+            shouldHaveGapTime = true;
         }
     }
 
@@ -258,7 +246,6 @@ public class CombatGenerator : MonoBehaviour
                 if (hasStartedCombat && hasEndedCombat)
                 {
                     Debug.Log("You kick the right nodes!!!");
-                    Debug.Log("You win this turn, congraduation!!!");
                     canCheckCombat = false;
 
                     succeededCounter++;
@@ -268,16 +255,11 @@ public class CombatGenerator : MonoBehaviour
             }
             else if (combatTimer == 0)
             {
-                Debug.Log("You Fool");
+                Debug.Log("Node kick your ass.");
                 canCheckCombat = false;
 
-                if (shouldHaveGapTime)
-                {
-                    combatTimer = gapTime;
-                    shouldHaveGapTime = false;
-                    InitializeCombat(combatCounter);
-                }
-                
+                attemptsCounter--;
+                InitializeCombat(combatCounter);
             }
         }
 
