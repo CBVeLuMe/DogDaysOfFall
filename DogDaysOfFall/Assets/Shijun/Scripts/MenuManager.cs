@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour
     public GameObject SelectMenu;
     public GameObject OptionsMenu;
 
-    public string mainMenu;
+    public string MainMenuName;
 
     public bool IsMainMenu;
 
@@ -35,7 +35,7 @@ public class MenuManager : MonoBehaviour
     private void Update()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        mainMenu = currentScene.name;
+        MainMenuName = currentScene.name;
     }
 
     public void MainMenuActive()

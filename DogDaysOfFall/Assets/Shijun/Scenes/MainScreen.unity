@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 471781890}
   - component: {fileID: 471781894}
   m_Layer: 5
-  m_Name: UICanvas
+  m_Name: MainCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -882,7 +882,7 @@ RectTransform:
   - {fileID: 385511942}
   - {fileID: 1143071301}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -904,7 +904,7 @@ MonoBehaviour:
   MainMenu: {fileID: 1673994663}
   SelectMenu: {fileID: 385511941}
   OptionsMenu: {fileID: 1143071300}
-  mainMenu: 
+  MainMenuName: 
   IsMainMenu: 1
 --- !u!1 &498227337
 GameObject:
@@ -1302,6 +1302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476ef565b01001d43bcd330cd580e904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTestMode: 0
 --- !u!1 &977320812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,7 +1833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1673994664
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2320,5 +2321,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
