@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class CombatGenerator : MonoBehaviour
 {
-    // (Todo) Test Mode for combat
-    public bool combatTestMode;
+
 
     private void Start()
     {
@@ -29,7 +28,7 @@ public class CombatGenerator : MonoBehaviour
 
     #region Combat methods
     // The Counters for the combat
-    public int toSucceedTimes; // The Times player needed to win
+    public int toSucceedTimes; // The Times player need to win
     public int attemptsTimes; // The times player can try
 
     private int combatCounter; // Count the times player played (+1 per turn)
@@ -50,6 +49,10 @@ public class CombatGenerator : MonoBehaviour
     private bool canActivateCombat;
     private bool canCheckCombat;
     private bool shouldHaveGapTime;
+
+    // (Todo) Test Mode for combat
+    public bool combatTestMode;
+
 
     // Set or reset the Counters, Timer and Checkers
     private void InitializeCombat(int Counter)
