@@ -7,13 +7,13 @@ using UnityEngine.Animations;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject MainMenu;
-    public GameObject SelectMenu;
-    public GameObject OptionsMenu;
+    public GameObject mainMenu;
+    public GameObject selectMenu;
+    public GameObject optionsMenu;
 
-    public string MainMenuName;
+    private string mainMenuName;
 
-    public bool IsMainMenu;
+    public bool isMainMenu;
 
     private GameManager gameManager;
 
@@ -22,11 +22,11 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {   
-        MainMenu.SetActive(false);
+        mainMenu.SetActive(false);
 
-        if (IsMainMenu)
+        if (isMainMenu)
         {
-            MainMenuActive();
+            ActivateMainMenu();
         }
 
         gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
@@ -35,22 +35,27 @@ public class MenuManager : MonoBehaviour
     private void Update()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        MainMenuName = currentScene.name;
+        mainMenuName = currentScene.name;
     }
 
-    public void MainMenuActive()
+    public void ActivateMainMenu()
     {
-        MainMenu.SetActive(true);
+        mainMenu.SetActive(true);
 
-        SelectMenu.SetActive(false);
-        OptionsMenu.SetActive(false);
+        selectMenu.SetActive(false);
+        optionsMenu.SetActive(false);
     }
 
-    public void SelectMenuActive()
+    public void ActivateSelectMenu()
     {
-        SelectMenu.SetActive(true);
+        selectMenu.SetActive(true);
 
-        MainMenu.SetActive(false);
-        OptionsMenu.SetActive(false);
+        mainMenu.SetActive(false);
+        optionsMenu.SetActive(false);
+    }
+
+    public void ActivateCombatSystem()
+    {
+        gameManager.LoadCombatScene();
     }
 }

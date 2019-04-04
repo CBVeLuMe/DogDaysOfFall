@@ -1,27 +1,34 @@
-﻿/* Cambat System
- * 面向整体
- * The counters for the combat
- * The checkers for the combat
- * 
- * 面向单次
- * timer
- * Checker for 单次
- * 面向note
- * note 盒子
- * color
- * checker for sequences
- * Testmode
- */
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CombatGenerator : MonoBehaviour
 {
+
+
+    private void Start()
+    {
+        InitializeCombat(combatCounter = 0);
+    }
+
+    private void Update()
+    {
+        OutputCounter();
+        
+        if (canGenerateCombat)
+        {
+            GenerateCombat();
+            // (todo) canGenerateCombat = false;
+        }
+
+        SetupTimer();
+        CheckCombat();
+    }
+
+    #region Combat methods
     // The Counters for the combat
-    public int toSucceedTimes; // The Times player needed to win
+    public int toSucceedTimes; // The Times player need to win
     public int attemptsTimes; // The times player can try
 
     private int combatCounter; // Count the times player played (+1 per turn)
@@ -43,45 +50,9 @@ public class CombatGenerator : MonoBehaviour
     private bool canCheckCombat;
     private bool shouldHaveGapTime;
 
-    // The Nodes for the combat
-    public Button[] upperNodes;
-    public Button[] lowerNodes;
-    // The Colors for the nodes
-    public Color promptColor, rightAnswerColor; // The wrong answer color is the original "Normal Color"\
-
-    private Color[] nodesColors;
-
-    private bool canAssignOriginalColorBlock;
-    private ColorBlock originalColorBlock;
-    // The Checkers to define the sequence for nodes
-    private int targetRow;
-    private bool hasActivatedFirstTime;
-    private bool hasActivatedSecondTime;
-    // The Checkers to check the status for combat
-    public bool hasStartedCombat;
-    public bool hasEndedCombat;
-
     // (Todo) Test Mode for combat
     public bool combatTestMode;
 
-    private void Start()
-    {
-        InitializeCombat(combatCounter = 0);
-    }
-
-    private void Update()
-    {
-        OutputCounter();
-        
-        if (canGenerateCombat)
-        {
-            GenerateCombat();
-            // (todo) canGenerateCombat = false;
-        }
-
-        SetupTimer();
-        CheckCombat();
-    }
 
     // Set or reset the Counters, Timer and Checkers
     private void InitializeCombat(int Counter)
@@ -276,6 +247,26 @@ public class CombatGenerator : MonoBehaviour
             combatTimer = 0;
         }
     }
+    #endregion
+
+    #region Nodes methods
+    // The Nodes for the combat
+    public Button[] upperNodes;
+    public Button[] lowerNodes;
+    // The Colors for the nodes
+    public Color promptColor, rightAnswerColor; // The wrong answer color is the original "Normal Color"
+
+    private Color[] nodesColors;
+
+    private bool canAssignOriginalColorBlock;
+    private ColorBlock originalColorBlock;
+    // The Checkers to define the sequence for nodes
+    private int targetRow;
+    private bool hasActivatedFirstTime;
+    private bool hasActivatedSecondTime;
+    // The Checkers to check the status for combat
+    public bool hasStartedCombat;
+    public bool hasEndedCombat;
 
     // Switch the colors for the different nodes
     // Setup the start and end points for the nodes
@@ -389,6 +380,5 @@ public class CombatGenerator : MonoBehaviour
         colorBlock.highlightedColor = colors[1];
         node.colors = colorBlock;
     }
-
-
+    #endregion
 }
