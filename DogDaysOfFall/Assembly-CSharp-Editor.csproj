@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AnimatedGifPlayer\Editor\AnimatedGifPlayerEditor.cs" />
     <Compile Include="Assets\Fungus\Scripts\Editor\AssetModProcessor.cs" />
     <Compile Include="Assets\Fungus\Scripts\Editor\BasePopupWindowContent.cs" />
     <Compile Include="Assets\Fungus\Scripts\Editor\BlockEditor.cs" />
@@ -370,6 +371,21 @@
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="GitHub.Api.45">
+      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Plugins/GitHub/Editor/GitHub.Api.45.dll</HintPath>
+    </Reference>
+    <Reference Include="GitHub.Logging">
+      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Plugins/GitHub/Editor/GitHub.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="GitHub.Unity.45">
+      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Plugins/GitHub/Editor/GitHub.Unity.45.dll</HintPath>
+    </Reference>
+    <Reference Include="GitHub.UnityShim">
+      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Plugins/GitHub/Editor/GitHub.UnityShim.dll</HintPath>
+    </Reference>
+    <Reference Include="sfw.net">
+      <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Assets/Plugins/GitHub/Editor/sfw.net.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/CBVeLuMe/Desktop/DogDaysOfFall/DogDaysOfFall/Library/PackageCache/com.unity.ads@2.3.1/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -751,6 +767,10 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{F282CD70-5432-369D-84C7-7B48C527C3F5}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
+      <Project>{E38072D9-2112-B7FA-4E54-80FACA385629}</Project>
+      <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -60,6 +60,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AnimatedGifPlayer\Examples\Code Example\CodeExample.cs" />
+    <Compile Include="Assets\AnimatedGifPlayer\Examples\Mesh Renderer Example\MeshRendererExample.cs" />
+    <Compile Include="Assets\AnimatedGifPlayer\Scripts\AnimatedGifDecoder.cs" />
+    <Compile Include="Assets\AnimatedGifPlayer\Scripts\AnimatedGifPlayer.cs" />
     <Compile Include="Assets\Fungus\Scripts\Commands\Break.cs" />
     <Compile Include="Assets\Fungus\Scripts\Commands\Call.cs" />
     <Compile Include="Assets\Fungus\Scripts\Commands\CallMethod.cs" />
@@ -615,6 +619,8 @@
     <Compile Include="Assets\Shijun\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Shijun\Scripts\NodeTrigger.cs" />
     <Compile Include="Assets\Shijun\Scripts\TextTrigger.cs" />
+    <Compile Include="Assets\Yi\Scripts\DragFunction.cs" />
+    <Compile Include="Assets\Yi\Scripts\EnemyController.cs" />
     <None Include="Assets\Fungus\Thirdparty\ThirdPartyNotices.txt" />
     <None Include="Assets\Fungus\Thirdparty\TextMeshPro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Fungus\Thirdparty\TextMeshPro\Resources\LineBreaking Leading Characters.txt" />
@@ -637,6 +643,7 @@
     <None Include="Assets\Fungus\Thirdparty\TextMeshPro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Fungus\Thirdparty\TextMeshPro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\Fungus\Thirdparty\TextMeshPro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\AnimatedGifPlayer\readme.txt" />
     <None Include="Assets\Fungus\Thirdparty\FungusLua\Resources\Types\UnityTypes.txt" />
     <None Include="Assets\FungusExamples\FirstPerson\Visuals\Google Poly\Key\CC-BY.txt" />
     <None Include="Assets\Fungus\Thirdparty\TextMeshPro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
