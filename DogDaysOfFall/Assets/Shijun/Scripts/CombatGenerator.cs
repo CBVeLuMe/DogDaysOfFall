@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Fungus;
 
 public class CombatGenerator : MonoBehaviour
 {
 
+    //Find Flowchart
+    public Flowchart flowChart;
+    public bool canDie;
 
     private void Start()
     {
@@ -24,6 +28,7 @@ public class CombatGenerator : MonoBehaviour
 
         SetupTimer();
         CheckCombat();
+
     }
 
     #region Combat methods
@@ -233,6 +238,16 @@ public class CombatGenerator : MonoBehaviour
                 InitializeCombat(combatCounter);
             }
         }
+
+        if (succeededCounter == toSucceedTimes)
+        {
+            flowChart.SetBooleanVariable("FirstMiniGame", true);
+        }
+        if (attemptsCounter <= 0 && canDie)
+        {
+            Debug.Log("You lose!");
+        }
+        
 
     }
 
