@@ -7,12 +7,6 @@ using Fungus;
 public class CombatGenerator : MonoBehaviour
 {
 
-
-
-    //The obejct for the Fungus
-    public Flowchart flowChart;
-    public bool canDie;
-
     private void Start()
     {
         InitializeCombat(combatCounter = 0);
@@ -30,10 +24,12 @@ public class CombatGenerator : MonoBehaviour
 
         SetupTimer();
         CheckCombat();
-
     }
 
     #region Combat methods
+    //The obejct for the Fungus
+    public Flowchart flowChart;
+
     // The Counters for the combat
     public int toSucceedTimes; // The Times player need to win
     public int attemptsTimes; // The times player can try
@@ -52,14 +48,15 @@ public class CombatGenerator : MonoBehaviour
     private float combatTimer;
 
     // The Checkers to check the status for methods
+    private bool shouldHaveGapTime;
+
     private bool canGenerateCombat;
     private bool canActivateCombat;
     private bool canCheckCombat;
-    private bool shouldHaveGapTime;
+    private bool canGenerateResult;
 
     // (Todo) Test Mode for combat
     public bool testMode;
-
 
     // Set or reset the Counters, Timer and Checkers
     private void InitializeCombat(int Counter)
@@ -76,6 +73,8 @@ public class CombatGenerator : MonoBehaviour
             canGenerateCombat = true;
             canActivateCombat = true;
             canCheckCombat = false;
+            canGenerateResult = true;
+
             shouldHaveGapTime = true;
 
             nodesColors = new Color[2];
@@ -133,12 +132,10 @@ public class CombatGenerator : MonoBehaviour
         textTrigger.attemptsCounter = attemptsCounter;
         textTrigger.succeededCounter = succeededCounter;
     }
-
-    // (todo) Control the timer and checker for the combat 生成战斗说的是每次调用的时候确定变量和状态，开启检查
+    
+    // Setup the timer to check the result
     private void GenerateCombat()
     {
-
-        // 生成cobat的过程中，最后一次以后有一个失败判定，而其他情况下要重新生成一些变量
         if (shouldHaveGapTime)
         {
             combatTimer = gapTime;
@@ -148,9 +145,8 @@ public class CombatGenerator : MonoBehaviour
         if (combatTimer == 0 && !hasActivatedFirstTime && canActivateCombat)
         {
             canActivateCombat = false;
-            // from here: if the timer == 0, you will lose this turn
+            // From here: if the timer == 0, you will lose this turn
             combatTimer = clickTime;
-            // 所以可以开始检查结果了
             canCheckCombat = true;
             ActivateCombat(upperNodes, lowerNodes, nodesColors);
         }
@@ -163,7 +159,7 @@ public class CombatGenerator : MonoBehaviour
         }
     }
 
-    // 激活战斗说的是确定首先在哪一行哪一个生成，然后到激活Node里生成确定的哪个node
+    // Deside which line will generate the prompt
     private void ActivateCombat(Button[] firstNodes, Button[] secondNodes, Color[] colors)
     {
         combatCounter++;
@@ -203,8 +199,6 @@ public class CombatGenerator : MonoBehaviour
             }
 
             hasActivatedSecondTime = true;
-
-            attemptsCounter--;
         }
         else if (!hasActivatedFirstTime && hasActivatedSecondTime)
         {
@@ -218,41 +212,49 @@ public class CombatGenerator : MonoBehaviour
 
     private void CheckCombat()
     {
+        // Generate a result and send a message to dialogue
+        if (canGenerateResult)
+        {
+            if (succeededCounter == toSucceedTimes)
+            {
+                flowChart.SetBooleanVariable("hasWonCombat", true);
 
+                Debug.Log("Player has won the combat.");
+                canGenerateResult = false;
+            }
+            else if (attemptsCounter <= 0)
+            {
+                Debug.Log("You lose!");
+                canGenerateResult = false;
+            }
+        }
+
+        // Check the status for the conbat in one turn
         if (canCheckCombat)
         {
             if (combatTimer > 0)
             {
                 if (hasStartedCombat && hasEndedCombat)
                 {
-                    Debug.Log("You kick the right nodes!!!");
-                    canCheckCombat = false;
-
+                    attemptsCounter--;
                     succeededCounter++;
+                    //Debug.Log("You kick the right nodes!!!");
+
+                    canCheckCombat = false;
 
                     InitializeCombat(combatCounter);
                 }
             }
             else if (combatTimer == 0)
             {
-                Debug.Log("Node kick your ass.");
+                attemptsCounter--;
+                //Debug.Log("Node kick your ass.");
+
                 canCheckCombat = false;
 
-                attemptsCounter--;
                 InitializeCombat(combatCounter);
             }
         }
-
-        if (succeededCounter == toSucceedTimes)
-        {
-            flowChart.SetBooleanVariable("hasWonCombat", true);
-        }
-        if (attemptsCounter <= 0 && canDie)
-        {
-            Debug.Log("You lose!");
-        }
-        
-
     }
 
     private void SetupTimer()
@@ -345,7 +347,6 @@ public class CombatGenerator : MonoBehaviour
     }
 
     // Save the original property and check if it is same (Colors)
-    // （todo）检查开关的一致性
     private ColorBlock originalNodeColors;
     private void CheckNotes(Button[] nodes)
     {
