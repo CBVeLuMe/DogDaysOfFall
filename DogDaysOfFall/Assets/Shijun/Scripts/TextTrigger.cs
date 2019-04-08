@@ -10,7 +10,7 @@ public class TextTrigger : MonoBehaviour
     private string attemptsString;
     
     public int attemptsCounter;
-    public int succeedingCounter;
+    public int toSucceedTimes;
     public int succeededCounter;
 
     private void Update()
@@ -21,7 +21,7 @@ public class TextTrigger : MonoBehaviour
 
     private void SetSuccessesText()
     {
-        successesString = "Successes Needed: " + succeededCounter.ToString() + "/" + succeedingCounter.ToString();
+        successesString = "Successes Needed: " + succeededCounter.ToString() + "/" + toSucceedTimes.ToString();
         successesText.text = successesString;
     }
 

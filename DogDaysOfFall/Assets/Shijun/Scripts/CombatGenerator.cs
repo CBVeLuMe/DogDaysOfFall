@@ -7,7 +7,9 @@ using Fungus;
 public class CombatGenerator : MonoBehaviour
 {
 
-    //Find Flowchart
+
+
+    //The obejct for the Fungus
     public Flowchart flowChart;
     public bool canDie;
 
@@ -56,7 +58,7 @@ public class CombatGenerator : MonoBehaviour
     private bool shouldHaveGapTime;
 
     // (Todo) Test Mode for combat
-    public bool combatTestMode;
+    public bool testMode;
 
 
     // Set or reset the Counters, Timer and Checkers
@@ -68,7 +70,9 @@ public class CombatGenerator : MonoBehaviour
             attemptsCounter = attemptsTimes;
             succeededCounter = 0;
             textTrigger = combatText.GetComponent<TextTrigger>();
+
             combatTimer = 0.0f;
+
             canGenerateCombat = true;
             canActivateCombat = true;
             canCheckCombat = false;
@@ -77,6 +81,7 @@ public class CombatGenerator : MonoBehaviour
             nodesColors = new Color[2];
             nodesColors[0] = promptColor;
             nodesColors[1] = rightAnswerColor;
+
             canAssignOriginalColorBlock = true;
 
             hasActivatedFirstTime = false;
@@ -116,15 +121,14 @@ public class CombatGenerator : MonoBehaviour
         }
         else
         {
-            Debug.LogError("The Counter could not be lees than 0.");
+            Debug.LogError("The Combat Counter could not be lees than 0.");
         }
     }
 
     // Send the Counters to the UI text
     private void OutputCounter()
     {
-        // (Todo) 更改text trigger 变量名
-        textTrigger.succeedingCounter = toSucceedTimes;
+        textTrigger.toSucceedTimes = toSucceedTimes;
 
         textTrigger.attemptsCounter = attemptsCounter;
         textTrigger.succeededCounter = succeededCounter;
@@ -241,7 +245,7 @@ public class CombatGenerator : MonoBehaviour
 
         if (succeededCounter == toSucceedTimes)
         {
-            flowChart.SetBooleanVariable("FirstMiniGame", true);
+            flowChart.SetBooleanVariable("hasWonCombat", true);
         }
         if (attemptsCounter <= 0 && canDie)
         {
