@@ -30,6 +30,9 @@ public class CombatGenerator : MonoBehaviour
     //The obejct for the Fungus
     public Flowchart flowChart;
 
+    // Continue Button
+    public GameObject continueB;
+
     // The Counters for the combat
     public int toSucceedTimes; // The Times player need to win
     public int attemptsTimes; // The times player can try
@@ -218,7 +221,7 @@ public class CombatGenerator : MonoBehaviour
             if (succeededCounter == toSucceedTimes)
             {
                 flowChart.SetBooleanVariable("hasWonCombat", true);
-
+                continueB.SetActive(true);
                 Debug.Log("Player has won the combat.");
                 canGenerateResult = false;
             }
