@@ -3325,7 +3325,6 @@ GameObject:
   - component: {fileID: 817489380}
   - component: {fileID: 817489379}
   - component: {fileID: 817489378}
-  - component: {fileID: 817489377}
   - component: {fileID: 817489383}
   - component: {fileID: 817489400}
   - component: {fileID: 817489399}
@@ -3467,6 +3466,7 @@ GameObject:
   - component: {fileID: 817489404}
   - component: {fileID: 817489384}
   - component: {fileID: 817489424}
+  - component: {fileID: 817489377}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -3476,18 +3476,25 @@ GameObject:
   m_IsActive: 1
 --- !u!114 &817489377
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817489376}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Script: {fileID: 11500000, guid: 437f9a4e3dbc647f9bdce95308418bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentBlock: {fileID: 817489378}
-  waitForFrames: 1
+  itemId: 156
+  indentLevel: 0
+  duration: 1
+  fadeOut: 1
+  targetView: {fileID: 674585094}
+  waitUntilFinished: 1
+  fadeColor: {r: 0, g: 0, b: 0, a: 0}
+  fadeTexture: {fileID: 0}
+  targetCamera: {fileID: 1196295671}
 --- !u!114 &817489378
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3503,15 +3510,15 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 67
-    y: 70
-    width: 148.73416
+    y: 71
+    width: 139
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 0
   blockName: Chapter 1 Start
   description: 
-  eventHandler: {fileID: 817489377}
+  eventHandler: {fileID: 0}
   commandList:
   - {fileID: 817489388}
   - {fileID: 817489383}
@@ -3529,11 +3536,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 272.98526, y: -66.312904}
+  scrollPos: {x: 213.6137, y: -39.54152}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 449
-  zoom: 0.7900002
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -3542,7 +3549,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 817489400}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 817489377}
   variables:
   - {fileID: 817489381}
   description: Chapter 1
@@ -3625,7 +3633,7 @@ MonoBehaviour:
   waitUntilFinished: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTexture: {fileID: 0}
-  targetCamera: {fileID: 0}
+  targetCamera: {fileID: 1196295671}
 --- !u!114 &817489384
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3658,9 +3666,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 70.26828
+    x: 69.26828
     y: 238.36588
-    width: 120.886055
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3688,7 +3696,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 59.713287
     y: 324.63583
-    width: 141.13922
+    width: 129
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4056,6 +4064,7 @@ MonoBehaviour:
   - {fileID: 817489395}
   - {fileID: 817489396}
   - {fileID: 817489390}
+  - {fileID: 817489377}
   - {fileID: 817489393}
   - {fileID: 817489392}
   - {fileID: 817489391}
@@ -4265,7 +4274,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 287.8089
     y: 329.56064
-    width: 160.12656
+    width: 150
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4431,7 +4440,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1322.0299
     y: 327.14627
-    width: 172.78479
+    width: 161
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4496,7 +4505,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 691.0058
     y: 333.56885
-    width: 195.56958
+    width: 179
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4857,7 +4866,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 473.7975
     y: 434.66547
-    width: 155.06326
+    width: 144
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4884,7 +4893,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 471.2649
     y: 384.01666
-    width: 122.15188
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4911,7 +4920,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 469.99902
     y: 339.6987
-    width: 146.20251
+    width: 136
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4938,7 +4947,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 461.1353
     y: 286.51706
-    width: 149.99997
+    width: 139
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5248,7 +5257,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1125.3674
     y: 366.40323
-    width: 156.32909
+    width: 146
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5276,7 +5285,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1126.4935
     y: 286.76337
-    width: 139.8734
+    width: 132
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5744,7 +5753,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 925.95245
     y: 332.34253
-    width: 172.78479
+    width: 161
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5877,7 +5886,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 720.0533
     y: 430.913
-    width: 127.21517
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5924,7 +5933,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1527.1312
     y: 325.0208
-    width: 160.12656
+    width: 148
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -10563,7 +10572,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000005722046, y: 0.000091552734}
+  m_AnchoredPosition: {x: -0.00002193451, y: 0.000091552734}
   m_SizeDelta: {x: -14.299988, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1688324484
@@ -10952,8 +10961,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1451512192}
   m_HandleRect: {fileID: 1451512191}
   m_Direction: 2
-  m_Value: 0.99999934
-  m_Size: 0.6824052
+  m_Value: 0.99999917
+  m_Size: 0.683731
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
