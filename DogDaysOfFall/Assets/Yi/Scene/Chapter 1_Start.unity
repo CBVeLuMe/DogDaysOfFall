@@ -511,7 +511,8 @@ AudioSource:
   m_GameObject: {fileID: 231666010}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243863379074352374, guid: 6c52f430805f31348a0c907c1989933b,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -3466,9 +3467,10 @@ GameObject:
   - component: {fileID: 817489384}
   - component: {fileID: 817489424}
   - component: {fileID: 817489377}
+  - component: {fileID: 817489405}
   - component: {fileID: 817489524}
   - component: {fileID: 817489523}
-  - component: {fileID: 817489405}
+  - component: {fileID: 817489438}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -3513,7 +3515,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 67
     y: 71
-    width: 139
+    width: 140.42554
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3538,11 +3540,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 213.6137, y: -64.54152}
+  scrollPos: {x: -1213.7058, y: -116.43512}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 449
-  zoom: 1
+  zoom: 0.94000006
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -3550,9 +3552,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 817489400}
+  - {fileID: 817489469}
   selectedCommands:
-  - {fileID: 817489398}
+  - {fileID: 817489471}
   variables:
   - {fileID: 817489381}
   description: Chapter 1
@@ -3698,7 +3700,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 59.713287
     y: 324.63583
-    width: 129
+    width: 132.97873
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3893,7 +3895,7 @@ MonoBehaviour:
   description: 
   character: {fileID: 1248199730}
   portrait: {fileID: 21300000, guid: e72b65520aad7f7449ffb1c75058f67b, type: 3}
-  voiceOverClip: {fileID: 0}
+  voiceOverClip: {fileID: 8300000, guid: 6444bc49244534f4e8e6c98bfc25b345, type: 3}
   showAlways: 1
   showCount: 1
   extendPrevious: 0
@@ -3948,7 +3950,7 @@ MonoBehaviour:
   description: 
   character: {fileID: 1248199730}
   portrait: {fileID: 21300000, guid: e72b65520aad7f7449ffb1c75058f67b, type: 3}
-  voiceOverClip: {fileID: 0}
+  voiceOverClip: {fileID: 8300000, guid: c18463d74ad2e524290c73fa49f34ae2, type: 3}
   showAlways: 1
   showCount: 1
   extendPrevious: 0
@@ -4062,10 +4064,8 @@ MonoBehaviour:
   - {fileID: 817489398}
   - {fileID: 817489389}
   - {fileID: 817489397}
-  - {fileID: 817489524}
   - {fileID: 817489394}
   - {fileID: 817489395}
-  - {fileID: 817489523}
   - {fileID: 817489396}
   - {fileID: 817489390}
   - {fileID: 817489377}
@@ -4274,7 +4274,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 287.8089
     y: 329.56064
-    width: 150
+    width: 151.06381
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4285,9 +4285,12 @@ MonoBehaviour:
   commandList:
   - {fileID: 817489406}
   - {fileID: 817489410}
+  - {fileID: 817489524}
   - {fileID: 817489423}
   - {fileID: 817489409}
   - {fileID: 817489411}
+  - {fileID: 817489523}
+  - {fileID: 817489438}
   - {fileID: 817489422}
   - {fileID: 817489412}
   - {fileID: 817489421}
@@ -4338,11 +4341,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 33
   indentLevel: 0
-  storyText: Whimpering and the sound of footsteps running away.
+  storyText: <Whimpering>
   description: 
   character: {fileID: 1248199730}
   portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
+  voiceOverClip: {fileID: 8300000, guid: e10a5db428b4528488d4806228ee7c7a, type: 3}
   showAlways: 1
   showCount: 1
   extendPrevious: 0
@@ -4440,7 +4443,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1322.0299
     y: 327.14627
-    width: 161
+    width: 162.76596
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4505,7 +4508,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 691.0058
     y: 333.56885
-    width: 179
+    width: 185.10637
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4866,7 +4869,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 473.7975
     y: 434.66547
-    width: 144
+    width: 148.93616
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4920,7 +4923,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 469.99902
     y: 339.6987
-    width: 136
+    width: 141.48935
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4947,7 +4950,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 461.1353
     y: 286.51706
-    width: 139
+    width: 144.68085
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5122,6 +5125,23 @@ MonoBehaviour:
   vector3Data:
     vector3Ref: {fileID: 0}
     vector3Val: {x: 0, y: 0, z: 0}
+--- !u!114 &817489438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817489376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2f6be51b3d7490ba5633ee095d0391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 163
+  indentLevel: 0
+  soundClip: {fileID: 8300000, guid: d45f1b7bb881047468d7ca3bfc4a34ed, type: 3}
+  volume: 1
+  waitUntilFinished: 0
 --- !u!114 &817489439
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5257,7 +5277,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1125.3674
     y: 366.40323
-    width: 146
+    width: 151.06381
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5285,7 +5305,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1126.4935
     y: 286.76337
-    width: 132
+    width: 136.1702
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5753,7 +5773,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 925.95245
     y: 332.34253
-    width: 161
+    width: 162.76596
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5933,7 +5953,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1527.1312
     y: 325.0208
-    width: 148
+    width: 153.19148
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6000,7 +6020,7 @@ MonoBehaviour:
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
+  voiceOverClip: {fileID: 8300000, guid: d4247fa1c5da4ed4ca81b44f6eba0fb0, type: 3}
   showAlways: 1
   showCount: 1
   extendPrevious: 0
@@ -6174,7 +6194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 141
   indentLevel: 0
-  soundClip: {fileID: 8300000, guid: e15cd033e8242884fa44bbbffb3635e4, type: 3}
+  soundClip: {fileID: 8300000, guid: d45f1b7bb881047468d7ca3bfc4a34ed, type: 3}
   volume: 1
   waitUntilFinished: 0
 --- !u!114 &817489479
@@ -7257,7 +7277,7 @@ MonoBehaviour:
   targetButton: {fileID: 87145932}
 --- !u!114 &817489523
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7267,14 +7287,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2f6be51b3d7490ba5633ee095d0391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 159
+  itemId: 162
   indentLevel: 0
-  soundClip: {fileID: 8300000, guid: c18463d74ad2e524290c73fa49f34ae2, type: 3}
+  soundClip: {fileID: 8300000, guid: 09fce8c3fdb72c2489fd8814cae3384f, type: 3}
   volume: 1
   waitUntilFinished: 0
 --- !u!114 &817489524
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7284,9 +7304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2f6be51b3d7490ba5633ee095d0391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 158
+  itemId: 161
   indentLevel: 0
-  soundClip: {fileID: 8300000, guid: 6444bc49244534f4e8e6c98bfc25b345, type: 3}
+  soundClip: {fileID: 8300000, guid: b4e2477a9b02e954fafd86c0943c9470, type: 3}
   volume: 1
   waitUntilFinished: 0
 --- !u!1 &836726668
@@ -10995,8 +11015,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1451512192}
   m_HandleRect: {fileID: 1451512191}
   m_Direction: 2
-  m_Value: 0.99999917
-  m_Size: 0.683731
+  m_Value: 0.99999934
+  m_Size: 0.6840572
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
