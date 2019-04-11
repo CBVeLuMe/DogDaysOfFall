@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Fungus;
+using TMPro;
 
 public class CombatGenerator : MonoBehaviour
 {
 
-    private void Start()
+    private void Awake()
     {
         InitializeCombat(combatCounter = 0);
     }
@@ -15,7 +16,10 @@ public class CombatGenerator : MonoBehaviour
     private void Update()
     {
         OutputCounter();
-        
+
+        if(!hasFinishedCount)
+            StartCountDown();
+
         if (canGenerateCombat)
         {
             GenerateCombat();
@@ -30,8 +34,14 @@ public class CombatGenerator : MonoBehaviour
     //The obejct for the Fungus
     public Flowchart flowChart;
 
-    // Continue Button
+    // Start Countdown
+    private bool hasFinishedCount;
+    public GameObject countDown;
+    public float countDownTimer;
+
+    // Continue and Retry Buttons
     public GameObject continueB;
+    public GameObject retryB;
 
     // The Counters for the combat
     public int toSucceedTimes; // The Times player need to win
@@ -61,6 +71,27 @@ public class CombatGenerator : MonoBehaviour
     // (Todo) Test Mode for combat
     public bool testMode;
 
+    // Countdown TImer
+    private void StartCountDown()
+    {
+        //countDown.SetActive(true);
+        countDownTimer -= Time.deltaTime;
+        countDown.GetComponent<TextMeshProUGUI>().text = ((int)countDownTimer).ToString();
+        if ((int)countDownTimer == 0)
+            countDown.GetComponent<TextMeshProUGUI>().text = "Go!";
+        if (countDownTimer < 0)
+        {
+            countDown.SetActive(false);
+            canGenerateCombat = true;
+            hasFinishedCount = true;
+        }
+    }
+    // Try again button Method
+    public void ReTryButton()
+    {
+        InitializeCombat(combatCounter = 0);
+        retryB.SetActive(false);
+    }
     // Set or reset the Counters, Timer and Checkers
     private void InitializeCombat(int Counter)
     {
@@ -73,7 +104,8 @@ public class CombatGenerator : MonoBehaviour
 
             combatTimer = 0.0f;
 
-            canGenerateCombat = true;
+            hasFinishedCount = false;
+            canGenerateCombat = false;
             canActivateCombat = true;
             canCheckCombat = false;
             canGenerateResult = true;
@@ -221,14 +253,21 @@ public class CombatGenerator : MonoBehaviour
             if (succeededCounter == toSucceedTimes)
             {
                 flowChart.SetBooleanVariable("hasWonCombat", true);
+                countDown.SetActive(true);
+                countDown.GetComponent<TextMeshProUGUI>().text = "YOU WIN!";
                 continueB.SetActive(true);
-                Debug.Log("Player has won the combat.");
+                //Debug.Log("Player has won the combat.");
                 canGenerateResult = false;
+                canGenerateCombat = false;
             }
             else if (attemptsCounter <= 0)
             {
-                Debug.Log("You lose!");
+                //Debug.Log("You lose!");
+                countDown.SetActive(true);
+                countDown.GetComponent<TextMeshProUGUI>().text = "YOU DIE!";
                 canGenerateResult = false;
+                canGenerateCombat = false;
+                retryB.SetActive(true);
             }
         }
 
