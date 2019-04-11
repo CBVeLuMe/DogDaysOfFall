@@ -3759,6 +3759,10 @@ GameObject:
   - component: {fileID: 817489438}
   - component: {fileID: 817489405}
   - component: {fileID: 817489402}
+  - component: {fileID: 817489525}
+  - component: {fileID: 817489527}
+  - component: {fileID: 817489526}
+  - component: {fileID: 817489528}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -3828,7 +3832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 103.565445, y: -109.939575}
+  scrollPos: {x: -827.0226, y: -113.468994}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 449
@@ -3840,8 +3844,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 817489386}
-  selectedCommands: []
+  - {fileID: 817489469}
+  selectedCommands:
+  - {fileID: 817489528}
   variables:
   - {fileID: 817489381}
   description: Chapter 1
@@ -4382,7 +4387,7 @@ MonoBehaviour:
   targetGameObjectOLD: {fileID: 0}
 --- !u!114 &817489402
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4488,7 +4493,7 @@ MonoBehaviour:
   targetGameObjectOLD: {fileID: 0}
 --- !u!114 &817489405
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4574,11 +4579,14 @@ MonoBehaviour:
   - {fileID: 817489406}
   - {fileID: 817489410}
   - {fileID: 817489524}
+  - {fileID: 817489527}
   - {fileID: 817489423}
   - {fileID: 817489409}
   - {fileID: 817489411}
   - {fileID: 817489523}
+  - {fileID: 817489525}
   - {fileID: 817489438}
+  - {fileID: 817489526}
   - {fileID: 817489422}
   - {fileID: 817489412}
   - {fileID: 817489421}
@@ -4701,7 +4709,7 @@ MonoBehaviour:
       I try not to think about it.\nFreeman Munehisa_Sigh: Yes, it\u2019s sad to see
       how far some people have chosen to fall. Even if our bodies changed, our minds
       still keep us human. {w}\nI wish communication devices still worked after the
-      turn. Hypothetically, if you could pick one to bring back between television,
+      turn. {w}\nHypothetically, if you could pick one to bring back between television,
       phones, the internet, or radio, which would it be?"
   clearPrevious:
     booleanRef: {fileID: 0}
@@ -4795,7 +4803,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 691.0058
-    y: 333.56885
+    y: 334.74533
     width: 185.2941
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -4805,8 +4813,8 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 817489416}
   - {fileID: 817489424}
+  - {fileID: 817489416}
   - {fileID: 817489465}
 --- !u!114 &817489415
 MonoBehaviour:
@@ -5714,7 +5722,7 @@ MonoBehaviour:
   itemId: 83
   indentLevel: 0
   storyText: "Hey, that\u2019s not fair. You were the one who used the free drinks
-    as an incentive for me to start doing patrol around the outskirts. {w=1.5}\nIt\u2019s
+    as an incentive for me to start doing patrol around the outskirts. {wc}\nIt\u2019s
     not my fault that most days it's just a good excuse to walk around the city. I
     guess I can thank them for the abundance of exercise at least."
   description: 
@@ -5771,10 +5779,10 @@ MonoBehaviour:
   itemId: 81
   indentLevel: 0
   storyText: "What? Did you expect me to change that much just because I became part
-    dog? {w=1.5}\nRight after the turn I lived further into the new city limits and
-    I hated it. He\u2019s just a dictator who thinks he knows what\u2019s best for
-    everyone. {w=1.5}\nThat\u2019s why I moved out here to the edge of the city. That
-    oppressive vibe was too depressing."
+    dog? {wc}\nRight after the turn I lived further into the new city limits and I
+    hated it. He\u2019s just a dictator who thinks he knows what\u2019s best for everyone.
+    {wc}\nThat\u2019s why I moved out here to the edge of the city. That oppressive
+    vibe was too depressing."
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 21300000, guid: a50a3ebe81ce33c49803e4d3cbf266ea, type: 3}
@@ -5802,8 +5810,8 @@ MonoBehaviour:
   itemId: 80
   indentLevel: 0
   storyText: "Yes yes, I\u2019ve heard your stories. With so few of us living out
-    on the borders, it was nice to have another person move in. {w=1.5}\nEspecially
-    someone with a background in veterinary medicine and martial arts."
+    on the borders, it was nice to have another person move in. {wc}\nEspecially someone
+    with a background in veterinary medicine and martial arts."
   description: 
   character: {fileID: 1995605269}
   portrait: {fileID: 21300000, guid: 6c11c0e31dfdb004491cae3afe45e76f, type: 3}
@@ -5831,8 +5839,8 @@ MonoBehaviour:
   itemId: 79
   indentLevel: 0
   storyText: "Yeah, a lot of help that\u2019s been. I can barely put my veterinary
-    knowledge to use. {w=1.5}\nThe one exception being when I have to tell my idiot
-    neighbor to stop eating apple seeds."
+    knowledge to use. {wc}\nThe one exception being when I have to tell my idiot neighbor
+    to stop eating apple seeds."
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
@@ -5887,10 +5895,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 77
   indentLevel: 0
-  storyText: "Thanks Freeman. {w=1.5}\nAlthough, I still think we have your friend
-    the mayor to thank for the food shortages. I wouldn\u2019t be surprised if he\u2019s
-    hoarding most of it for himself and his lackeys. {w=1.5}\nI know I only took on
-    the patrol job because I need to supplement my food allotment.. I still can\u2019t
+  storyText: "Thanks Freeman. {wc}\nAlthough, I still think we have your friend the
+    mayor to thank for the food shortages. I wouldn\u2019t be surprised if he\u2019s
+    hoarding most of it for himself and his lackeys. {wc}\nI know I only took on the
+    patrol job because I need to supplement my food allotment.. I still can\u2019t
     believe this bar and its watered down drinks keeps you afloat."
   description: 
   character: {fileID: 166583802}
@@ -6070,8 +6078,8 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 817489461}
   - {fileID: 817489446}
+  - {fileID: 817489461}
   - {fileID: 817489460}
   - {fileID: 817489459}
   - {fileID: 817489451}
@@ -6203,8 +6211,8 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 817489466}
   - {fileID: 817489464}
+  - {fileID: 817489466}
   - {fileID: 817489463}
 --- !u!114 &817489468
 MonoBehaviour:
@@ -6254,6 +6262,7 @@ MonoBehaviour:
   - {fileID: 817489480}
   - {fileID: 817489479}
   - {fileID: 817489478}
+  - {fileID: 817489528}
   - {fileID: 817489477}
   - {fileID: 817489476}
   - {fileID: 817489475}
@@ -6983,8 +6992,8 @@ MonoBehaviour:
   itemId: 120
   indentLevel: 0
   storyText: "Stop right there Freeman. I\u2019ve told you before, I don\u2019t want
-    to talk about that. {w=1.5}\n<Sigh> I appreciate your concern, I really do, but
-    I\u2019m fine. I\u2019m going to bed."
+    to talk about that. {wc}\n<Sigh> I appreciate your concern, I really do, but I\u2019m
+    fine. I\u2019m going to bed."
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
@@ -7452,8 +7461,8 @@ MonoBehaviour:
   itemId: 101
   indentLevel: 0
   storyText: "Well excuse me! I couldn\u2019t get used to walking around outside without
-    pants on. {w=1.5}\nI tried it a few times, but I didn\u2019t last five minutes
-    before I felt awkward. Even with all this fur, it felt too weird."
+    pants on. {wc}\nI tried it a few times, but I didn\u2019t last five minutes before
+    I felt awkward. Even with all this fur, it felt too weird."
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
@@ -7508,8 +7517,8 @@ MonoBehaviour:
   itemId: 99
   indentLevel: 0
   storyText: "If that\u2019s case, then I\u2019m going to end this depressing conversation
-    here and go to bed. {w=1.5}\nIt\u2019s been a very long day and I want sleep.
-    Maybe all that exercise will help me sleep without any dreams of being human again."
+    here and go to bed. {wc}\nIt\u2019s been a very long day and I want sleep. Maybe
+    all that exercise will help me sleep without any dreams of being human again."
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
@@ -7597,6 +7606,78 @@ MonoBehaviour:
   soundClip: {fileID: 8300000, guid: b4e2477a9b02e954fafd86c0943c9470, type: 3}
   volume: 1
   waitUntilFinished: 0
+--- !u!114 &817489525
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817489376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 166
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 1.6
+  durationOLD: 0
+--- !u!114 &817489526
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817489376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 168
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 2
+  durationOLD: 0
+--- !u!114 &817489527
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817489376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 167
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 1.8
+  durationOLD: 0
+--- !u!114 &817489528
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817489376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 169
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 1.2
+  durationOLD: 0
 --- !u!1 &836726668
 GameObject:
   m_ObjectHideFlags: 0
