@@ -126,6 +126,7 @@ namespace Fungus
                 {
                     dialogClickedFlag = false;
                     nextLineInputFlag = false;
+                    Debug.Log("Menu opened!");
                 }
             }
 
