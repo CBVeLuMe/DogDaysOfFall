@@ -82,8 +82,9 @@ public class EnemyController : MonoBehaviour
         {
             stopTimer = true;
             Timer = 0;
-            BananaIdle.SetActive(false);
-            BananaTurn.SetActive(true);
+            // BananaIdle.SetActive(false);
+            // BananaTurn.SetActive(true);
+            dieSFX.Play();
             AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
             AnimatedGifPlayer.Play();
             Invoke("CheckPlayer", dieTime);
@@ -124,8 +125,10 @@ public class EnemyController : MonoBehaviour
 
     void CheckPlayer()
     {
+        BananaIdle.SetActive(false);
+        BananaTurn.SetActive(true);
         checkPlayer = true;
-        dieSFX.Play();
+        
     }
     void Restart()
     {
