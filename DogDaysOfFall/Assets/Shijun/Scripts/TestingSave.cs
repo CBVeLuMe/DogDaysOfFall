@@ -47,7 +47,7 @@ namespace Fungus
         [Tooltip("A scrollable text field used for debugging the save data. The text field should be disabled in normal use.")]
         [SerializeField] protected ScrollRect debugView;
 
-        protected static bool saveMenuActive = false;
+        protected static bool saveMenuActive = true;
 
         protected AudioSource clickAudioSource;
 
@@ -133,21 +133,21 @@ namespace Fungus
             //    }
             //}
 
-            foreach (Button button in saveButton)
-            {
-                if (button != null)
-                {
-                    button.interactable = saveManager.NumSavePoints > 0 && saveMenuActive;
-                }
-            }
+            //foreach (Button button in saveButton)
+            //{
+            //    if (button != null)
+            //    {
+            //        button.interactable = saveManager.NumSavePoints > 0 && saveMenuActive;
+            //    }
+            //}
 
-            foreach (Button button in loadButton)
-            {
-                if (button != null)
-                {
-                    button.interactable = saveManager.NumSavePoints > 0 && saveMenuActive;
-                }
-            }
+            //foreach (Button button in loadButton)
+            //{
+            //    if (button != null)
+            //    {
+            //        button.interactable = saveManager.NumSavePoints > 0 && saveMenuActive;
+            //    }
+            //}
 
             //if (restartButton != null)
             //{
