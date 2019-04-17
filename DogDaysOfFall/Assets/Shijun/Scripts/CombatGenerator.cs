@@ -43,6 +43,9 @@ public class CombatGenerator : MonoBehaviour
     public GameObject continueB;
     public GameObject retryB;
 
+    // Scene Manage Speed
+    //public GameObject speedInput;
+
     // The Counters for the combat
     public int toSucceedTimes; // The Times player need to win
     public int attemptsTimes; // The times player can try
@@ -86,6 +89,13 @@ public class CombatGenerator : MonoBehaviour
             hasFinishedCount = true;
         }
     }
+
+    //// Slider Function
+    //public void onSpeedChanged(Slider speed)
+    //{
+    //    clickTime = speed.value;
+    //    speedInput.GetComponent<TextMeshProUGUI>().text = ("Speed: " +speed.value.ToString());
+    //}
     // Try again button Method
     public void ReTryButton()
     {
@@ -252,6 +262,13 @@ public class CombatGenerator : MonoBehaviour
         {
             if (succeededCounter == toSucceedTimes)
             {
+                //// Retry Function
+                //countDown.SetActive(true);
+                //countDown.GetComponent<TextMeshProUGUI>().text = "YOU DIE!";
+                //canGenerateResult = false;
+                //canGenerateCombat = false;
+                //retryB.SetActive(true);
+                //Succeed Function
                 flowChart.SetBooleanVariable("hasWonCombat", true);
                 countDown.SetActive(true);
                 countDown.GetComponent<TextMeshProUGUI>().text = "YOU WIN!";

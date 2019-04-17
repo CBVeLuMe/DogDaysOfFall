@@ -7,20 +7,24 @@ using UnityEngine;
 
 public class DragFunction : MonoBehaviour
 {
-    public float moveSpeed;
-    public float offset = 0.05f;
-    public float leftBlock;
-    public float rightBlock;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float offset = 0.05f;
+    [SerializeField] private float leftBlock;
+    [SerializeField] private float rightBlock;
+    [SerializeField] private float toleranceRight;
+    [SerializeField] private float toleranceLeft;
 
     public bool Playerfollowing;
     public bool canMove = false;
+    public bool MoveorNot;
 
     private EnemyController EnmCon;
+    private Vector3 originalPos;
 
     // Use this for initialization
     void Start()
     {
-
+        
         Playerfollowing = false;
         EnmCon = FindObjectOfType<EnemyController>();
         offset += 10;
@@ -52,6 +56,16 @@ public class DragFunction : MonoBehaviour
             {
                 EnmCon.wonGameFuc();
             }
+            if (EnmCon.checkPlayer)
+            {
+               
+                if (gameObject.transform.position.x > originalPos.x +toleranceRight || gameObject.transform.position.x < originalPos.x - toleranceLeft)
+                    MoveorNot = true;
+                else
+                    MoveorNot = false;
+                
+            }
+            originalPos = gameObject.transform.position;
         }
         
 

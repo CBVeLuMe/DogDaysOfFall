@@ -21,6 +21,9 @@ namespace Fungus
 
         [Tooltip("Set to true to enable the game object")]
         [SerializeField] protected BooleanData activeState;
+
+        [Tooltip("Set to true to enable the game object's children")]
+        [SerializeField] protected BooleanData activeChildren;
     
         #region Public members
 
@@ -29,6 +32,14 @@ namespace Fungus
             if (_targetGameObject.Value != null)
             {
                 _targetGameObject.Value.SetActive(activeState.Value);
+            }
+
+            if (activeChildren)
+            {
+                foreach(Transform child in _targetGameObject.Value.transform)
+                {
+                    child.gameObject.SetActive(true);
+                }
             }
 
             Continue();

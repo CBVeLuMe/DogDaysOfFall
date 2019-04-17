@@ -7,28 +7,28 @@ using TMPro;
 
 public class EnemyController : MonoBehaviour
 {
-    public GameObject BananaIdle;
-    public GameObject BananaTurn;
-    public GameObject youDiePic;
-    public GameObject youWinPic;
-    public GameObject winButton;
-    public GameObject loseButton;
-    public GameObject timerS;
+    [SerializeField] private GameObject BananaIdle;
+    [SerializeField] private GameObject BananaTurn;
+    [SerializeField] private GameObject youDiePic;
+    [SerializeField] private GameObject youWinPic;
+    [SerializeField] private GameObject winButton;
+    [SerializeField] private GameObject loseButton;
+    [SerializeField] private GameObject timerS;
 
     private Vector3 startPos;
     private float Timer;
     private float randomTimer;
     private bool stopTimer = false;
-    private bool checkPlayer = false;
+    public bool checkPlayer = false;
     private bool isStart = false;
     private AnimatedGifPlayer AnimatedGifPlayer;
     private DragFunction dragFuc;
     private AudioSource dieSFX;
 
-    public List<float> RandomNub;
-    public float RestartTime;
-    public float dieTime;
-    public float startTimer;
+    [SerializeField] private List<float> RandomNub;
+    [SerializeField] private float RestartTime;
+    [SerializeField] private float dieTime;
+    [SerializeField] private float startTimer;
 
     public Flowchart fcC1;
 
@@ -82,8 +82,8 @@ public class EnemyController : MonoBehaviour
         {
             stopTimer = true;
             Timer = 0;
-            // BananaIdle.SetActive(false);
-            // BananaTurn.SetActive(true);
+            BananaIdle.SetActive(false);
+            BananaTurn.SetActive(true);
             dieSFX.Play();
             AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
             AnimatedGifPlayer.Play();
@@ -93,7 +93,7 @@ public class EnemyController : MonoBehaviour
     }
     void lostGameCheck()
     {
-        if (dragFuc.Playerfollowing)
+        if (dragFuc.MoveorNot)
         {
             youDiePic.SetActive(true);
             loseButton.SetActive(true);
@@ -125,8 +125,8 @@ public class EnemyController : MonoBehaviour
 
     void CheckPlayer()
     {
-        BananaIdle.SetActive(false);
-        BananaTurn.SetActive(true);
+        //BananaIdle.SetActive(false);
+        //BananaTurn.SetActive(true);
         checkPlayer = true;
         
     }
