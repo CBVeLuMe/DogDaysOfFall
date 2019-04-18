@@ -86,7 +86,10 @@ public class CombatGenerator : MonoBehaviour
             hasFinishedCount = true;
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 181b87a... Updated Chapter 2 and Chapter 3
     // Try again button Method
     public void ReTryButton()
     {
