@@ -58,7 +58,7 @@ public class CombatGenerator : MonoBehaviour
     public float clickTime = 0.5f;
     public float gapTime = 1.0f;
 
-    public float combatTimer;
+    private float combatTimer;
 
     // The Checkers to check the status for methods
     private bool shouldHaveGapTime;
@@ -86,14 +86,12 @@ public class CombatGenerator : MonoBehaviour
             hasFinishedCount = true;
         }
     }
-
     // Try again button Method
     public void ReTryButton()
     {
         InitializeCombat(combatCounter = 0);
         retryB.SetActive(false);
     }
-
     // Set or reset the Counters, Timer and Checkers
     private void InitializeCombat(int Counter)
     {
@@ -120,19 +118,6 @@ public class CombatGenerator : MonoBehaviour
 
             canAssignOriginalColorBlock = true;
 
-            foreach (Button node in upperNodes)
-            {
-                NodeTrigger nodeTrigger = node.GetComponent<NodeTrigger>();
-
-                nodeTrigger.DeactivatePrompt();
-            }
-            foreach (Button node in lowerNodes)
-            {
-                NodeTrigger nodeTrigger = node.GetComponent<NodeTrigger>();
-
-                nodeTrigger.DeactivatePrompt();
-            }
-
             hasActivatedFirstTime = false;
             hasActivatedSecondTime = false;
             hasStartedCombat = false;
@@ -158,8 +143,6 @@ public class CombatGenerator : MonoBehaviour
                 nodeTrigger.isEndNode = false;
 
                 node.colors = originalColorBlock;
-
-                nodeTrigger.DeactivatePrompt();
             }
             foreach (Button node in lowerNodes)
             {
@@ -168,8 +151,6 @@ public class CombatGenerator : MonoBehaviour
                 nodeTrigger.isEndNode = false;
 
                 node.colors = originalColorBlock;
-
-                nodeTrigger.DeactivatePrompt();
             }
         }
         else
@@ -460,7 +441,6 @@ public class CombatGenerator : MonoBehaviour
         colorBlock.normalColor = colors[0];
         colorBlock.highlightedColor = colors[1];
         node.colors = colorBlock;
-        
     }
     #endregion
 }
