@@ -87,7 +87,10 @@ public class CombatGenerator : MonoBehaviour
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 181b87a... Updated Chapter 2 and Chapter 3
 =======
 >>>>>>> parent of 181b87a... Updated Chapter 2 and Chapter 3
     // Try again button Method
