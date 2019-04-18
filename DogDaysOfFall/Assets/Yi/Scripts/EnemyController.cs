@@ -15,6 +15,12 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject loseButton;
     [SerializeField] private GameObject timerS;
 
+    //[SerializeField] private TMP_InputField IPF1;
+    //[SerializeField] private TMP_InputField IPF2;
+    //[SerializeField] private TMP_InputField IPF3;
+    //[SerializeField] private TMP_InputField IPF4;
+    //[SerializeField] private TMP_InputField IPF5;
+
     private Vector3 startPos;
     private float Timer;
     private float randomTimer;
@@ -58,7 +64,25 @@ public class EnemyController : MonoBehaviour
         }
         else
             StartTimer();
+
+         //if (IPF1.text != "" && IPF2.text != "" && IPF3.text != "" && IPF4.text != "" && IPF5.text != "")
+         //       ChangeRandomValue();
+        
     }
+
+    //void ChangeRandomValue()
+    //{
+    //    string random1 = IPF1.text;
+    //    RandomNub[0] = float.Parse(random1);
+    //    string random2 = IPF2.text;
+    //    RandomNub[1] = float.Parse(random2);
+    //    string random3 = IPF3.text;
+    //    RandomNub[2] = float.Parse(random3);
+    //    string random4 = IPF4.text;
+    //    RandomNub[3] = float.Parse(random4);
+    //    string random5 = IPF5.text;
+    //    dragFuc.moveSpeed = float.Parse(random5);
+    //}
 
     void StartTimer()
     {
@@ -105,6 +129,7 @@ public class EnemyController : MonoBehaviour
     {
         dragFuc.gameObject.transform.position = startPos;
         Restart();
+        dragFuc.MoveorNot = false;
         dragFuc.canMove = true;
         youDiePic.SetActive(false);
         loseButton.SetActive(false);
@@ -113,6 +138,10 @@ public class EnemyController : MonoBehaviour
 
     public void wonGameFuc()
     {
+        //youDiePic.SetActive(true);
+        //loseButton.SetActive(true);
+        //dragFuc.canMove = false;
+        //Time.timeScale = 0;
         winButton.SetActive(true);
         youWinPic.SetActive(true);
         Time.timeScale = 0;
