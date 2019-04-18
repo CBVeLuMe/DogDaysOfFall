@@ -1,8 +1,21 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class NodeTrigger : MonoBehaviour
 {
-    // Setup the checkers for nodes status
+    // Setup the prompt for the node
+    public GameObject bluePrompt;
+    public Image blueRing;
+    public GameObject greenPrompt;
+    public Image greenRing;
+
+    public float maxTime;
+    public float leftTime;
+
+    private bool hasActivatedBluePrompt = false;
+    private bool hasActivatedGreenPrompt = false;
+
+    // Setup the checkers for node's status
     public bool isStartNode = false;
     public bool isEndNode = false;
     public bool isInNode = false;
@@ -12,12 +25,59 @@ public class NodeTrigger : MonoBehaviour
     private bool isPressingnode = false;
     private float pressingTime = 0;
     private bool isDetectingPointer = false;
-    
+
     private CombatGenerator combatGenerator;
 
     private void Start()
     {
         combatGenerator = GameObject.FindWithTag("MinigameManager").GetComponent<CombatGenerator>();
+    }
+
+    private void Update()
+    {
+        ActivateBluePrompt();
+        ActivateGreenPrompt();
+    }
+
+    public void ActivateBluePrompt()
+    {
+        if (isStartNode)
+        {
+            if (!hasActivatedBluePrompt)
+            {
+                bluePrompt.SetActive(true);
+                maxTime = combatGenerator.clickTime;
+
+                hasActivatedBluePrompt = true;
+            }
+            leftTime = combatGenerator.combatTimer;
+            blueRing.fillAmount = leftTime / maxTime;
+        }
+    }
+
+    public void ActivateGreenPrompt()
+    {
+        if (isEndNode)
+        {
+            if (!hasActivatedGreenPrompt)
+            {
+                greenPrompt.SetActive(true);
+                maxTime = combatGenerator.gapTime;
+
+                hasActivatedGreenPrompt = true;
+            }
+            leftTime = combatGenerator.combatTimer;
+            greenRing.fillAmount = leftTime / maxTime;
+        }
+    }
+
+    public void DeactivatePrompt()
+    {
+        bluePrompt.SetActive(false);
+        hasActivatedBluePrompt = false;
+
+        greenPrompt.SetActive(false);
+        hasActivatedGreenPrompt = false;
     }
 
     private void PointerDown(bool isnodeDown)
@@ -45,7 +105,7 @@ public class NodeTrigger : MonoBehaviour
             //Debug.Log("Cancel pressing a node.");
         }
     }
-    
+
     private void PointerOn(bool isnodeOn)
     {
         isDetectingPointer = isnodeOn;

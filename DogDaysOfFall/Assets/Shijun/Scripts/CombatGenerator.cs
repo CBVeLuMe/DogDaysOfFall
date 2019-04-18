@@ -17,7 +17,7 @@ public class CombatGenerator : MonoBehaviour
     {
         OutputCounter();
 
-        if(!hasFinishedCount)
+        if (!hasFinishedCount)
             StartCountDown();
 
         if (canGenerateCombat)
@@ -43,8 +43,8 @@ public class CombatGenerator : MonoBehaviour
     public GameObject continueB;
     public GameObject retryB;
 
-    // Scene Manage Speed
-    //public GameObject speedInput;
+
+
 
     // The Counters for the combat
     public int toSucceedTimes; // The Times player need to win
@@ -61,7 +61,7 @@ public class CombatGenerator : MonoBehaviour
     public float clickTime = 0.5f;
     public float gapTime = 1.0f;
 
-    private float combatTimer;
+    public float combatTimer;
 
     // The Checkers to check the status for methods
     private bool shouldHaveGapTime;
@@ -90,18 +90,19 @@ public class CombatGenerator : MonoBehaviour
         }
     }
 
-    //// Slider Function
-    //public void onSpeedChanged(Slider speed)
-    //{
-    //    clickTime = speed.value;
-    //    speedInput.GetComponent<TextMeshProUGUI>().text = ("Speed: " +speed.value.ToString());
-    //}
+
+
+
+
+
+
     // Try again button Method
     public void ReTryButton()
     {
         InitializeCombat(combatCounter = 0);
         retryB.SetActive(false);
     }
+
     // Set or reset the Counters, Timer and Checkers
     private void InitializeCombat(int Counter)
     {
@@ -128,6 +129,19 @@ public class CombatGenerator : MonoBehaviour
 
             canAssignOriginalColorBlock = true;
 
+            foreach (Button node in upperNodes)
+            {
+                NodeTrigger nodeTrigger = node.GetComponent<NodeTrigger>();
+
+                nodeTrigger.DeactivatePrompt();
+            }
+            foreach (Button node in lowerNodes)
+            {
+                NodeTrigger nodeTrigger = node.GetComponent<NodeTrigger>();
+
+                nodeTrigger.DeactivatePrompt();
+            }
+
             hasActivatedFirstTime = false;
             hasActivatedSecondTime = false;
             hasStartedCombat = false;
@@ -153,6 +167,8 @@ public class CombatGenerator : MonoBehaviour
                 nodeTrigger.isEndNode = false;
 
                 node.colors = originalColorBlock;
+
+                nodeTrigger.DeactivatePrompt();
             }
             foreach (Button node in lowerNodes)
             {
@@ -161,6 +177,8 @@ public class CombatGenerator : MonoBehaviour
                 nodeTrigger.isEndNode = false;
 
                 node.colors = originalColorBlock;
+
+                nodeTrigger.DeactivatePrompt();
             }
         }
         else
@@ -177,7 +195,7 @@ public class CombatGenerator : MonoBehaviour
         textTrigger.attemptsCounter = attemptsCounter;
         textTrigger.succeededCounter = succeededCounter;
     }
-    
+
     // Setup the timer to check the result
     private void GenerateCombat()
     {
@@ -214,7 +232,7 @@ public class CombatGenerator : MonoBehaviour
             // (todo) Check the Consistency for the nodes
             //CheckNotes(firstNodes);
             //CheckNotes(secondNodes);
-            
+
             targetRow = Random.Range(0, 2);
             switch (targetRow)
             {
@@ -228,7 +246,7 @@ public class CombatGenerator : MonoBehaviour
                     break;
             }
 
-            
+
             hasActivatedFirstTime = true;
         }
         else if (hasActivatedFirstTime && hasStartedCombat)
@@ -262,13 +280,13 @@ public class CombatGenerator : MonoBehaviour
         {
             if (succeededCounter == toSucceedTimes)
             {
-                //// Retry Function
-                //countDown.SetActive(true);
-                //countDown.GetComponent<TextMeshProUGUI>().text = "YOU DIE!";
-                //canGenerateResult = false;
-                //canGenerateCombat = false;
-                //retryB.SetActive(true);
-                //Succeed Function
+
+
+
+
+
+
+
                 flowChart.SetBooleanVariable("hasWonCombat", true);
                 countDown.SetActive(true);
                 countDown.GetComponent<TextMeshProUGUI>().text = "YOU WIN!";
@@ -450,14 +468,15 @@ public class CombatGenerator : MonoBehaviour
             originalColorBlock = node.colors;
             canAssignOriginalColorBlock = false;
         }
-        
+
 
         ColorBlock colorBlock;
         colorBlock = node.colors;
-        
+
         colorBlock.normalColor = colors[0];
         colorBlock.highlightedColor = colors[1];
         node.colors = colorBlock;
+
     }
     #endregion
 }
