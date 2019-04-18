@@ -280,13 +280,6 @@ public class CombatGenerator : MonoBehaviour
         {
             if (succeededCounter == toSucceedTimes)
             {
-
-
-
-
-
-
-
                 flowChart.SetBooleanVariable("hasWonCombat", true);
                 countDown.SetActive(true);
                 countDown.GetComponent<TextMeshProUGUI>().text = "YOU WIN!";
