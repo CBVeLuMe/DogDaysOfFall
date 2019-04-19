@@ -1,7 +1,7 @@
 // This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.com/gofungus).
 // It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
 
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Fungus
@@ -13,8 +13,6 @@ namespace Fungus
     {
         /// <summary> Clicking disabled. </summary>
         Disabled,
-        /// <summary> Click screen to advance. </summary>
-        ClickScreen,
         /// <summary> Click anywhere on screen to advance. </summary>
         ClickAnywhere,
         /// <summary> Click anywhere on Say Dialog to advance. </summary>
@@ -40,12 +38,7 @@ namespace Fungus
         [Tooltip("Ignore input if a Menu dialog is currently active")]
         [SerializeField] protected bool ignoreMenuClicks = true;
 
-        [Tooltip("Ignore input if a save menu is currently active")]
-        [SerializeField] protected bool ignoreSaveClicks = true;
-
         protected bool dialogClickedFlag;
-
-        protected bool screenClickedFlag;
 
         protected bool nextLineInputFlag;
 
@@ -78,7 +71,7 @@ namespace Fungus
                 }
             }
         }
-
+            
         protected virtual void Update()
         {
             if (EventSystem.current == null)
@@ -102,55 +95,37 @@ namespace Fungus
 
             switch (clickMode)
             {
-                case ClickMode.Disabled:
-                    break;
-                case ClickMode.ClickScreen:
-                    if (Input.GetMouseButtonDown(0) && screenClickedFlag)
-                    {
-                        SetNextLineFlag();
-                        screenClickedFlag = false;
-                    }
-                    break;
-                case ClickMode.ClickAnywhere:
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        SetNextLineFlag();
-                    }
-                    break;
-                case ClickMode.ClickOnDialog:
-                    if (dialogClickedFlag)
-                    {
-                        SetNextLineFlag();
-                        dialogClickedFlag = false;
-                    }
-                    break;
+            case ClickMode.Disabled:
+                break;
+            case ClickMode.ClickAnywhere:
+                if (Input.GetMouseButtonDown(0))
+                {
+                    SetNextLineFlag();
+                }
+                break;
+            case ClickMode.ClickOnDialog:
+                if (dialogClickedFlag)
+                {
+                    SetNextLineFlag();
+                    dialogClickedFlag = false;
+                }
+                break;
             }
 
             if (ignoreClickTimer > 0f)
             {
-                ignoreClickTimer = Mathf.Max(ignoreClickTimer - Time.deltaTime, 0f);
+                ignoreClickTimer = Mathf.Max (ignoreClickTimer - Time.deltaTime, 0f);
             }
 
             if (ignoreMenuClicks)
             {
                 // Ignore input events if a Menu is being displayed
-                if (MenuDialog.ActiveMenuDialog != null &&
+                if (MenuDialog.ActiveMenuDialog != null && 
                     MenuDialog.ActiveMenuDialog.IsActive() &&
                     MenuDialog.ActiveMenuDialog.DisplayedOptionsCount > 0)
                 {
                     dialogClickedFlag = false;
                     nextLineInputFlag = false;
-                    screenClickedFlag = false;
-                }
-            }
-
-            if (ignoreSaveClicks)
-            {
-                if (SaveMenu.saveMenuActive)
-                {
-                    dialogClickedFlag = false;
-                    nextLineInputFlag = false;
-                    screenClickedFlag = false;
                 }
             }
 
@@ -193,24 +168,6 @@ namespace Fungus
             if (clickMode == ClickMode.ClickOnDialog)
             {
                 dialogClickedFlag = true;
-            }
-        }
-
-        /// <summary>
-        /// Set the screen clicked flag
-        ///  </summary>
-        public virtual void SetScreenClickedFlag()
-        {
-            if (ignoreClickTimer > 0f)
-            {
-                return;
-            }
-            ignoreClickTimer = nextClickDelay;
-
-            // Only applies in Click On Dialog mode
-            if (clickMode == ClickMode.ClickScreen)
-            {
-                screenClickedFlag = true;
             }
         }
 

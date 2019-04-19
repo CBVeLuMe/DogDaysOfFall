@@ -2,7 +2,6 @@
 // It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
 
 using UnityEngine;
-using UnityEngine.Audio;
 
 namespace Fungus
 {
@@ -17,9 +16,6 @@ namespace Fungus
         protected AudioSource audioSourceAmbiance;
         protected AudioSource audioSourceSoundEffect;
 
-        private AudioMixer audioMixer;
-        private AudioMixerGroup[] audioMixGroup;
-
         void Reset()
         {
             int audioSourceCount = this.GetComponents<AudioSource>().Length;
@@ -30,16 +26,11 @@ namespace Fungus
 
         protected virtual void Awake()
         {
-            Reset();            
+            Reset();
             AudioSource[] audioSources = GetComponents<AudioSource>();
             audioSourceMusic = audioSources[0];
             audioSourceAmbiance = audioSources[1];
             audioSourceSoundEffect = audioSources[2];
-
-            audioMixer = Resources.Load<AudioMixer>("AudioMixersControl") as AudioMixer;
-            audioMixGroup = audioMixer.FindMatchingGroups("Master");
-            audioSourceMusic.outputAudioMixerGroup = audioMixGroup[1];
-            audioSourceSoundEffect.outputAudioMixerGroup = audioMixGroup[2];
         }
 
         protected virtual void Start()
