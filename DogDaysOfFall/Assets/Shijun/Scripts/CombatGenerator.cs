@@ -301,7 +301,7 @@ public class CombatGenerator : MonoBehaviour
                 canGenerateResult = false;
                 canGenerateCombat = false;
             }
-            else if (attemptsCounter <= 0)
+            else if (succeededCounter + attemptsCounter < 3)
             {
                 // Lost Function
                 //Debug.Log("You lose!");
