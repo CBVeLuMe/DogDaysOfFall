@@ -30,6 +30,7 @@ public class EnemyController : MonoBehaviour
     private AnimatedGifPlayer AnimatedGifPlayer;
     private DragFunction dragFuc;
     private AudioSource dieSFX;
+    private FillBarFunction fillFuc;
 
     [SerializeField] private List<float> RandomNub;
     [SerializeField] private float RestartTime;
@@ -44,6 +45,7 @@ public class EnemyController : MonoBehaviour
     {
         dieSFX = GetComponent<AudioSource>();
         dragFuc = FindObjectOfType<DragFunction>();
+        fillFuc = FindObjectOfType<FillBarFunction>();
     }
 
     private void Start()
@@ -131,6 +133,7 @@ public class EnemyController : MonoBehaviour
         Restart();
         dragFuc.MoveorNot = false;
         dragFuc.canMove = true;
+        fillFuc.ResetGreen();
         youDiePic.SetActive(false);
         loseButton.SetActive(false);
         Time.timeScale = 1;

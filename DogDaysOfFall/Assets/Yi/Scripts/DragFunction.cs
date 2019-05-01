@@ -8,8 +8,7 @@ using UnityEngine;
 public class DragFunction : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
-    [SerializeField] private float offset = 0.05f;
-    [SerializeField] private float leftBlock;
+    [SerializeField] private float offset = 0.05f;    
     [SerializeField] private float rightBlock;
     [SerializeField] private float toleranceRight;
     [SerializeField] private float toleranceLeft;
@@ -20,6 +19,7 @@ public class DragFunction : MonoBehaviour
 
     private EnemyController EnmCon;
     private Vector3 originalPos;
+    private float leftBlock;
 
     // Use this for initialization
     void Start()
@@ -47,6 +47,7 @@ public class DragFunction : MonoBehaviour
             {
                 Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 mousePos.y = transform.position.y;
+                leftBlock = transform.position.x;
                 transform.position = Vector2.Lerp(transform.position, mousePos, moveSpeed);
                 Vector2 clampledpos = transform.position;
                 clampledpos.x = Mathf.Clamp(transform.position.x, leftBlock, rightBlock);
