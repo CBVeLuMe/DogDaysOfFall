@@ -37,6 +37,7 @@ public class CombatGenerator : MonoBehaviour
     // Start Countdown
     private bool hasFinishedCount;
     public GameObject countDown;
+    public GameObject winloseText;
     public float countDownTimer;
 
     // Continue and Retry Buttons
@@ -81,7 +82,7 @@ public class CombatGenerator : MonoBehaviour
         countDownTimer -= Time.deltaTime;
         countDown.GetComponent<TextMeshProUGUI>().text = ((int)countDownTimer).ToString();
         if ((int)countDownTimer == 0)
-            countDown.GetComponent<TextMeshProUGUI>().text = "Go!";
+            countDown.GetComponent<TextMeshProUGUI>().text = "GO";
         if (countDownTimer < 0)
         {
             countDown.SetActive(false);
@@ -101,6 +102,7 @@ public class CombatGenerator : MonoBehaviour
     {
         InitializeCombat(combatCounter = 0);
         retryB.SetActive(false);
+        winloseText.SetActive(false);
     }
 
     //// Slider Speed Method
@@ -294,8 +296,8 @@ public class CombatGenerator : MonoBehaviour
                 //retryB.SetActive(true);
                 // Win Function
                 flowChart.SetBooleanVariable("hasWonCombat", true);
-                countDown.SetActive(true);
-                countDown.GetComponent<TextMeshProUGUI>().text = "YOU WIN!";
+                winloseText.SetActive(true);
+                winloseText.GetComponentInChildren<TextMeshProUGUI>().text = "YOU WIN";
                 continueB.SetActive(true);
                 //Debug.Log("Player has won the combat.");
                 canGenerateResult = false;
@@ -305,8 +307,8 @@ public class CombatGenerator : MonoBehaviour
             {
                 // Lost Function
                 //Debug.Log("You lose!");
-                countDown.SetActive(true);
-                countDown.GetComponent<TextMeshProUGUI>().text = "YOU DIE!";
+                winloseText.SetActive(true);
+                winloseText.GetComponentInChildren<TextMeshProUGUI>().text = "YOU DIE";
                 canGenerateResult = false;
                 canGenerateCombat = false;
                 retryB.SetActive(true);
