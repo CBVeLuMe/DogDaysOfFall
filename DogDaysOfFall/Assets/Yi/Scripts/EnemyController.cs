@@ -146,6 +146,7 @@ public class EnemyController : MonoBehaviour
     public void ResetGameButton()
     {
         dragFuc.gameObject.transform.position = startPos;
+        checkPlayer = false;
         Restart();
         dragFuc.MoveorNot = false;
         dragFuc.canMove = true;
