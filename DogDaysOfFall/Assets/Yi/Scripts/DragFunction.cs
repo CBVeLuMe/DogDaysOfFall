@@ -20,6 +20,12 @@ public class DragFunction : MonoBehaviour
     private EnemyController EnmCon;
     private Vector3 originalPos;
     private float leftBlock;
+    //new variables 
+    public float turnPoint = 1;
+    public bool triggerTurn;
+    private float timeSpend;
+    private Vector3 startPoint;
+    private Vector3 fixedPoint;
 
     // Use this for initialization
     void Start()
@@ -66,7 +72,31 @@ public class DragFunction : MonoBehaviour
                     MoveorNot = false;
                 
             }
-            originalPos = gameObject.transform.position;
+            // Below are all new functions
+            else
+            {
+                originalPos = gameObject.transform.position;
+            }
+
+            if (!Input.GetMouseButton(0))
+            {
+                startPoint = transform.position;
+                timeSpend = 0;
+                triggerTurn = false;
+            }
+
+            if (transform.position != startPoint)
+            {
+                fixedPoint = transform.position - startPoint;
+                timeSpend += Time.deltaTime;
+                if (fixedPoint.x / timeSpend > turnPoint)
+                {
+                    triggerTurn = true;
+                    Debug.Log("Activate Turn");
+                    
+                }
+
+            }
         }
         
 

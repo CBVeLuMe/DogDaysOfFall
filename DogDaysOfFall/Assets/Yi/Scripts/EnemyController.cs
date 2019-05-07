@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour
     private AudioSource dieSFX;
     private FillBarFunction fillFuc;
 
-    [SerializeField] private List<float> RandomNub;
+    [SerializeField] private List<float> RandomNub;//修改意见：增加了新的功能以后 random 的值可以都变大 现在暂时取消了原来的回头功能 详情可以咨询我
     [SerializeField] private float RestartTime;
     [SerializeField] private float dieTime;
     [SerializeField] private float startTimer;
@@ -60,7 +60,8 @@ public class EnemyController : MonoBehaviour
     {
         if (isStart)
         {
-            TimerFunc();
+            //如果改变了random值这个地方可以取消注释
+            //TimerFunc();
             if (checkPlayer)
                 lostGameCheck();
         }
@@ -69,7 +70,10 @@ public class EnemyController : MonoBehaviour
 
          //if (IPF1.text != "" && IPF2.text != "" && IPF3.text != "" && IPF4.text != "" && IPF5.text != "")
          //       ChangeRandomValue();
-        
+        if (dragFuc.triggerTurn == true)//new
+        {
+            ActivateTurn();
+        }
     }
 
     //void ChangeRandomValue()
@@ -100,11 +104,23 @@ public class EnemyController : MonoBehaviour
             dragFuc.canMove = true;
         }
     }
+
+    void ActivateTurn()//new 
+    {
+        Debug.Log("Direct Turn");
+        BananaIdle.SetActive(false);
+        BananaTurn.SetActive(true);
+        dieSFX.Play();
+        AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
+        AnimatedGifPlayer.Play();
+        Invoke("CheckPlayer", dieTime);
+        Invoke("Restart", RestartTime);
+    }
     void TimerFunc()
     {
         if (!stopTimer)
             Timer += Time.deltaTime;
-        if (Timer >= randomTimer)
+        if (Timer >= randomTimer && dragFuc.triggerTurn ==false)
         {
             stopTimer = true;
             Timer = 0;
@@ -164,6 +180,7 @@ public class EnemyController : MonoBehaviour
     }
     void Restart()
     {
+        dragFuc.triggerTurn = false;
         stopTimer = false;
         checkPlayer = false;
         randomTimer = RandomNub[Random.Range(0, RandomNub.Count)];
