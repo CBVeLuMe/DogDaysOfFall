@@ -61,6 +61,8 @@ namespace Fungus
         [Tooltip("Resume execution from this location after loading this Save Point.")]
         [SerializeField] protected bool resumeOnLoad = true;
 
+        [SerializeField] protected bool lengkuwuqing;
+
         #region Public members
 
         /// <summary>

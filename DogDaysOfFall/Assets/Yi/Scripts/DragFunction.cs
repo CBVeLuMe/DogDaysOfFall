@@ -23,6 +23,7 @@ public class DragFunction : MonoBehaviour
     //new variables 
     public float turnPoint = 1;
     public bool triggerTurn;
+    public bool isMoving;
     private float timeSpend;
     private Vector3 startPoint;
     private Vector3 fixedPoint;
@@ -87,6 +88,7 @@ public class DragFunction : MonoBehaviour
 
             if (transform.position != startPoint)
             {
+                isMoving = true;
                 fixedPoint = transform.position - startPoint;
                 timeSpend += Time.deltaTime;
                 if (fixedPoint.x / timeSpend > turnPoint)
@@ -96,6 +98,10 @@ public class DragFunction : MonoBehaviour
                     
                 }
 
+            }
+            else
+            {
+                isMoving = false;
             }
         }
         

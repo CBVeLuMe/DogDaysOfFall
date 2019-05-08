@@ -38,8 +38,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float startTimer;
 
     public Flowchart fcC1;
+    // new
+    [SerializeField] private bool turnActivate;
 
-
+    private float waitTime;
     // Start is called before the first frame update
     void Awake()
     {
@@ -61,7 +63,8 @@ public class EnemyController : MonoBehaviour
         if (isStart)
         {
             //如果改变了random值这个地方可以取消注释
-            //TimerFunc();
+            if(!turnActivate)
+                TimerFunc();
             if (checkPlayer)
                 lostGameCheck();
         }
@@ -70,10 +73,15 @@ public class EnemyController : MonoBehaviour
 
          //if (IPF1.text != "" && IPF2.text != "" && IPF3.text != "" && IPF4.text != "" && IPF5.text != "")
          //       ChangeRandomValue();
-        if (dragFuc.triggerTurn == true)//new
+        if (dragFuc.triggerTurn == true&&!turnActivate)//new
         {
-            ActivateTurn();
+            //ActivateTurn();
+            StartCoroutine(TurnAround());
+
         }
+        
+
+        
     }
 
     //void ChangeRandomValue()
@@ -105,6 +113,30 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    public IEnumerator TurnAround()
+    {
+        
+        waitTime += Time.deltaTime;
+        if (!turnActivate)
+        {
+            Timer = 0;
+            BananaIdle.SetActive(false);
+            BananaTurn.SetActive(true);
+            dieSFX.Play();
+            AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
+            AnimatedGifPlayer.Play();
+            Invoke("CheckPlayer", dieTime);
+            Invoke("Restart", RestartTime);
+            turnActivate = true;
+        }
+
+        if (waitTime > RestartTime)
+        {
+            turnActivate = false;
+        }
+        
+        yield return null;
+    }
     void ActivateTurn()//new 
     {
         Debug.Log("Direct Turn");
@@ -120,8 +152,22 @@ public class EnemyController : MonoBehaviour
     {
         if (!stopTimer)
             Timer += Time.deltaTime;
-        if (Timer >= randomTimer && dragFuc.triggerTurn ==false)
+        if (Timer >= randomTimer && dragFuc.triggerTurn ==false&&!turnActivate)
         {
+            if (!turnActivate)
+            {
+                stopTimer = true;
+                Timer = 0;
+                BananaIdle.SetActive(false);
+                BananaTurn.SetActive(true);
+                dieSFX.Play();
+                AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
+                AnimatedGifPlayer.Play();
+                Invoke("CheckPlayer", dieTime);
+                Invoke("Restart", RestartTime);
+                turnActivate = true;
+            }
+            /*
             stopTimer = true;
             Timer = 0;
             BananaIdle.SetActive(false);
@@ -131,7 +177,9 @@ public class EnemyController : MonoBehaviour
             AnimatedGifPlayer.Play();
             Invoke("CheckPlayer", dieTime);
             Invoke("Restart", RestartTime);
+            */
         }
+        
     }
     void lostGameCheck()
     {
@@ -181,6 +229,7 @@ public class EnemyController : MonoBehaviour
     }
     void Restart()
     {
+        turnActivate = false;
         dragFuc.triggerTurn = false;
         stopTimer = false;
         checkPlayer = false;

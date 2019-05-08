@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FillBarFunction : MonoBehaviour
 {
-    private bool StopOrNot;
+    [SerializeField] private bool StopOrNot;
     [SerializeField] float GreenSpeed;
     [SerializeField] float GreenDistance;
     [SerializeField] GameObject rayCastCenter;
