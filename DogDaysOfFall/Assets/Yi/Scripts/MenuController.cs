@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    private void Awake()
+    {
+
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +20,13 @@ public class MenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-            SceneManager.LoadScene("Chapter 1");
+            
     }
+
+    public void TouchStart()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    
 }
