@@ -94,7 +94,6 @@ public class DragFunction : MonoBehaviour
                 if (fixedPoint.x / timeSpend > turnPoint)
                 {
                     triggerTurn = true;
-                    Debug.Log("Activate Turn");
                     
                 }
 

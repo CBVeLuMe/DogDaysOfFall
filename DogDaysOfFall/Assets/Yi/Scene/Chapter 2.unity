@@ -10600,15 +10600,20 @@ PrefabInstance:
       propertyPath: fcC1
       value: 
       objectReference: {fileID: 1179315780}
-    - target: {fileID: 534642157444083542, guid: 607a7e6544ac4534a823b86964260119,
+    - target: {fileID: 534642157834809710, guid: 607a7e6544ac4534a823b86964260119,
         type: 3}
-      propertyPath: RandomNub.Array.data[0]
-      value: 2.75
+      propertyPath: m_Sprite
+      value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 534642157444083542, guid: 607a7e6544ac4534a823b86964260119,
+    - target: {fileID: 534642157834809710, guid: 607a7e6544ac4534a823b86964260119,
         type: 3}
-      propertyPath: RandomNub.Array.data[1]
-      value: 3
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 534642157834809709, guid: 607a7e6544ac4534a823b86964260119,
+        type: 3}
+      propertyPath: GifTexture
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 607a7e6544ac4534a823b86964260119, type: 3}
