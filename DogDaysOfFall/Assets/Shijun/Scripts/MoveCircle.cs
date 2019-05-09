@@ -10,15 +10,18 @@ public class MoveCircle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public Vector3 positionone;
 
     //public RectTransform rt;
-    public Transform startParent;
+    //public Transform startParent;
 
     public static GameObject itemBeingDragged;
 
     private Vector3 initial;
+    
+
 
     public void Awake()
     {
         positionone = transform.position;
+       
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -53,7 +56,7 @@ public class MoveCircle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public void MoveBack()
     {
 
-        transform.SetParent(startParent);
+        //transform.SetParent(startParent);
         transform.position = positionone;
         //GetComponent<CanvasGroup>().blocksRaycasts = true;
 

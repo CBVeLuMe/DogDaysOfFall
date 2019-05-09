@@ -4,13 +4,94 @@ using UnityEngine;
 using UnityEngine.UI;
 using Fungus;
 using TMPro;
+using UnityEngine.EventSystems;
 
+/// <summary>
+/// Visual scripting for the combat minigame.
+/// </summary>
 public class CombatGenerator : MonoBehaviour
 {
+    public Flowchart flowChart;
+    
+    /// <summary>
+    /// The UI for the Count Down
+    /// </summary>
+    [HideInInspector]
+    [SerializeField] protected bool hasFinishedCount;
 
-    private void Awake()
+    [SerializeField] protected float countDownTimer = 4.0f;
+
+    [SerializeField] protected GameObject countDownText;
+    
+    [SerializeField] protected GameObject winloseText;
+    
+    /// <summary>
+    /// The Counter and UI for the times to play
+    /// </summary>
+    [HideInInspector]
+    [SerializeField] protected int combatCounter; // Count the times player played (+1 per turn)
+
+    [HideInInspector]
+    [SerializeField] protected int attemptsCounter; // Count the times player still can try (-1 per turn)
+
+    [HideInInspector]
+    [SerializeField] protected int succeededCounter; // Count the times player have successed
+
+    [Tooltip("The Times player need to win")]
+    [SerializeField] protected int toSucceedTimes = 3;
+
+    [Tooltip("The Times player can try")]
+    [SerializeField] protected int attemptsTimes = 5;
+
+    [SerializeField] protected GameObject combatText;
+
+    [HideInInspector]
+    [SerializeField] protected TextTrigger textTrigger;
+
+    /// <summary>
+    /// The UI for the Continue and Retry
+    /// </summary>
+    [SerializeField] protected GameObject continueButton;
+
+    [SerializeField] protected GameObject retryButton;
+
+    /// <summary>
+    /// The Checkers to check the status for methods
+    /// </summary>
+    [HideInInspector]
+    [SerializeField] protected bool shouldHaveGapTime;
+
+    [HideInInspector]
+    [SerializeField] protected bool canGenerateCombat;
+
+    [HideInInspector]
+    [SerializeField] protected bool canActivateCombat;
+
+    [HideInInspector]
+    [SerializeField] protected bool canCheckCombat;
+
+    [HideInInspector]
+    [SerializeField] protected bool canGenerateResult;
+
+    /// <summary>
+    /// The Timer for the trigger of clicker and generation
+    /// </summary>
+    public float combatTimer;
+    public float clickTime = 0.5f;
+    public float gapTime = 1.0f;
+
+    GraphicRaycaster m_Raycaster;
+    PointerEventData m_PointerEventData;
+    EventSystem m_EventSystem;
+
+    private void Start()
     {
         InitializeCombat(combatCounter = 0);
+
+        //Fetch the Raycaster from the GameObject (the Canvas)
+        m_Raycaster = GetComponent<GraphicRaycaster>();
+        //Fetch the Event System from the Scene
+        m_EventSystem = GetComponent<EventSystem>();
     }
 
     private void Update()
@@ -23,96 +104,104 @@ public class CombatGenerator : MonoBehaviour
         if (canGenerateCombat)
         {
             GenerateCombat();
-            // (todo) canGenerateCombat = false;
         }
 
         SetupTimer();
         CheckCombat();
+
+        //Check if the left Mouse button is clicked
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            //Set up the new Pointer Event
+            m_PointerEventData = new PointerEventData(m_EventSystem);
+            //Set the Pointer Event Position to that of the mouse position
+            m_PointerEventData.position = Input.mousePosition;
+
+            //Create a list of Raycast Results
+            List<RaycastResult> results = new List<RaycastResult>();
+
+            //Raycast using the Graphics Raycaster and mouse click position
+            m_Raycaster.Raycast(m_PointerEventData, results);
+
+            //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
+            foreach (RaycastResult result in results)
+            {
+                //Debug.Log("Hit " + result.gameObject.name);
+                if (result.gameObject.tag == "Ring")
+                {
+                    //Debug.Log("yougetit");
+                    //EventTrigger eventTrigger = result.gameObject.GetComponent<EventTrigger>();
+                    //EventTrigger.Entry entry = new EventTrigger.Entry();
+                    //entry.eventID = EventTriggerType.PointerEnter;
+                    //entry.callback.AddListener((true) => { result.gameObject.})
+                    NodeTrigger nodeTrigger = result.gameObject.GetComponent<NodeTrigger>();
+                    nodeTrigger.PointerOn(true);
+                }
+            }
+        }
     }
 
-    #region Combat methods
-    //The obejct for the Fungus
-    public Flowchart flowChart;
+    private void SetupTimer()
+    {
+        if (combatTimer >= 0)
+        {
+            combatTimer -= Time.deltaTime;
+        }
+        else
+        {
+            combatTimer = 0;
+        }
+    }
 
-    // Start Countdown
-    private bool hasFinishedCount;
-    public GameObject countDown;
-    public GameObject winloseText;
-    public float countDownTimer;
+    #region UI methods
 
-    // Continue and Retry Buttons
-    public GameObject continueB;
-    public GameObject retryB;
-    //// Slider Function
-    //public Slider speedBar;
-    //public TextMeshProUGUI speedText;
-
-    // The Counters for the combat
-    public int toSucceedTimes; // The Times player need to win
-    public int attemptsTimes; // The times player can try
-
-    private int combatCounter; // Count the times player played (+1 per turn)
-    private int attemptsCounter; // Count the times player still can try (-1 per turn)
-    private int succeededCounter; // Count the times player have successed
-
-    public GameObject combatText;
-    private TextTrigger textTrigger;
-
-    // The Timer for the combat
-    public float clickTime = 0.5f;
-    public float gapTime = 1.0f;
-
-    public float combatTimer;
-
-    // The Checkers to check the status for methods
-    private bool shouldHaveGapTime;
-
-    private bool canGenerateCombat;
-    private bool canActivateCombat;
-    private bool canCheckCombat;
-    private bool canGenerateResult;
-
-    // (Todo) Test Mode for combat
-    public bool testMode;
-
-    // Countdown TImer
+    /// <summary>
+    /// Countdown Timer
+    /// </summary>
     private void StartCountDown()
     {
         //countDown.SetActive(true);
         countDownTimer -= Time.deltaTime;
-        countDown.GetComponent<TextMeshProUGUI>().text = ((int)countDownTimer).ToString();
+        countDownText.GetComponent<TextMeshProUGUI>().text = ((int)countDownTimer).ToString();
         if ((int)countDownTimer == 0)
-            countDown.GetComponent<TextMeshProUGUI>().text = "GO";
+            countDownText.GetComponent<TextMeshProUGUI>().text = "GO";
         if (countDownTimer < 0)
         {
-            countDown.SetActive(false);
+            countDownText.SetActive(false);
             canGenerateCombat = true;
             hasFinishedCount = true;
         }
     }
 
+    /// <summary>
+    /// Send the Counters to the UI text
+    /// </summary>
+    private void OutputCounter()
+    {
+        textTrigger.toSucceedTimes = toSucceedTimes;
 
+        textTrigger.attemptsCounter = attemptsCounter;
+        textTrigger.succeededCounter = succeededCounter;
+    }
 
-
-
-
-
-    // Try again button Method
+    /// <summary>
+    /// Try again button Method
+    /// </summary>
     public void ReTryButton()
     {
         InitializeCombat(combatCounter = 0);
-        retryB.SetActive(false);
+        retryButton.SetActive(false);
         winloseText.SetActive(false);
     }
 
-    //// Slider Speed Method
-    //public void OnSpeedValueChanged(float speed)
-    //{
-    //    clickTime = speedBar.value;
-    //    speedText.text = speedBar.value.ToString();
-    //}
+    #endregion
 
-    // Set or reset the Counters, Timer and Checkers
+    #region Combat methods
+
+    /// <summary>
+    /// Set or reset the Counters, Timer and Checkers
+    /// </summary>
+    /// <param name="Counter"></param>
     private void InitializeCombat(int Counter)
     {
         // Setup everything for a new combat
@@ -143,6 +232,7 @@ public class CombatGenerator : MonoBehaviour
                 NodeTrigger nodeTrigger = node.GetComponent<NodeTrigger>();
 
                 nodeTrigger.DeactivatePrompt();
+                
             }
             foreach (Button node in lowerNodes)
             {
@@ -174,6 +264,8 @@ public class CombatGenerator : MonoBehaviour
                 NodeTrigger nodeTrigger = node.GetComponent<NodeTrigger>();
                 nodeTrigger.isStartNode = false;
                 nodeTrigger.isEndNode = false;
+                nodeTrigger.isOnNode = false;
+                nodeTrigger.isInNode = false;
 
                 node.colors = originalColorBlock;
 
@@ -184,6 +276,8 @@ public class CombatGenerator : MonoBehaviour
                 NodeTrigger nodeTrigger = node.GetComponent<NodeTrigger>();
                 nodeTrigger.isStartNode = false;
                 nodeTrigger.isEndNode = false;
+                nodeTrigger.isOnNode = false;
+                nodeTrigger.isInNode = false;
 
                 node.colors = originalColorBlock;
 
@@ -196,16 +290,9 @@ public class CombatGenerator : MonoBehaviour
         }
     }
 
-    // Send the Counters to the UI text
-    private void OutputCounter()
-    {
-        textTrigger.toSucceedTimes = toSucceedTimes;
-
-        textTrigger.attemptsCounter = attemptsCounter;
-        textTrigger.succeededCounter = succeededCounter;
-    }
-
-    // Setup the timer to check the result
+    /// <summary>
+    /// Setup the timer to check the result
+    /// </summary>
     private void GenerateCombat()
     {
         if (shouldHaveGapTime)
@@ -231,7 +318,12 @@ public class CombatGenerator : MonoBehaviour
         }
     }
 
-    // Deside which line will generate the prompt
+    /// <summary>
+    /// Deside which line will generate the prompt
+    /// </summary>
+    /// <param name="firstNodes"></param>
+    /// <param name="secondNodes"></param>
+    /// <param name="colors"></param>
     private void ActivateCombat(Button[] firstNodes, Button[] secondNodes, Color[] colors)
     {
         combatCounter++;
@@ -282,6 +374,9 @@ public class CombatGenerator : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Check the final result and ouput the message
+    /// </summary>
     private void CheckCombat()
     {
         // Generate a result and send a message to dialogue
@@ -298,7 +393,7 @@ public class CombatGenerator : MonoBehaviour
                 flowChart.SetBooleanVariable("hasWonCombat", true);
                 winloseText.SetActive(true);
                 winloseText.GetComponentInChildren<TextMeshProUGUI>().text = "YOU WIN";
-                continueB.SetActive(true);
+                continueButton.SetActive(true);
                 //Debug.Log("Player has won the combat.");
                 canGenerateResult = false;
                 canGenerateCombat = false;
@@ -311,7 +406,7 @@ public class CombatGenerator : MonoBehaviour
                 winloseText.GetComponentInChildren<TextMeshProUGUI>().text = "YOU DIE";
                 canGenerateResult = false;
                 canGenerateCombat = false;
-                retryB.SetActive(true);
+                retryButton.SetActive(true);
             }
         }
 
@@ -343,17 +438,6 @@ public class CombatGenerator : MonoBehaviour
         }
     }
 
-    private void SetupTimer()
-    {
-        if (combatTimer >= 0)
-        {
-            combatTimer -= Time.deltaTime;
-        }
-        else
-        {
-            combatTimer = 0;
-        }
-    }
     #endregion
 
     #region Nodes methods
@@ -367,6 +451,7 @@ public class CombatGenerator : MonoBehaviour
 
     private bool canAssignOriginalColorBlock;
     private ColorBlock originalColorBlock;
+    
     // The Checkers to define the sequence for nodes
     private int targetRow;
     private bool hasActivatedFirstTime;
