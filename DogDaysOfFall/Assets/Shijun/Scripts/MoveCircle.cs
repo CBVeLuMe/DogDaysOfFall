@@ -9,10 +9,12 @@ public class MoveCircle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public Vector3 backPosition;
     public Vector3 positionone;
 
+    public RectTransform originalRectTransform;
     //public RectTransform rt;
     //public Transform startParent;
 
     public static GameObject itemBeingDragged;
+    private Vector3 aPosition;
 
     private Vector3 initial;
     
@@ -21,7 +23,16 @@ public class MoveCircle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public void Awake()
     {
         positionone = transform.position;
-       
+
+        originalRectTransform = this.gameObject.GetComponent<RectTransform>();
+        aPosition = originalRectTransform.anchoredPosition;
+
+    }
+
+    public void ResetTransform()
+    {
+        RectTransform rectTransform = this.gameObject.GetComponent<RectTransform>();
+        rectTransform.anchoredPosition = aPosition;
     }
 
     public void OnBeginDrag(PointerEventData eventData)

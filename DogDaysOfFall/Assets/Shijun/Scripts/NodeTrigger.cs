@@ -95,6 +95,14 @@ public class NodeTrigger : MonoBehaviour
         //bluePrompt.GetComponent<MoveCircle>().MoveBack();
         //moveBlueCircle.MoveBack();
 
+        //MoveCircle moveBluePrompt = bluePrompt.GetComponent<MoveCircle>();
+        //moveBluePrompt.startPosition = new Vector3(0, 0, 0);
+        //moveBluePrompt.backPosition = new Vector3(0, 0, 0);
+        //moveBluePrompt.positionone = new Vector3(0, 0, 0);
+
+        MoveCircle moveCircle = bluePrompt.GetComponent<MoveCircle>();
+        //rectTransform.position = Vector3.zero;
+        moveCircle.ResetTransform();
 
         bluePrompt.SetActive(false);
         hasActivatedBluePrompt = false;
