@@ -103,7 +103,6 @@ MonoBehaviour:
   MoveorNot: 0
   turnPoint: 3
   triggerTurn: 0
-  isMoving: 0
 --- !u!61 &1424645743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -219,7 +218,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 534642156966271359}
-  - component: {fileID: 143599284}
   m_Layer: 0
   m_Name: Stealth_Minigame_System
   m_TagString: Untagged
@@ -251,21 +249,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &143599284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534642156966271358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 141ef89ece8a1364d97b657b517f01d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuButton: {fileID: 0}
-  panelButton: {fileID: 0}
-  narrative: {fileID: 0}
 --- !u!1 &534642156974122580
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,7 +818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &534642157172293129
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1277,15 +1260,14 @@ MonoBehaviour:
   timerS: {fileID: 534642157120153364}
   checkPlayer: 0
   RandomNub:
-  - 2.75
-  - 3
+  - 1
+  - 1.5
   - 2
   - 2.5
   RestartTime: 2
   dieTime: 0.5
   startTimer: 4
   fcC1: {fileID: 0}
-  turnActivate: 0
 --- !u!82 &534642157444083541
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2266,7 +2248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d435981dfd99a04584400956a63c2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StopOrNot: 0
   GreenSpeed: 2
   GreenDistance: 0.01
   rayCastCenter: {fileID: 3119429064428614378}
