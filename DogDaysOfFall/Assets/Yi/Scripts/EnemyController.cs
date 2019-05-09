@@ -42,15 +42,12 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private bool turnActivate;
 
     private float waitTime;
-
-    private StelthGameAssist assist;
     // Start is called before the first frame update
     void Awake()
     {
         dieSFX = GetComponent<AudioSource>();
         dragFuc = FindObjectOfType<DragFunction>();
         fillFuc = FindObjectOfType<FillBarFunction>();
-        assist = FindObjectOfType<StelthGameAssist>().GetComponent<StelthGameAssist>();
     }
 
     private void Start()
@@ -220,7 +217,6 @@ public class EnemyController : MonoBehaviour
     public void wonButton()
     {
         Time.timeScale = 1;
-        assist.StelthOver();
         fcC1.SetBooleanVariable("StealthGameWon", true);
     }
 
