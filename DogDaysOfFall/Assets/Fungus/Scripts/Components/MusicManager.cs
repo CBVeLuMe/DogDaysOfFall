@@ -40,6 +40,7 @@ namespace Fungus
             audioMixGroup = audioMixer.FindMatchingGroups("Master");
             audioSourceMusic.outputAudioMixerGroup = audioMixGroup[1];
             audioSourceSoundEffect.outputAudioMixerGroup = audioMixGroup[2];
+            audioSourceAmbiance.outputAudioMixerGroup = audioMixGroup[2];
         }
 
         protected virtual void Start()

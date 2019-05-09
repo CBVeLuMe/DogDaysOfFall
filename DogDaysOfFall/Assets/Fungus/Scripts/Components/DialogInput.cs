@@ -38,6 +38,9 @@ namespace Fungus
         [Tooltip("Ignore input if a Menu dialog is currently active")]
         [SerializeField] protected bool ignoreMenuClicks = true;
 
+        [Tooltip("Ignore input if a Option Menu is currently active")]
+        [SerializeField] protected bool ignoreOptionClicks = true;
+
         protected bool dialogClickedFlag;
 
         protected bool nextLineInputFlag;
@@ -124,6 +127,15 @@ namespace Fungus
                     MenuDialog.ActiveMenuDialog.IsActive() &&
                     MenuDialog.ActiveMenuDialog.DisplayedOptionsCount > 0)
                 {
+                    dialogClickedFlag = false;
+                    nextLineInputFlag = false;
+                }
+            }
+
+            if (ignoreOptionClicks)
+            {
+                if (SaveMenu.SaveMenuActive) {
+
                     dialogClickedFlag = false;
                     nextLineInputFlag = false;
                 }
