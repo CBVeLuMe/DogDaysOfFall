@@ -267,6 +267,9 @@ public class CombatGenerator : MonoBehaviour
                 nodeTrigger.isOnNode = false;
                 nodeTrigger.isInNode = false;
 
+                Image nodeImage = node.GetComponent<Image>();
+                nodeImage.enabled = true;
+
                 node.colors = originalColorBlock;
 
                 nodeTrigger.DeactivatePrompt();
@@ -278,6 +281,9 @@ public class CombatGenerator : MonoBehaviour
                 nodeTrigger.isEndNode = false;
                 nodeTrigger.isOnNode = false;
                 nodeTrigger.isInNode = false;
+
+                Image nodeImage = node.GetComponent<Image>();
+                nodeImage.enabled = true;
 
                 node.colors = originalColorBlock;
 
@@ -546,12 +552,16 @@ public class CombatGenerator : MonoBehaviour
     private void SetupStartNode(Button node)
     {
         NodeTrigger nodeTrigger = node.GetComponent<NodeTrigger>();
+        Image nodeImage = node.GetComponent<Image>();
+        nodeImage.enabled = false;
         nodeTrigger.isStartNode = true;
     }
 
     private void SetupEndNode(Button node)
     {
         NodeTrigger nodeTrigger = node.GetComponent<NodeTrigger>();
+        //Image nodeImage = node.GetComponent<Image>();
+        //nodeImage.enabled = false;
         nodeTrigger.isEndNode = true;
     }
 
