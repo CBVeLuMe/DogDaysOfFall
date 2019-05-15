@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         if (Fwriter = GameObject.FindGameObjectWithTag("SayDialogue"))
         {
             Fwriter.GetComponent<Writer>().WritingSpeed = WSpeed;
+            Debug.Log(Fwriter);
         }
         else
             return;
