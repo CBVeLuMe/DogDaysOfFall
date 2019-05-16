@@ -68,6 +68,7 @@ namespace Fungus
         protected virtual void Update()
         {
             var saveManager = FungusManager.Instance.SaveManager;
+
             StartFastForward(hasStartedFastForward);
         }
         
@@ -112,7 +113,7 @@ namespace Fungus
         [SerializeField] protected bool hasStartedFastForward = false;
 
 
-        public void ActivateAutoPlay()
+        public void ActivateFastForward()
         {
             hasStartedFastForward = true;
         }

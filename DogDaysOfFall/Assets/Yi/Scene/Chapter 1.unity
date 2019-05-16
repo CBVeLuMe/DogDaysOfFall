@@ -726,20 +726,24 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1479918958, guid: 92fbbaada063bab498555dba2a665b4c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -97.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479918958, guid: 92fbbaada063bab498555dba2a665b4c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -194.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479918957, guid: 92fbbaada063bab498555dba2a665b4c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735813395, guid: 92fbbaada063bab498555dba2a665b4c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92fbbaada063bab498555dba2a665b4c, type: 3}
---- !u!114 &430692864 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6317410009554227626, guid: 92fbbaada063bab498555dba2a665b4c,
-    type: 3}
-  m_PrefabInstance: {fileID: 430692863}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a0bbe22c246e4c78ad8e9816cbae9d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &509881124
 GameObject:
   m_ObjectHideFlags: 0
@@ -8159,8 +8163,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1451512192}
   m_HandleRect: {fileID: 1451512191}
   m_Direction: 2
-  m_Value: 0.99999934
-  m_Size: 0.6323765
+  m_Value: 0.9999993
+  m_Size: 0.6438757
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8888,7 +8892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48b0d536f49ade42a9039d9c69bc395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sayDialog: {fileID: 430692864}
 --- !u!114 &1834736377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8901,9 +8904,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b99cf8455c5f4c4588fc5eb291c0ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sayDialog: {fileID: 430692864}
-  dialogInput: {fileID: 0}
-  hasStartedFastForward: 0
 --- !u!1 &1840526356
 GameObject:
   m_ObjectHideFlags: 0

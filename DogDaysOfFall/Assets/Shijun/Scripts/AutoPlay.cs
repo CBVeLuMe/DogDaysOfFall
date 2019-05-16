@@ -5,19 +5,19 @@ using Fungus;
 
 public class AutoPlay : MonoBehaviour
 {
-    public SayDialog sayDialog;
-    protected DialogInput dialogInput;
+    //public SayDialog sayDialog;
+    //protected DialogInput dialogInput;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        dialogInput = sayDialog.GetComponent<DialogInput>();
+    //// Start is called before the first frame update
+    //void Start()
+    //{
+    //    dialogInput = sayDialog.GetComponent<DialogInput>();
 
-    }
+    //}
 
-    // Update is called once per frame
-    void Update()
-    {
-        //dialogInput.
-    }
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    //dialogInput.
+    //}
 }
