@@ -7,11 +7,11 @@ using Fungus;
 public class GameManager : MonoBehaviour
 {
 
-   // public static GameManager _instance;
+    // public static GameManager _instance;
 
     private float WSpeed;
-    public GameObject sayDialog;
 
+    public GameObject sayDialog;
     public DialogInput dialogInput;
 
     void Awake()
@@ -37,16 +37,16 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        
-            sayDialog = GameObject.FindGameObjectWithTag("SayDialogue");
-            Debug.Log(sayDialog);
-            if (sayDialog)
-            {
-                sayDialog.GetComponent<Writer>().WritingSpeed = WSpeed;
-                dialogInput = sayDialog.GetComponent<DialogInput>();
-            }
-            else
-                return;
-        
+
+        sayDialog = GameObject.FindGameObjectWithTag("SayDialogue");
+        Debug.Log(sayDialog);
+        if (sayDialog)
+        {
+            sayDialog.GetComponent<Writer>().WritingSpeed = WSpeed;
+            dialogInput = sayDialog.GetComponent<DialogInput>();
+        }
+        else
+            return;
+
     }
 }
