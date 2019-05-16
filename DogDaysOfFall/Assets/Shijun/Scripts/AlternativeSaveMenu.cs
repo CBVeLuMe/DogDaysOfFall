@@ -31,8 +31,13 @@ namespace Fungus
 
         [Tooltip("A scrollable text field used for debugging the save data. The text field should be disabled in normal use.")]
         [SerializeField] protected ScrollRect debugView;
+        // new --------------------------------------
+        [Tooltip("The CanvasGroup containing the save menu buttons")]
+        [SerializeField] protected CanvasGroup saveMenuGroup;
+        public static bool SaveMenuActive { get { return saveMenuActive; } set { saveMenuActive = value; } }
 
-        protected static bool saveMenuActive = true;
+
+        protected static bool saveMenuActive = false;
 
         protected AudioSource clickAudioSource;
 
@@ -65,13 +70,53 @@ namespace Fungus
             clickAudioSource = GetComponent<AudioSource>();
         }
 
+        protected virtual void Start()
+        {
+            if (!saveMenuActive)
+            {
+                saveMenuGroup.alpha = 0f;
+            }
+        }
+
         protected virtual void Update()
         {
             var saveManager = FungusManager.Instance.SaveManager;
 
             StartFastForward(hasStartedFastForward);
         }
-        
+        public virtual void ToggleSaveMenu()
+        {
+            if (fadeTween != null)
+            {
+                LeanTween.cancel(fadeTween.id, true);
+                fadeTween = null;
+            }
+
+            if (saveMenuActive)
+            {
+                // Switch menu off
+                LeanTween.value(saveMenuGroup.gameObject, saveMenuGroup.alpha, 0f, 0.2f)
+                    .setEase(LeanTweenType.easeOutQuint)
+                    .setOnUpdate((t) => {
+                        saveMenuGroup.alpha = t;
+                    }).setOnComplete(() => {
+                        saveMenuGroup.alpha = 0f;
+                    });
+            }
+            else
+            {
+                // Switch menu on
+                LeanTween.value(saveMenuGroup.gameObject, saveMenuGroup.alpha, 1f, 0.2f)
+                    .setEase(LeanTweenType.easeOutQuint)
+                    .setOnUpdate((t) => {
+                        saveMenuGroup.alpha = t;
+                    }).setOnComplete(() => {
+                        saveMenuGroup.alpha = 1f;
+                    });
+            }
+
+            saveMenuActive = !saveMenuActive;
+        }
 
 
         #region Save and Load
