@@ -5,10 +5,11 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Fungus
 {
-    public class AlternativeSaveMenu : MonoBehaviour
+    public class AlternativeSaveMenu : GameManager
     {
         [Tooltip("The string key used to store save game data in Player Prefs. If you have multiple games defined in the same Unity project, use a unique key for each one.")]
         [SerializeField] protected string[] saveDataKey = new string[] { "autosavedata", "savedata1", "savedata2", "savedata3" };
@@ -67,8 +68,13 @@ namespace Fungus
         protected virtual void Update()
         {
             var saveManager = FungusManager.Instance.SaveManager;
+            StartFastForward(hasStartedFastForward);
         }
         
+
+
+        #region Save and Load
+
         public virtual string[] SaveDataKey
         {
             get
@@ -98,7 +104,34 @@ namespace Fungus
             }
 
         }
-        
+        #endregion Save and Load
+
+        #region Fastforward and AutoPlay
+
+        [HideInInspector]
+        [SerializeField] protected bool hasStartedFastForward = false;
+
+
+        public void ActivateAutoPlay()
+        {
+            hasStartedFastForward = true;
+        }
+
+        public void DeactivateAutoPlay()
+        {
+            hasStartedFastForward = false;
+        }
+
+        protected void StartFastForward(bool hasStarted)
+        {
+            if (hasStarted)
+            {
+                dialogInput.SetNextLineFlag();
+            }
+        }
+
+
+        #endregion
     }
 }
 

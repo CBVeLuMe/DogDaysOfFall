@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
     public static GameManager _instance;
 
     private float WSpeed;
-    private GameObject Fwriter;
+    public GameObject sayDialog;
+
+    public DialogInput dialogInput;
 
     void Awake()
     {
@@ -35,10 +37,10 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (Fwriter = GameObject.FindGameObjectWithTag("SayDialogue"))
+        if (sayDialog = GameObject.FindGameObjectWithTag("SayDialogue"))
         {
-            Fwriter.GetComponent<Writer>().WritingSpeed = WSpeed;
-            Debug.Log(Fwriter);
+            sayDialog.GetComponent<Writer>().WritingSpeed = WSpeed;
+            dialogInput = sayDialog.GetComponent<DialogInput>();
         }
         else
             return;
