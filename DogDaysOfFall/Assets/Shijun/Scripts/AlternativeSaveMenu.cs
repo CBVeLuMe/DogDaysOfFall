@@ -118,7 +118,7 @@ namespace Fungus
             hasStartedFastForward = true;
         }
 
-        public void DeactivateAutoPlay()
+        public void DeactivateFastForward()
         {
             hasStartedFastForward = false;
         }
