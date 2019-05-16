@@ -47,6 +47,8 @@ namespace Fungus
 
         protected static bool hasLoadedOnStart = false;
 
+        protected bool oktoDe = false;
+
         protected virtual void Awake()
         {
             // Only one instance of SaveMenu may exist
@@ -78,11 +80,29 @@ namespace Fungus
             }
         }
 
+        float waitingClick = 0f;
+        private void SetupTimer()
+        {
+            waitingClick -= Time.deltaTime;
+        }
+
         protected virtual void Update()
         {
+            //SetupTimer();
+
             var saveManager = FungusManager.Instance.SaveManager;
 
+            if (oktoDe)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    DeactivateFastForward();
+                    oktoDe = false;
+                }
+                
+            }
             StartFastForward(hasStartedFastForward);
+
         }
         public virtual void ToggleSaveMenu()
         {
@@ -160,6 +180,7 @@ namespace Fungus
 
         public void ActivateFastForward()
         {
+            
             hasStartedFastForward = true;
         }
 
@@ -173,7 +194,14 @@ namespace Fungus
             if (hasStarted)
             {
                 dialogInput.SetNextLineFlag();
+                Invoke("toOK", 3f);
             }
+            
+        }
+
+        private void toOK()
+        {
+            oktoDe = true;
         }
 
 

@@ -134,7 +134,7 @@ namespace Fungus
 
             if (ignoreOptionClicks)
             {
-                if (SaveMenu.SaveMenuActive) {
+                if (AlternativeSaveMenu.SaveMenuActive) {
 
                     dialogClickedFlag = false;
                     nextLineInputFlag = false;
