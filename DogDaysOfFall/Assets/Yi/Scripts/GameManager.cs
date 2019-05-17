@@ -12,16 +12,38 @@ public class GameManager : MonoBehaviour
     public GameObject sayDialog;
     public DialogInput dialogInput;
 
-    private float masterVolume;
-    private float musicVolume;
-    private float sfxVolume;
-    private float WSpeed;
 
-    [SerializeField] private Slider masterSlider;
+    
+    
+
+    //Audio
     [SerializeField] private Slider musicSlider;
-    [SerializeField] private Slider sfxSlider;
+    [SerializeField] private Slider soundSlider;
+    [SerializeField] private Slider textSlider;
     [SerializeField] private AudioMixer audioMix;
+    private float musicVolume;
+    private float soundVolume;
+    private float WSpeed;
+    private bool changing1;
+    private void Start()
+    {
+        /*
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
+        soundSlider.value = PlayerPrefs.GetFloat("SoundVolume");
+        audioMix.SetFloat("Music", musicSlider.value);
+        audioMix.SetFloat("SFX", soundSlider.value);
+        */
+    }
 
+    private void Update()
+    {
+       /* if (changing1)
+        {
+            audioMix.SetFloat("Music", musicSlider.value);
+            audioMix.SetFloat("SFX", soundSlider.value);
+        }
+        */
+    }
     #region Load Scene Event
     private void OnEnable()
     {
@@ -50,11 +72,12 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Option Function
+    /*
     public void SetMusicVolume()
     {
         musicVolume = musicSlider.value;
         audioMix.SetFloat("Music", Mathf.Log(musicVolume) * 20);
-    }
+    }*/
 
     public void SetSoundVolume()
     {
@@ -63,4 +86,19 @@ public class GameManager : MonoBehaviour
 
 
     #endregion
+    /*
+    public void SetMusic()
+    {
+        audioMix.SetFloat("Music", musicSlider.value);
+        PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
+        changing1 = true;
+    }
+
+    public void SetSound()
+    {
+        audioMix.SetFloat("SFX", musicSlider.value);
+        PlayerPrefs.SetFloat("SoundVolume", musicSlider.value);
+        changing1 = true;
+    }
+    */
 }
