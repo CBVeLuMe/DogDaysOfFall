@@ -12,37 +12,29 @@ public class GameManager : MonoBehaviour
     public GameObject sayDialog;
     public DialogInput dialogInput;
 
+    private bool firstOpen = true;
 
-    
-    
-
+    [SerializeField] protected GameObject Loadingbar;
+    [SerializeField] protected GameObject LoadingBG;
     //Audio
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider soundSlider;
     [SerializeField] private Slider textSlider;
     [SerializeField] private AudioMixer audioMix;
-    private float musicVolume;
-    private float soundVolume;
     private float WSpeed;
-    private bool changing1;
     private void Start()
     {
-        /*
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
-        soundSlider.value = PlayerPrefs.GetFloat("SoundVolume");
-        audioMix.SetFloat("Music", musicSlider.value);
-        audioMix.SetFloat("SFX", soundSlider.value);
-        */
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+        soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 0.75f);
+        textSlider.value = PlayerPrefs.GetFloat("WriteSpeed", 60);
+        WSpeed = textSlider.value;
+        audioMix.SetFloat("Music", Mathf.Log10(musicSlider.value) * 20);
+        audioMix.SetFloat("SFX", Mathf.Log10(soundSlider.value) * 20);
     }
 
     private void Update()
     {
-       /* if (changing1)
-        {
-            audioMix.SetFloat("Music", musicSlider.value);
-            audioMix.SetFloat("SFX", soundSlider.value);
-        }
-        */
+
     }
     #region Load Scene Event
     private void OnEnable()
@@ -57,48 +49,87 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
-        sayDialog = GameObject.FindGameObjectWithTag("SayDialogue");
-        Debug.Log(sayDialog);
-        if (sayDialog)
+        if (scene.name != "Main Menu")
         {
-            sayDialog.GetComponent<Writer>().WritingSpeed = WSpeed;
-            dialogInput = sayDialog.GetComponent<DialogInput>();
+            firstOpen = false;
+            sayDialog = GameObject.FindGameObjectWithTag("SayDialogue");
+            Debug.Log(sayDialog);
+            if (sayDialog)
+            {
+                sayDialog.GetComponent<Writer>().WritingSpeed = WSpeed;
+                dialogInput = sayDialog.GetComponent<DialogInput>();
+            }
+            else
+                return;
         }
-        else
-            return;
+        if(scene.name == "Main Menu")
+        {
+            if (firstOpen == false)
+            {
+                LoadingBG.SetActive(false);
+                StartCoroutine(WaitForRender());
+                
+            }
+        }
+    }
 
+    IEnumerator WaitForRender()
+    {
+        yield return new WaitForSeconds(1f);
+        musicSlider = GameObject.FindGameObjectWithTag("MusicSlider").GetComponent<Slider>();
+        musicSlider.onValueChanged.AddListener(delegate { SetMusic(); });
+        soundSlider = GameObject.FindGameObjectWithTag("SoundSlider").GetComponent<Slider>();
+        soundSlider.onValueChanged.AddListener(delegate { SetSound(); });
+        textSlider = GameObject.FindGameObjectWithTag("TextspeedSlider").GetComponent<Slider>();
+        textSlider.onValueChanged.AddListener(delegate { SetWriteSpeed(); });
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+        soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 0.75f);
+        textSlider.value = PlayerPrefs.GetFloat("WriteSpeed", 60);
+        WSpeed = textSlider.value;
+        audioMix.SetFloat("Music", Mathf.Log10(musicSlider.value) * 20);
+        audioMix.SetFloat("SFX", Mathf.Log10(soundSlider.value) * 20);
     }
     #endregion
 
     #region Option Function
-    /*
-    public void SetMusicVolume()
-    {
-        musicVolume = musicSlider.value;
-        audioMix.SetFloat("Music", Mathf.Log(musicVolume) * 20);
-    }*/
-
-    public void SetSoundVolume()
-    {
-        
-    }
-
-
-    #endregion
-    /*
     public void SetMusic()
     {
-        audioMix.SetFloat("Music", musicSlider.value);
+        //Debug.Log("Changing Volume1");
+        audioMix.SetFloat("Music", Mathf.Log10(musicSlider.value) * 20);
         PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
-        changing1 = true;
     }
 
     public void SetSound()
     {
-        audioMix.SetFloat("SFX", musicSlider.value);
-        PlayerPrefs.SetFloat("SoundVolume", musicSlider.value);
-        changing1 = true;
+        //Debug.Log("Changing Volume2");
+        audioMix.SetFloat("SFX", Mathf.Log10(soundSlider.value) * 20);
+        PlayerPrefs.SetFloat("SoundVolume", soundSlider.value);
     }
-    */
+
+    public void SetWriteSpeed()
+    {
+        WSpeed = textSlider.value;
+        PlayerPrefs.SetFloat("WriteSpeed", textSlider.value);
+    }
+
+    public void ReturnToMainMenu()
+    {
+        LoadingBG.SetActive(true);
+        Loadingbar.GetComponent<Animator>().SetBool("RPlay", true);
+
+        StartCoroutine(WaitForSecondtoLoad());
+    }
+
+    private void LoadScene(string SceneName)
+    {
+        SceneManager.LoadScene(SceneName);
+    }
+
+    #endregion
+
+    IEnumerator WaitForSecondtoLoad()
+    {
+        yield return new WaitForSeconds(2.5f);
+        LoadScene("Main Menu");
+    }
 }

@@ -1014,15 +1014,16 @@ GameObject:
   m_Component:
   - component: {fileID: 98779299}
   - component: {fileID: 98779301}
-  - component: {fileID: 98779302}
   - component: {fileID: 98779300}
+  - component: {fileID: 98779303}
+  - component: {fileID: 98779302}
   m_Layer: 5
   m_Name: Option Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &98779299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1057,7 +1058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.5254902}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1089,13 +1090,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 98779298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c48a3bc0b1b914593578d8250e8a9f, type: 3}
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSlider: {fileID: 412175374}
-  soundSlider: {fileID: 176470030}
-  textSlider: {fileID: 2053704654}
-  audioMix: {fileID: 24100000, guid: 6c52f430805f31348a0c907c1989933b, type: 2}
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!223 &98779303
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98779298}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: -1
+  m_TargetDisplay: 0
 --- !u!1 &102726073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2194,7 +2217,7 @@ GameObject:
   - component: {fileID: 176470030}
   m_Layer: 5
   m_Name: Sound Slider
-  m_TagString: Untagged
+  m_TagString: SoundSlider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2219,7 +2242,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 919.28, y: -420.00003}
+  m_AnchoredPosition: {x: 710.25586, y: -420.00003}
   m_SizeDelta: {x: 749.5, y: 93.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &176470030
@@ -2262,14 +2285,14 @@ MonoBehaviour:
   m_FillRect: {fileID: 1040855700}
   m_HandleRect: {fileID: 824186278}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
-  m_WholeNumbers: 1
-  m_Value: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 98779302}
+      - m_Target: {fileID: 669484363}
         m_MethodName: SetSound
         m_Mode: 1
         m_Arguments:
@@ -5018,7 +5041,7 @@ GameObject:
   - component: {fileID: 412175374}
   m_Layer: 5
   m_Name: Music Slider
-  m_TagString: Untagged
+  m_TagString: MusicSlider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5043,7 +5066,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 919.28, y: -256.30002}
+  m_AnchoredPosition: {x: 710.25586, y: -256.30002}
   m_SizeDelta: {x: 749.5, y: 93.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &412175374
@@ -5086,14 +5109,14 @@ MonoBehaviour:
   m_FillRect: {fileID: 815270875}
   m_HandleRect: {fileID: 1455104404}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
-  m_WholeNumbers: 1
-  m_Value: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 98779302}
+      - m_Target: {fileID: 669484363}
         m_MethodName: SetMusic
         m_Mode: 1
         m_Arguments:
@@ -6822,7 +6845,7 @@ RectTransform:
   m_GameObject: {fileID: 558149454}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1967192243}
   - {fileID: 1569779615}
@@ -7800,6 +7823,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &669484363 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 412315718, guid: 36d20a233be88ef45bda4449d841b90c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1064629517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bdcb88c8471e294c9c972adab77e9ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &706304037
 GameObject:
   m_ObjectHideFlags: 0
@@ -11437,8 +11472,9 @@ GameObject:
   - component: {fileID: 988348123}
   - component: {fileID: 988348122}
   - component: {fileID: 988348121}
-  - component: {fileID: 988348120}
   - component: {fileID: 988348119}
+  - component: {fileID: 988348120}
+  - component: {fileID: 988348126}
   - component: {fileID: 988348118}
   m_Layer: 0
   m_Name: Flowchart
@@ -11772,7 +11808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -15.274248, y: 53.585617}
+  scrollPos: {x: -183.45605, y: 76.312874}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 466
@@ -11784,9 +11820,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 988348123}
-  selectedCommands:
-  - {fileID: 988348120}
+  - {fileID: 988348125}
+  selectedCommands: []
   variables:
   - {fileID: 988347887}
   - {fileID: 988347986}
@@ -11859,10 +11894,10 @@ MonoBehaviour:
   indentLevel: 1
   _targetGameObject:
     gameObjectRef: {fileID: 0}
-    gameObjectVal: {fileID: 1824070530}
+    gameObjectVal: {fileID: 962908545}
   activeState:
     booleanRef: {fileID: 0}
-    booleanVal: 0
+    booleanVal: 1
   activeChildren:
     booleanRef: {fileID: 0}
     booleanVal: 0
@@ -17802,7 +17837,7 @@ MonoBehaviour:
   indentLevel: 0
   _targetGameObject:
     gameObjectRef: {fileID: 0}
-    gameObjectVal: {fileID: 1305520986}
+    gameObjectVal: {fileID: 4729246015815733059}
   activeState:
     booleanRef: {fileID: 0}
     booleanVal: 1
@@ -17812,28 +17847,69 @@ MonoBehaviour:
   targetGameObjectOLD: {fileID: 0}
 --- !u!114 &988348118
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988347881}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Script: {fileID: 11500000, guid: 95d9ff288f3904c05ada7ac9c9a075bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 211
+  itemId: 216
   indentLevel: 0
-  _targetGameObject:
-    gameObjectRef: {fileID: 0}
-    gameObjectVal: {fileID: 98779298}
-  activeState:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  activeChildren:
+  description: Change sortingOrder
+  delay: 0
+  invokeType: 0
+  staticEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 98779303}
+        m_MethodName: set_sortingOrder
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  booleanParameter:
     booleanRef: {fileID: 0}
     booleanVal: 0
-  targetGameObjectOLD: {fileID: 0}
+  booleanEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  integerParameter:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  integerEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  floatParameter:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  floatEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  stringParameter:
+    stringRef: {fileID: 0}
+    stringVal: 
+  stringEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &988348119
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -17850,28 +17926,29 @@ MonoBehaviour:
   targetButton: {fileID: 1569779616}
 --- !u!114 &988348120
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988347881}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Script: {fileID: 11500000, guid: ee63e642958494f1ebed8116ae4b1103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 210
+  itemId: 214
   indentLevel: 0
-  _targetGameObject:
-    gameObjectRef: {fileID: 0}
-    gameObjectVal: {fileID: 98779298}
-  activeState:
+  _animator:
+    animatorRef: {fileID: 0}
+    animatorVal: {fileID: 558149456}
+  _parameterName:
+    stringRef: {fileID: 0}
+    stringVal: LClose
+  value:
     booleanRef: {fileID: 0}
-    booleanVal: 0
-  activeChildren:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
-  targetGameObjectOLD: {fileID: 0}
+    booleanVal: 1
+  animatorOLD: {fileID: 0}
+  parameterNameOLD: 
 --- !u!114 &988348121
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -17912,7 +17989,7 @@ MonoBehaviour:
     stringVal: LClose
   value:
     booleanRef: {fileID: 0}
-    booleanVal: 1
+    booleanVal: 0
   animatorOLD: {fileID: 0}
   parameterNameOLD: 
 --- !u!114 &988348123
@@ -17942,7 +18019,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 988348122}
   - {fileID: 988348121}
-  - {fileID: 988348120}
+  - {fileID: 988348118}
 --- !u!114 &988348124
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -17982,7 +18059,73 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 988348124}
   commandList:
-  - {fileID: 988348118}
+  - {fileID: 988348126}
+  - {fileID: 988348120}
+--- !u!114 &988348126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988347881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d9ff288f3904c05ada7ac9c9a075bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 215
+  indentLevel: 0
+  description: Change sortingOrder
+  delay: 0
+  invokeType: 0
+  staticEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 98779303}
+        m_MethodName: set_sortingOrder
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  booleanParameter:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  booleanEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Fungus.InvokeEvent+BooleanEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  integerParameter:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  integerEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Fungus.InvokeEvent+IntegerEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  floatParameter:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  floatEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Fungus.InvokeEvent+FloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  stringParameter:
+    stringRef: {fileID: 0}
+    stringVal: 
+  stringEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Fungus.InvokeEvent+StringEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &992471924
 GameObject:
   m_ObjectHideFlags: 0
@@ -18959,28 +19102,15 @@ PrefabInstance:
     - target: {fileID: 412315718, guid: 36d20a233be88ef45bda4449d841b90c, type: 3}
       propertyPath: musicSlider
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 412315718, guid: 36d20a233be88ef45bda4449d841b90c, type: 3}
-      propertyPath: sfxSlider
-      value: 
-      objectReference: {fileID: 176470030}
-    - target: {fileID: 412315718, guid: 36d20a233be88ef45bda4449d841b90c, type: 3}
-      propertyPath: masterSlider
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 412315718, guid: 36d20a233be88ef45bda4449d841b90c, type: 3}
-      propertyPath: audioMix
-      value: 
-      objectReference: {fileID: 24100000, guid: 6c52f430805f31348a0c907c1989933b,
-        type: 2}
+      objectReference: {fileID: 412175374}
     - target: {fileID: 412315718, guid: 36d20a233be88ef45bda4449d841b90c, type: 3}
       propertyPath: soundSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 176470030}
     - target: {fileID: 412315718, guid: 36d20a233be88ef45bda4449d841b90c, type: 3}
       propertyPath: textSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2053704654}
     - target: {fileID: 3881509357056631905, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19113,13 +19243,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3881509357167130389, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 14.299959
-      objectReference: {fileID: 0}
-    - target: {fileID: 3881509357167130389, guid: 36d20a233be88ef45bda4449d841b90c,
-        type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000061035156
+      value: 0.00015258789
       objectReference: {fileID: 0}
     - target: {fileID: 3881509355124217267, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
@@ -19306,10 +19431,61 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4729246015936543310, guid: 36d20a233be88ef45bda4449d841b90c,
+    - target: {fileID: 3881509357056631904, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
-      propertyPath: m_IsActive
+      propertyPath: LoadingBG
+      value: 
+      objectReference: {fileID: 1089664261751399344}
+    - target: {fileID: 3881509357056631904, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: Loadingbar
+      value: 
+      objectReference: {fileID: 8035214363295662125}
+    - target: {fileID: 3881509357056631904, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: audioMix
+      value: 
+      objectReference: {fileID: 24100000, guid: 6c52f430805f31348a0c907c1989933b,
+        type: 2}
+    - target: {fileID: 7152871559145061397, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152871559145061397, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152871559145061397, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152871559145061397, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152871559145061397, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152871559145061397, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744843248945936666, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744843248945936666, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36d20a233be88ef45bda4449d841b90c, type: 3}
@@ -21790,12 +21966,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300289666}
   m_CullTransparentMesh: 0
---- !u!1 &1305520986 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4729246015936543310, guid: 36d20a233be88ef45bda4449d841b90c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1064629517}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1306293191
 GameObject:
   m_ObjectHideFlags: 0
@@ -30525,7 +30695,7 @@ GameObject:
   - component: {fileID: 2053704654}
   m_Layer: 5
   m_Name: Text Speed
-  m_TagString: Untagged
+  m_TagString: TextspeedSlider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30550,7 +30720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 919.28, y: -583.7}
+  m_AnchoredPosition: {x: 710.25586, y: -583.7}
   m_SizeDelta: {x: 749.5, y: 93.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2053704654
@@ -30593,13 +30763,24 @@ MonoBehaviour:
   m_FillRect: {fileID: 711009102}
   m_HandleRect: {fileID: 1468004115}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 1
+  m_MinValue: 20
+  m_MaxValue: 80
+  m_WholeNumbers: 1
+  m_Value: 80
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 669484363}
+        m_MethodName: SetWriteSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &2055999709
@@ -31718,6 +31899,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145816371}
   m_CullTransparentMesh: 0
+--- !u!1 &1089664261751399344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1089664261751399344, guid: 36d20a233be88ef45bda4449d841b90c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1064629517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4729246015815733059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4729246015936543310, guid: 36d20a233be88ef45bda4449d841b90c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1064629517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5738237044840425379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32092,3 +32285,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a4de01753c8364098e099e255c3736, type: 3}
+--- !u!1 &8035214363295662125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8035214363295662125, guid: 36d20a233be88ef45bda4449d841b90c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1064629517}
+  m_PrefabAsset: {fileID: 0}
