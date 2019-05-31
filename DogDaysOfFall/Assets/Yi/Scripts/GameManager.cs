@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Slider soundSlider;
     [SerializeField] private Slider textSlider;
     [SerializeField] private AudioMixer audioMix;
+    [SerializeField] private GameObject optionMenu;
     private float WSpeed;
     private void Start()
     {
@@ -116,8 +117,21 @@ public class GameManager : MonoBehaviour
     {
         LoadingBG.SetActive(true);
         Loadingbar.GetComponent<Animator>().SetBool("RPlay", true);
+        OptionMenuClose();
 
         StartCoroutine(WaitForSecondtoLoad());
+    }
+
+    public void OptionMenuOpen()
+    {
+        optionMenu.SetActive(true);
+        optionMenu.GetComponentInChildren<Animator>().SetBool("LClose", true);
+    }
+
+    public void OptionMenuClose()
+    {
+        optionMenu.GetComponentInChildren<Animator>().SetBool("LClose", false);
+        optionMenu.SetActive(false);
     }
 
     private void LoadScene(string SceneName)
