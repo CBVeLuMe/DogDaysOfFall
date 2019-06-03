@@ -7,7 +7,7 @@ public class TestLevelManager : MonoBehaviour
 {
     public void LoadCombatTest()
     {
-        SceneManager.LoadScene("MinigameScene");
+        SceneManager.LoadScene("CombatTest");
     }
 
     public void LoadStealthTest()

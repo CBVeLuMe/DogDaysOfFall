@@ -5,7 +5,7 @@ using OldMoatGames;
 using Fungus;
 using TMPro;
 
-public class EnemyController : MonoBehaviour
+public class EnemyControllerTest : MonoBehaviour
 {
     [SerializeField] private GameObject BananaIdle;
     [SerializeField] private GameObject BananaTurn;
@@ -28,7 +28,7 @@ public class EnemyController : MonoBehaviour
     public bool checkPlayer = false;
     private bool isStart = false;
     private AnimatedGifPlayer AnimatedGifPlayer;
-    private DragFunction dragFuc;
+    private DragFunctionTest dragFuc;
     private AudioSource dieSFX;
     private FillBarFunction fillFuc;
 
@@ -48,9 +48,9 @@ public class EnemyController : MonoBehaviour
     void Awake()
     {
         dieSFX = GetComponent<AudioSource>();
-        dragFuc = FindObjectOfType<DragFunction>();
+        dragFuc = FindObjectOfType<DragFunctionTest>();
         fillFuc = FindObjectOfType<FillBarFunction>();
-        stelthAssist = FindObjectOfType<StelthGameAssist>().GetComponent<StelthGameAssist>();
+        //stelthAssist = FindObjectOfType<StelthGameAssist>().GetComponent<StelthGameAssist>();
     }
 
     private void Start()
@@ -236,8 +236,9 @@ public class EnemyController : MonoBehaviour
     public void wonButton()
     {
         Time.timeScale = 1;
-        stelthAssist.StelthOver();
-        fcC1.SetBooleanVariable("StealthGameWon", true);
+        winButton.SetActive(false);
+        youWinPic.SetActive(false);
+        ResetGameButton();
     }
 
     void CheckPlayer()
