@@ -201,7 +201,7 @@ public class EnemyController : MonoBehaviour
         Restart();
         dragFuc.MoveorNot = false;
         dragFuc.canMove = true;
-        fillFuc.ResetGreen();
+        //fillFuc.ResetGreen();
         youDiePic.SetActive(false);
         loseButton.SetActive(false);
         Time.timeScale = 1;
@@ -213,6 +213,7 @@ public class EnemyController : MonoBehaviour
         //loseButton.SetActive(true);
         //dragFuc.canMove = false;
         //Time.timeScale = 0;
+        Debug.Log("WonFuc");
         winButton.SetActive(true);
         youWinPic.SetActive(true);
         Time.timeScale = 0;

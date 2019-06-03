@@ -8,7 +8,7 @@ using UnityEngine;
 public class DragFunction : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
-    [SerializeField] private float offset = 0.05f;    
+    [SerializeField] private float offset = 0.05f;
     [SerializeField] private float rightBlock;
     [SerializeField] private float toleranceRight;
     [SerializeField] private float toleranceLeft;
@@ -31,12 +31,12 @@ public class DragFunction : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
+
         Playerfollowing = false;
         EnmCon = FindObjectOfType<EnemyController>();
         offset += 10;
     }
-    
+
     //Update is called once per frame
     void Update()
     {
@@ -62,16 +62,17 @@ public class DragFunction : MonoBehaviour
             }
             if (transform.position.x == rightBlock)
             {
+                Debug.Log("WON2");
                 EnmCon.wonGameFuc();
             }
             if (EnmCon.checkPlayer)
             {
-               
-                if (gameObject.transform.position.x > originalPos.x +toleranceRight || gameObject.transform.position.x < originalPos.x - toleranceLeft)
+
+                if (gameObject.transform.position.x > originalPos.x + toleranceRight || gameObject.transform.position.x < originalPos.x - toleranceLeft)
                     MoveorNot = true;
                 else
                     MoveorNot = false;
-                
+
             }
             // Below are all new functions
             else
@@ -94,7 +95,7 @@ public class DragFunction : MonoBehaviour
                 if (fixedPoint.x / timeSpend > turnPoint)
                 {
                     triggerTurn = true;
-                    
+
                 }
 
             }
@@ -103,7 +104,5 @@ public class DragFunction : MonoBehaviour
                 isMoving = false;
             }
         }
-        
-
     }
 }

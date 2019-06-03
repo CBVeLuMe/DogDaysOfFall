@@ -194,6 +194,16 @@ public class CombatGenerator : MonoBehaviour
         winloseText.SetActive(false);
     }
 
+    public void Restartgame()
+    {
+        countDownTimer = 4f;
+        hasFinishedCount = false;
+        canGenerateCombat = false;
+        countDownText.SetActive(true);
+        InitializeCombat(combatCounter = 0);
+        winloseText.SetActive(false);
+    }
+
     #endregion
 
     #region Combat methods
