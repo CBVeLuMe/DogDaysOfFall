@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -265,6 +265,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: SayDialogue
       objectReference: {fileID: 0}
+    - target: {fileID: 6317410009624783550, guid: 92fbbaada063bab498555dba2a665b4c,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317410009624783550, guid: 92fbbaada063bab498555dba2a665b4c,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317410008867300513, guid: 92fbbaada063bab498555dba2a665b4c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -38.95117
+      objectReference: {fileID: 0}
     - target: {fileID: 6317410009554227623, guid: 92fbbaada063bab498555dba2a665b4c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -370,21 +385,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6317410009624783550, guid: 92fbbaada063bab498555dba2a665b4c,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317410009624783550, guid: 92fbbaada063bab498555dba2a665b4c,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317410008953151688, guid: 92fbbaada063bab498555dba2a665b4c,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -224.44922
-      objectReference: {fileID: 0}
     - target: {fileID: 1479918958, guid: 92fbbaada063bab498555dba2a665b4c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -97.299805
@@ -405,6 +405,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -178.29883
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317410008953151688, guid: 92fbbaada063bab498555dba2a665b4c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -224.44922
       objectReference: {fileID: 0}
     - target: {fileID: 1479918959, guid: 92fbbaada063bab498555dba2a665b4c, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
@@ -433,11 +438,6 @@ PrefabInstance:
     - target: {fileID: 1479918959, guid: 92fbbaada063bab498555dba2a665b4c, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317410008867300513, guid: 92fbbaada063bab498555dba2a665b4c,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -38.95117
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92fbbaada063bab498555dba2a665b4c, type: 3}
@@ -1061,7 +1061,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 56.700684
     y: 74.86224
-    width: 130.7004
+    width: 146.68422
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1086,11 +1086,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 146.37657, y: -22.080267}
+  scrollPos: {x: -1113.6251, y: -136.82657}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 394
-  zoom: 0.6567502
+  zoom: 0.80675006
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -1098,8 +1098,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 817489670}
-  selectedCommands: []
+  - {fileID: 817489469}
+  selectedCommands:
+  - {fileID: 817489468}
   variables:
   - {fileID: 817489381}
   description: Chapter 1
@@ -1248,7 +1249,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 59.713287
     y: 324.63583
-    width: 124.609795
+    width: 139.24698
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1842,7 +1843,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 262.0606
     y: 336.09344
-    width: 139.83629
+    width: 157.84009
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2024,7 +2025,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1324.7081
     y: 347.2333
-    width: 148.97218
+    width: 170.2355
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2088,7 +2089,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 688.52673
     y: 337.27698
-    width: 168.76662
+    width: 192.54724
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2461,7 +2462,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 473.7975
     y: 434.66547
-    width: 135.26834
+    width: 152.88193
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2488,7 +2489,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 471.2649
     y: 384.01666
-    width: 120
+    width: 120.653854
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2515,7 +2516,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 469.99902
     y: 339.6987
-    width: 127.6551
+    width: 144.20514
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2542,7 +2543,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 468.5726
     y: 281.5589
-    width: 129.17773
+    width: 147.92377
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2870,7 +2871,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1130.5172
     y: 397.30118
-    width: 136.79099
+    width: 154.12146
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2898,7 +2899,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1134.2184
     y: 312.51166
-    width: 124.609795
+    width: 138.00743
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3368,7 +3369,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 932.3895
     y: 354.22858
-    width: 148.97218
+    width: 170.2355
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3512,7 +3513,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 697.6936
     y: 395.39206
-    width: 120
+    width: 125.612015
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3541,7 +3542,7 @@ MonoBehaviour:
   _sceneName:
     stringRef: {fileID: 0}
     stringVal: Chapter 2
-  loadingImage: {fileID: 2800000, guid: e439b6e84037db74fbb4445869440a77, type: 3}
+  loadingImage: {fileID: 2800000, guid: 368c2d4fe353a8649b7b1aa421ca6746, type: 3}
   sceneNameOLD: 
 --- !u!114 &817489469
 MonoBehaviour:
@@ -3559,7 +3560,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1530.4764
     y: 345.0933
-    width: 141.35895
+    width: 157.84009
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3979,7 +3980,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1329.4423
     y: 291.7251
-    width: 120
+    width: 124.372475
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6474,7 +6475,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 691.10504
     y: 285.30258
-    width: 120
+    width: 120.653854
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6855,7 +6856,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 946.1999
     y: 288.99023
-    width: 120
+    width: 124.372475
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9142,7 +9143,7 @@ PrefabInstance:
     - target: {fileID: 3881509357167130389, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000020503998
+      value: -0.000038146973
       objectReference: {fileID: 0}
     - target: {fileID: 3881509357167130389, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
