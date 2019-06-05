@@ -23,8 +23,6 @@ public class CombatGenerator : MonoBehaviour
 
     [SerializeField] protected GameObject countDownText;
     
-    [SerializeField] protected GameObject winloseText;
-    
     /// <summary>
     /// The Counter and UI for the times to play
     /// </summary>
@@ -189,9 +187,14 @@ public class CombatGenerator : MonoBehaviour
     /// </summary>
     public void ReTryButton()
     {
+        retryButton.GetComponent<Animator>().SetTrigger("CombatClose");
+        Invoke("ReTryButton2", 1f);
+    }
+
+    private void ReTryButton2()
+    {
         InitializeCombat(combatCounter = 0);
         retryButton.SetActive(false);
-        winloseText.SetActive(false);
     }
 
     public void Restartgame()
@@ -201,7 +204,6 @@ public class CombatGenerator : MonoBehaviour
         canGenerateCombat = false;
         countDownText.SetActive(true);
         InitializeCombat(combatCounter = 0);
-        winloseText.SetActive(false);
     }
 
     #endregion
@@ -407,8 +409,6 @@ public class CombatGenerator : MonoBehaviour
                 //retryB.SetActive(true);
                 // Win Function
                 flowChart.SetBooleanVariable("hasWonCombat", true);
-                winloseText.SetActive(true);
-                winloseText.GetComponentInChildren<TextMeshProUGUI>().text = "YOU WIN";
                 continueButton.SetActive(true);
                 //Debug.Log("Player has won the combat.");
                 canGenerateResult = false;
@@ -418,8 +418,6 @@ public class CombatGenerator : MonoBehaviour
             {
                 // Lost Function
                 //Debug.Log("You lose!");
-                winloseText.SetActive(true);
-                winloseText.GetComponentInChildren<TextMeshProUGUI>().text = "YOU DIE";
                 canGenerateResult = false;
                 canGenerateCombat = false;
                 retryButton.SetActive(true);

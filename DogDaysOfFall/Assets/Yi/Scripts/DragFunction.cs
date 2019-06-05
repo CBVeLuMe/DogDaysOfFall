@@ -62,8 +62,9 @@ public class DragFunction : MonoBehaviour
             }
             if (transform.position.x == rightBlock)
             {
-                Debug.Log("WON2");
+                //Debug.Log("WON2");
                 EnmCon.wonGameFuc();
+                canMove = false;
             }
             if (EnmCon.checkPlayer)
             {

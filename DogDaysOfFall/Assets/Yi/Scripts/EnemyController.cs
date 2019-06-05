@@ -9,8 +9,6 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private GameObject BananaIdle;
     [SerializeField] private GameObject BananaTurn;
-    [SerializeField] private GameObject youDiePic;
-    [SerializeField] private GameObject youWinPic;
     [SerializeField] private GameObject winButton;
     [SerializeField] private GameObject loseButton;
     [SerializeField] private GameObject timerS;
@@ -82,9 +80,6 @@ public class EnemyController : MonoBehaviour
             StartCoroutine(TurnAround());
 
         }
-        
-
-        
     }
 
     //void ChangeRandomValue()
@@ -142,7 +137,7 @@ public class EnemyController : MonoBehaviour
     }
     void ActivateTurn()//new 
     {
-        Debug.Log("Direct Turn");
+        //Debug.Log("Direct Turn");
         BananaIdle.SetActive(false);
         BananaTurn.SetActive(true);
         dieSFX.Play();
@@ -188,32 +183,33 @@ public class EnemyController : MonoBehaviour
     {
         if (dragFuc.MoveorNot)
         {
-            youDiePic.SetActive(true);
             loseButton.SetActive(true);
             dragFuc.canMove = false;
             Time.timeScale = 0;
+            checkPlayer = false;
         }
     }
     public void ResetGameButton()
     {
+        Time.timeScale = 1;
+        loseButton.GetComponent<Animator>().SetTrigger("LostClose");
+        Invoke("ResetGameButton2", 1f);
+    }
+    public void ResetGameButton2()
+    {
+        loseButton.SetActive(false);
         dragFuc.gameObject.transform.position = startPos;
-        checkPlayer = false;
         Restart();
         dragFuc.MoveorNot = false;
         dragFuc.canMove = true;
         //fillFuc.ResetGreen();
-        youDiePic.SetActive(false);
-        loseButton.SetActive(false);
-        Time.timeScale = 1;
     }
-
-    public void ResetGameTimer()
+    private void ResetGameTimer()
     {
         startTimer = 4f;
         timerS.SetActive(true);
         isStart = false;
         winButton.SetActive(false);
-        youWinPic.SetActive(false);
         dragFuc.gameObject.transform.position = startPos;
         checkPlayer = false;
         Restart();
@@ -228,14 +224,18 @@ public class EnemyController : MonoBehaviour
         //loseButton.SetActive(true);
         //dragFuc.canMove = false;
         //Time.timeScale = 0;
-        Debug.Log("WonFuc");
+        //Debug.Log("WonFuc");
         winButton.SetActive(true);
-        youWinPic.SetActive(true);
         Time.timeScale = 0;
     }
     public void wonButton()
     {
+        winButton.GetComponent<Animator>().SetTrigger("LostClose");
         Time.timeScale = 1;
+        Invoke("wonButton2", 1f);
+    }
+    private void wonButton2()
+    {
         stelthAssist.StelthOver();
         fcC1.SetBooleanVariable("StealthGameWon", true);
     }

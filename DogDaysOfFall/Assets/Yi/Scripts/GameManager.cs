@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitForSecondtoLoad()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(2.4f);
         LoadScene("Main Menu");
     }
 }
