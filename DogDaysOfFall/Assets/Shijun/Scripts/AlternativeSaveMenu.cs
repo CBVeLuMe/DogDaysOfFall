@@ -11,7 +11,7 @@ namespace Fungus
 {
     public class AlternativeSaveMenu : GameManager
     {
-        [Tooltip("The string key used to store save game data in Player Prefs. If you have multiple games defined in the same Unity project, use a unique key for each one.")]
+        [Tooltip("0 = Autosave, 1 = Quicksave, 2 = Savedata01, 3 = Savedata02, 4 = Savedata03")]
         [SerializeField] protected string[] saveDataKey = new string[] { "autosavedata", "savedata1", "savedata2", "savedata3" };
 
         [Tooltip("Automatically load the most recently saved game on startup")]
@@ -141,13 +141,28 @@ namespace Fungus
         }
 
 
-        #region Save and Load
+        #region Save and Load Button Functionalities
+        [SerializeField] protected Button[] saveButtons;
         [SerializeField] protected Image[] savePanelPic;
         [SerializeField] protected TextMeshProUGUI[] saveTitle;
         [SerializeField] protected TextMeshProUGUI[] saveDate;
 
+        protected bool SaveOrLoad = false;
+
         // Enable Save Panel in Menu Bar
+
         public void EnableSavePanel()
+        {
+            SaveOrLoad = true;
+            EnableSaveOrLoadPanel();
+        }
+        public void EnableLoadPanel()
+        {
+            SaveOrLoad = false;
+            EnableSaveOrLoadPanel();
+        }
+
+        public void EnableSaveOrLoadPanel()
         {
             var saveManager = FungusManager.Instance.SaveManager;
 
@@ -155,17 +170,64 @@ namespace Fungus
             {
                 if (saveManager.SaveDataExists(saveDataKey[i]))
                 {
-                    if (i != 0)
+                    if (i > 1)
                     {
-                        //savePanelPic[i] = 
-                        saveTitle[i].text = "Save Data";
-                        saveDate[i].text = saveDataKey[i];
+                        for (int s = 0; s < 3; s++)
+                        {
+                            //savePanelPic[i] = 
+                            saveTitle[s].text = "Save Data";
+                            saveDate[s].text = saveDataKey[i];
+                        }
                     }
                 }
-                SavePanel.SetActive(true);
+               
             }
+            SavePanel.SetActive(true);
+
+            if (SaveOrLoad)
+            {
+                Debug.Log("1");
+                saveButtons[0].onClick.AddListener(() => Save(2));
+                saveButtons[1].onClick.AddListener(() => Save(3));
+                saveButtons[2].onClick.AddListener(() => Save(4));
+
+            }
+            else
+            {
+                saveButtons[0].onClick.AddListener(() => Load(2));
+                saveButtons[1].onClick.AddListener(() => Load(3));
+                saveButtons[2].onClick.AddListener(() => Load(4));
+            }
+            SavePanel.GetComponentInChildren<Animator>().SetBool("LClose", true);
         }
 
+        public void DisableSavePanel()
+        {
+            SavePanel.GetComponentInChildren<Animator>().SetBool("LClose", false);
+            Invoke("closeSavePanel", 0.6f);
+        }
+
+        private void closeSavePanel()
+        {
+            if (SaveOrLoad)
+            {
+                saveButtons[0].onClick.RemoveListener(() => Save(2));
+                saveButtons[1].onClick.RemoveListener(() => Save(3));
+                saveButtons[2].onClick.RemoveListener(() => Save(4));
+
+            }
+            else
+            {
+                saveButtons[0].onClick.RemoveListener(() => Load(2));
+                saveButtons[1].onClick.RemoveListener(() => Load(3));
+                saveButtons[2].onClick.RemoveListener(() => Load(4));
+            }
+            SavePanel.SetActive(false);
+        }
+
+        #endregion
+
+        #region Save and Load Function
         public virtual string[] SaveDataKey
         {
             get
@@ -175,13 +237,17 @@ namespace Fungus
         }
         public virtual void Save(int i)
         {
-            SavePanel.SetActive(false);
+            if (SavePanel.activeInHierarchy)
+            {
+                SavePanel.GetComponentInChildren<Animator>().SetBool("LClose", false);
+                Invoke("closeSavePanel", 0.4f);
+            }
 
             var saveManager = FungusManager.Instance.SaveManager;
 
             if (saveManager.NumSavePoints > 0)
             {
-                SaveSystemTime(i);
+                //SaveSystemTime(i);
 
                 saveManager.Save(saveDataKey[i]);
                 TakeAPicture(saveDataKey[i]);

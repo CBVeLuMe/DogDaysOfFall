@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,10 +15,13 @@ public class MainMenuSaveSystem : MonoBehaviour
 
         var saveManager = Fungus.FungusManager.Instance.SaveManager;
 
-        if (!saveManager.SaveDataExists("autosavedata"))
-            Continue.interactable = false;
-        else
-            Continue.interactable = true;
+        foreach (string savedata in ANSM.SaveDataKey)
+        {
+            if (!saveManager.SaveDataExists(savedata))
+                Continue.interactable = false;
+            else
+                Continue.interactable = true;
+        }
     }
 
 
@@ -28,10 +30,28 @@ public class MainMenuSaveSystem : MonoBehaviour
     {
 
     }
+    int SaveDataNumber()
+    {
+        int temp;
+        int max = 0;
+        for (int i = 0; i < ANSM.SaveDataKey.Length - 1; i++)
+        {
+            temp = Convert.ToInt32(ANSM.SaveDataKey[i]);
 
+            if (temp > Convert.ToInt32(ANSM.SaveDataKey[i + 1]))
+            {
+                max = i;
+            }
+            else if (Convert.ToInt32(ANSM.SaveDataKey[i + 1]) > temp)
+            {
+                max = i + 1;
+            }
+        }
+        return max;
+    }
     public void ContinueFunction()
     {
-        ANSM.Load(0);
-        Destroy(ANSM.gameObject);
+        ANSM.Load(SaveDataNumber());
+        //Destroy(ANSM.gameObject);
     }
 }
