@@ -5,7 +5,7 @@
 
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using TMPro;
 
 namespace Fungus
 {
@@ -34,6 +34,8 @@ namespace Fungus
         // new --------------------------------------
         [Tooltip("The CanvasGroup containing the save menu buttons")]
         [SerializeField] protected CanvasGroup saveMenuGroup;
+        [Tooltip("Put Save Panel over there")]
+        [SerializeField] protected GameObject SavePanel;
         public static bool SaveMenuActive { get { return saveMenuActive; } set { saveMenuActive = value; } }
 
 
@@ -99,7 +101,7 @@ namespace Fungus
                     DeactivateFastForward();
                     oktoDe = false;
                 }
-                
+
             }
             StartFastForward(hasStartedFastForward);
 
@@ -140,6 +142,29 @@ namespace Fungus
 
 
         #region Save and Load
+        [SerializeField] protected Image[] savePanelPic;
+        [SerializeField] protected TextMeshProUGUI[] saveTitle;
+        [SerializeField] protected TextMeshProUGUI[] saveDate;
+
+        // Enable Save Panel in Menu Bar
+        public void EnableSavePanel()
+        {
+            var saveManager = FungusManager.Instance.SaveManager;
+
+            for (int i = 0; i < saveDataKey.Length; i++)
+            {
+                if (saveManager.SaveDataExists(saveDataKey[i]))
+                {
+                    if (i != 0)
+                    {
+                        //savePanelPic[i] = 
+                        saveTitle[i].text = "Save Data";
+                        saveDate[i].text = saveDataKey[i];
+                    }
+                }
+                SavePanel.SetActive(true);
+            }
+        }
 
         public virtual string[] SaveDataKey
         {
@@ -148,16 +173,30 @@ namespace Fungus
                 return saveDataKey;
             }
         }
-
         public virtual void Save(int i)
         {
+            SavePanel.SetActive(false);
 
             var saveManager = FungusManager.Instance.SaveManager;
 
             if (saveManager.NumSavePoints > 0)
             {
+                SaveSystemTime(i);
+
                 saveManager.Save(saveDataKey[i]);
+                TakeAPicture(saveDataKey[i]);
             }
+        }
+
+        void TakeAPicture(string name)
+        {
+            ScreenCapture.CaptureScreenshot(Application.persistentDataPath + name);
+        }
+
+
+        void SaveSystemTime(int number)
+        {
+            saveDataKey[number] = System.DateTime.Now.ToString();
         }
 
         public virtual void Load(int i)
