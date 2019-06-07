@@ -3,6 +3,8 @@
 
 #if UNITY_5_3_OR_NEWER
 
+using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -146,7 +148,8 @@ namespace Fungus
         [SerializeField] protected Image[] savePanelPic;
         [SerializeField] protected TextMeshProUGUI[] saveTitle;
         [SerializeField] protected TextMeshProUGUI[] saveDate;
-
+        [SerializeField] protected TextMeshProUGUI[] saveMinuet;
+        [SerializeField] protected Image[] saveImages;
         protected bool SaveOrLoad = false;
 
         // Enable Save Panel in Menu Bar
@@ -165,7 +168,29 @@ namespace Fungus
         public void EnableSaveOrLoadPanel()
         {
             var saveManager = FungusManager.Instance.SaveManager;
+            saveDataKey[2] = PlayerPrefs.GetString("SaveKeyOne","0");
+            saveDataKey[3] = PlayerPrefs.GetString("SaveKeyTwo", "0");
+            saveDataKey[4] = PlayerPrefs.GetString("SaveKeyThree", "0");
+            for (int s = 0; s < 3; s++)
+            {
+                Debug.Log("Show");
+                if (saveManager.SaveDataExists(saveDataKey[s+2]) && saveDataKey[s + 2] != "0")
+                {
+                    int n = s + 1;
+                    int x = s + 2;
+                    saveTitle[s].text = "Save Data" + " " + n.ToString();
+                    splittime = saveDataKey[x].Split('Y');
+                    string dates = splittime[0].Replace('Z', '/');
+                    saveDate[s].text = dates;
+                    string minutes = splittime[1].Replace('Z',':');
+                    saveMinuet[s].text = minutes + splittime[2];
+                    GetImage(x);
+                    saveImages[s].sprite = GetSprite(x);
+                    Debug.Log("Show Information");
+                }
 
+            }
+            /*
             for (int i = 0; i < saveDataKey.Length; i++)
             {
                 if (saveManager.SaveDataExists(saveDataKey[i]))
@@ -174,14 +199,24 @@ namespace Fungus
                     {
                         for (int s = 0; s < 3; s++)
                         {
-                            //savePanelPic[i] = 
-                            saveTitle[s].text = "Save Data";
-                            saveDate[s].text = saveDataKey[i];
+                            if (saveDataKey[s+2] != "0")
+                            {
+                                int n = s + 1;
+                                int x = s + 2;
+                                saveTitle[s].text = "Save Data"+ " "+ n.ToString();
+                                splittime = saveDataKey[s+2].Split(' ');
+                                saveDate[s].text = splittime[0];
+                                saveMinuet[s].text = splittime[1]+splittime[2];
+                                //GetImage(x);
+                                //saveImages[s].sprite = GetSprite(x);
+                            }
+                            
                         }
                     }
                 }
                
             }
+            */
             SavePanel.SetActive(true);
 
             if (SaveOrLoad)
@@ -235,6 +270,11 @@ namespace Fungus
                 return saveDataKey;
             }
         }
+        public Texture2D ScreenShot;
+        public string readTime;
+        private byte[] imageByte;
+        public List<Sprite> newSprites;
+        private string[] splittime;
         public virtual void Save(int i)
         {
             if (SavePanel.activeInHierarchy)
@@ -248,17 +288,107 @@ namespace Fungus
             if (saveManager.NumSavePoints > 0)
             {
                 //SaveSystemTime(i);
-
+                Rect newRect = new Rect(0, 0, 800, 640);
+                ScreenShot = CaptureCamera(Camera.main, newRect,i);
+                GetImage(i);
+                saveDataKey[i] = readTime;
+                PlayerPrefs.SetString("SaveKeyOne", saveDataKey[2]);
+                PlayerPrefs.SetString("SaveKeyTwo", saveDataKey[3]);
+                PlayerPrefs.SetString("SaveKeyThree", saveDataKey[4]);
                 saveManager.Save(saveDataKey[i]);
-                TakeAPicture(saveDataKey[i]);
+                //TakeAPicture(saveDataKey[i]);
             }
         }
 
+        Sprite GetSprite(int num) 
+        {
+            string filename = Application.dataPath + "/Screenshot" + num + ".png"; 
+            FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+            fs.Seek(0, SeekOrigin.Begin);
+            imageByte = new byte[fs.Length];
+            fs.Read(imageByte, 0, (int)fs.Length);
+            fs.Close();
+            fs.Dispose();
+            fs = null;
+            int width = 800;
+            int height = 640;
+            Texture2D texture = new Texture2D(width, height);
+            texture.LoadImage(imageByte);
+            ScreenShot = texture;
+            //ScreenShot = (Texture2D) Resources.Load(filename);
+            ScreenShot.Apply();
+            Sprite imageSprite = ChangeToSprite(ScreenShot);
+            return imageSprite;
+        }
+        void GetImage(int num)
+        {
+            //string filename = "/Project/DogDaysOfFall/DogDaysOfFall/Assets/Screenshot.png";
+            string filename = Application.dataPath + "/Screenshot"+num+".png";
+            //Texture2D _tex = (Texture2D)Resources.Load("Lighthouse");
+            FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+            FileInfo fi = new FileInfo(Application.dataPath + "/Screenshot" + num + ".png");
+            readTime = fi.LastWriteTime.ToString();
+            readTime = readTime.Replace('/', 'Z');
+            readTime = readTime.Replace(':', 'Z');
+            readTime = readTime.Replace(' ', 'Y');
+            //splittime = readTime.Split(' ');
+            fs.Seek(0, SeekOrigin.Begin);
+            imageByte = new byte[fs.Length];
+            fs.Read(imageByte, 0, (int)fs.Length);
+            fs.Close();
+            fs.Dispose();
+            fs = null;
+            int width = 800;
+            int height = 640;
+            Texture2D texture = new Texture2D(width, height);
+            texture.LoadImage(imageByte);
+            ScreenShot = texture;
+            //ScreenShot = (Texture2D) Resources.Load(filename);
+            ScreenShot.Apply();
+            newSprites.Add(ChangeToSprite(ScreenShot));
+        }
+        private Sprite ChangeToSprite(Texture2D tex)
+        {
+            Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
+            return sprite;
+        }
+        Texture2D CaptureCamera(Camera camera, Rect rect, int num)
+        {
+            // 创建一个RenderTexture对象
+            RenderTexture rt = new RenderTexture((int)rect.width, (int)rect.height, 0);
+            // 临时设置相关相机的targetTexture为rt, 并手动渲染相关相机
+            camera.targetTexture = rt;
+            camera.Render();
+            //ps: --- 如果这样加上第二个相机，可以实现只截图某几个指定的相机一起看到的图像。
+            //ps: camera2.targetTexture = rt;
+            //ps: camera2.Render();
+            //ps: -------------------------------------------------------------------
+
+            // 激活这个rt, 并从中中读取像素。
+            RenderTexture.active = rt;
+            Texture2D screenShot = new Texture2D((int)rect.width, (int)rect.height, TextureFormat.RGB24, false);
+            screenShot.ReadPixels(rect, 0, 0);// 注：这个时候，它是从RenderTexture.active中读取像素
+            screenShot.Apply();
+
+            // 重置相关参数，以使用camera继续在屏幕上显示
+            camera.targetTexture = null;
+            //ps: camera2.targetTexture = null;
+            RenderTexture.active = null; // JC: added to avoid errors
+            GameObject.Destroy(rt);
+            // 最后将这些纹理数据，成一个png图片文件
+            byte[] bytes = screenShot.EncodeToPNG();
+            string filename = Application.dataPath + "/Screenshot" + num + ".png";
+            System.IO.File.WriteAllBytes(filename, bytes);
+            Debug.Log(string.Format("截屏了一张照片: {0}", filename));
+
+            return screenShot;
+        }
+        /*
         void TakeAPicture(string name)
         {
             ScreenCapture.CaptureScreenshot(Application.persistentDataPath + name);
         }
-
+        */
 
         void SaveSystemTime(int number)
         {
@@ -312,6 +442,7 @@ namespace Fungus
 
         #endregion
     }
+
 }
 
 #endif

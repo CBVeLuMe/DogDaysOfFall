@@ -9,6 +9,7 @@ public class L_SaveTest : MonoBehaviour
     public string systemTime;
 
     public string[] splittime;
+    public string timeNumber;
 
     public Texture2D ScreenShot;
 
@@ -26,12 +27,18 @@ public class L_SaveTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        timeNumber = systemTime.Replace('/','Z');
+        timeNumber = timeNumber.Replace(':', 'Z');
+        timeNumber = timeNumber.Replace(' ', 'Y');
         splittime = systemTime.Split(' ');
+        /*
         if (Input.GetMouseButtonDown(1))
         {
             ScreenCapture.CaptureScreenshot("SomeLevel");
         }
-        Rect newRect = new Rect(0,0,1000,1000);
+        */
+        Rect newRect = new Rect(0,0,800,640);
         if (Input.GetMouseButtonDown(1))
         {
             ScreenShot = CaptureCamera(Camera.main, newRect);
