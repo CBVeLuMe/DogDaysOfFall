@@ -8,6 +8,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 namespace Fungus
 {
@@ -90,11 +91,13 @@ namespace Fungus
             waitingClick -= Time.deltaTime;
         }
 
-        protected virtual void Update()
+        private void Update()
         {
             //SetupTimer();
 
             var saveManager = FungusManager.Instance.SaveManager;
+
+            SkipSkipButton();
 
             if (oktoDe)
             {
@@ -105,9 +108,12 @@ namespace Fungus
                 }
 
             }
-            StartFastForward(hasStartedFastForward);
+            //StartFastForward(hasStartedFastForward);
+
 
         }
+
+
         public virtual void ToggleSaveMenu()
         {
             if (fadeTween != null)
@@ -188,7 +194,7 @@ namespace Fungus
                     saveDate[s].text = dates;
                     string minutes = splittime[1].Replace('Z', ':');
                     saveMinuet[s].text = minutes;
-                        //+splittime[2];
+                    //+splittime[2];
                     GetImage(x);
                     saveImages[s].sprite = GetSprite(x);
                     Debug.Log("Show Information");
@@ -451,8 +457,8 @@ namespace Fungus
 
         public void ActivateFastForward()
         {
-
             hasStartedFastForward = true;
+            StartCoroutine("SkipSkipButton");
         }
 
         public void DeactivateFastForward()
@@ -460,8 +466,23 @@ namespace Fungus
             hasStartedFastForward = false;
         }
 
+        //private
+        IEnumerator SkipSkipButton()
+        {
+            Debug.Log("skip1");
+            while (hasStartedFastForward)
+            {
+                Debug.Log("skip2");
+                dialogInput.SetNextLineFlag();
+                yield return new WaitForSeconds(0.1f);
+            }
+            //yield return null;
+        }
+
+
         protected void StartFastForward(bool hasStarted)
         {
+
             if (hasStarted)
             {
                 dialogInput.SetNextLineFlag();
