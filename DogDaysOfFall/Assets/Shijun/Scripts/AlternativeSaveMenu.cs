@@ -154,7 +154,7 @@ namespace Fungus
 
 
         #region Save and Load Button Functionalities
-        [SerializeField] protected Button[] saveButtons;
+        //[SerializeField] protected Button[] saveButtons;
         [SerializeField] protected Image[] savePanelPic;
         [SerializeField] protected TextMeshProUGUI[] saveTitle;
         [SerializeField] protected TextMeshProUGUI[] saveDate;
@@ -230,21 +230,31 @@ namespace Fungus
             */
             SavePanel.SetActive(true);
 
+            //if (SaveOrLoad)
+            //{
+            //    Debug.Log("1");
+            //    saveButtons[0].onClick.AddListener(() => Save(2));
+            //    saveButtons[1].onClick.AddListener(() => Save(3));
+            //    saveButtons[2].onClick.AddListener(() => Save(4));
+
+            //}
+            //else
+            //{
+            //    saveButtons[0].onClick.AddListener(() => Load(2));
+            //    saveButtons[1].onClick.AddListener(() => Load(3));
+            //    saveButtons[2].onClick.AddListener(() => Load(4));
+            //}
+            SavePanel.GetComponentInChildren<Animator>().SetBool("LClose", true);
+        }
+
+        public void SaveLoadButtonFunction(int num)
+        {
             if (SaveOrLoad)
             {
-                Debug.Log("1");
-                saveButtons[0].onClick.AddListener(() => Save(2));
-                saveButtons[1].onClick.AddListener(() => Save(3));
-                saveButtons[2].onClick.AddListener(() => Save(4));
-
+                Save(num);
             }
             else
-            {
-                saveButtons[0].onClick.AddListener(() => Load(2));
-                saveButtons[1].onClick.AddListener(() => Load(3));
-                saveButtons[2].onClick.AddListener(() => Load(4));
-            }
-            SavePanel.GetComponentInChildren<Animator>().SetBool("LClose", true);
+                Load(num);
         }
 
         public void DisableSavePanel()
@@ -255,19 +265,20 @@ namespace Fungus
 
         private void closeSavePanel()
         {
-            if (SaveOrLoad)
-            {
-                saveButtons[0].onClick.RemoveListener(() => Save(2));
-                saveButtons[1].onClick.RemoveListener(() => Save(3));
-                saveButtons[2].onClick.RemoveListener(() => Save(4));
+            //if (SaveOrLoad)
+            //{
+            //    saveButtons[0].onClick.RemoveListener(() => Save(2));
+            //    saveButtons[1].onClick.RemoveListener(() => Save(3));
+            //    saveButtons[2].onClick.RemoveListener(() => Save(4));
+            //    Debug.Log("removelistener");
 
-            }
-            else
-            {
-                saveButtons[0].onClick.RemoveListener(() => Load(2));
-                saveButtons[1].onClick.RemoveListener(() => Load(3));
-                saveButtons[2].onClick.RemoveListener(() => Load(4));
-            }
+            //}
+            //else
+            //{
+            //    saveButtons[0].onClick.RemoveListener(() => Load(2));
+            //    saveButtons[1].onClick.RemoveListener(() => Load(3));
+            //    saveButtons[2].onClick.RemoveListener(() => Load(4));
+            //}
             SavePanel.SetActive(false);
         }
 
@@ -342,7 +353,7 @@ namespace Fungus
             }
         }
 
-        Sprite GetSprite(int num)
+        public Sprite GetSprite(int num)
         {
             string filename = Application.dataPath + "/Screenshot" + num + ".png";
             FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
@@ -362,7 +373,7 @@ namespace Fungus
             Sprite imageSprite = ChangeToSprite(ScreenShot);
             return imageSprite;
         }
-        void GetImage(int num)
+        public void GetImage(int num)
         {
             //string filename = "/Project/DogDaysOfFall/DogDaysOfFall/Assets/Screenshot.png";
             string filename = Application.dataPath + "/Screenshot" + num + ".png";
@@ -439,6 +450,12 @@ namespace Fungus
 
         public virtual void Load(int i)
         {
+            if (SavePanel.activeInHierarchy)
+            {
+                SavePanel.GetComponentInChildren<Animator>().SetBool("LClose", false);
+                Invoke("closeSavePanel", 0.4f);
+            }
+
             var saveManager = FungusManager.Instance.SaveManager;
 
             if (saveManager.SaveDataExists(saveDataKey[i]))
