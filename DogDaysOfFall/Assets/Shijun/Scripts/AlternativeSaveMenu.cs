@@ -466,6 +466,20 @@ namespace Fungus
             hasStartedFastForward = false;
         }
 
+        private bool hasStartedAutoPlay = false;
+        public void ActivateAutoPlay()
+        {
+            hasStartedAutoPlay = true;
+            StartCoroutine("AutoPlayButton");
+        }
+
+        public void DeactivateAutoPlay()
+        {
+            hasStartedAutoPlay = false;
+        }
+
+
+
         //private
         IEnumerator SkipSkipButton()
         {
@@ -478,7 +492,17 @@ namespace Fungus
             }
             //yield return null;
         }
-
+        IEnumerator AutoPlayButton()
+        {
+            Debug.Log("skip3");
+            while (hasStartedAutoPlay)
+            {
+                Debug.Log("skip4");
+                dialogInput.SetNextLineFlag();
+                yield return new WaitForSeconds(2f);
+            }
+            //yield return null;
+        }
 
         protected void StartFastForward(bool hasStarted)
         {

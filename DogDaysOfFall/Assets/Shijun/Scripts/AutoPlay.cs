@@ -1,23 +1,53 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Fungus;
+﻿//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+//using Fungus;
 
-public class AutoPlay : MonoBehaviour
-{
-    //public SayDialog sayDialog;
-    //protected DialogInput dialogInput;
+//public class AutoPlay : SayDialog
+//{
 
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-    //    dialogInput = sayDialog.GetComponent<DialogInput>();
 
-    //}
+//    public GameObject sayDialog;
+//    public DialogInput dialogInput;
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    //dialogInput.
-    //}
-}
+//    private void FindSayDialogue()
+//    {
+//        sayDialog = GameObject.FindGameObjectWithTag("SayDialogue");
+//        if (sayDialog)
+//        {
+//            dialogInput = sayDialog.GetComponent<DialogInput>();
+//        }
+//    }
+
+//    private void OnEnable()
+//    {
+//        FindSayDialogue();
+//    }
+
+//    private bool hasAutoPlayed = false;
+//    public void AutoPlayDialog()
+//    {
+//        hasAutoPlayed = true;
+//    }
+
+//    IEnumerator AutoPlayButton()
+//    {
+//        while (hasAutoPlayed)
+//        {
+            
+//        }
+//    }
+
+//    private void Update()
+//    {
+//        print("update");
+//        if (hasAutoPlayed && GetWriter().IsWaitingForInput)
+//        {
+//            print("qiangguo");
+//            dialogInput = sayDialog.GetComponent<DialogInput>();
+
+//            dialogInput.SetNextLineFlag();
+//        }
+//    }
+
+//}
