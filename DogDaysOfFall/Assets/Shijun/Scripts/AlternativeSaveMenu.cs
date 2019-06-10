@@ -178,6 +178,8 @@ namespace Fungus
         public void EnableSaveOrLoadPanel()
         {
             var saveManager = FungusManager.Instance.SaveManager;
+            saveDataKey[0] = PlayerPrefs.GetString("SaveKeyAuto", "0");
+            saveDataKey[1] = PlayerPrefs.GetString("SaveKeyQuick", "0");
             saveDataKey[2] = PlayerPrefs.GetString("SaveKeyOne", "0");
             saveDataKey[3] = PlayerPrefs.GetString("SaveKeyTwo", "0");
             saveDataKey[4] = PlayerPrefs.GetString("SaveKeyThree", "0");
@@ -285,6 +287,8 @@ namespace Fungus
         public void mainMenuLoad()
         {
             var saveManager = FungusManager.Instance.SaveManager;
+            saveDataKey[0] = PlayerPrefs.GetString("SaveKeyAuto", "0");
+            saveDataKey[1] = PlayerPrefs.GetString("SaveKeyQuick", "0");
             saveDataKey[2] = PlayerPrefs.GetString("SaveKeyOne", "0");
             saveDataKey[3] = PlayerPrefs.GetString("SaveKeyTwo", "0");
             saveDataKey[4] = PlayerPrefs.GetString("SaveKeyThree", "0");
@@ -336,6 +340,8 @@ namespace Fungus
             if (saveManager.NumSavePoints > 0)
             {
                 //SaveSystemTime(i);
+                saveDataKey[0] = PlayerPrefs.GetString("SaveKeyAuto", "0");
+                saveDataKey[1] = PlayerPrefs.GetString("SaveKeyQuick", "0");
                 if (saveManager.SaveDataExists(saveDataKey[i]))
                 {
                     saveManager.Delete(saveDataKey[i]);
@@ -345,6 +351,8 @@ namespace Fungus
                 ScreenShot = CaptureCamera(Camera.main, newRect, i);
                 GetImage(i);
                 saveDataKey[i] = readTime;
+                PlayerPrefs.SetString("SaveKeyAuto", saveDataKey[0]);
+                PlayerPrefs.SetString("SaveKeyQuick", saveDataKey[1]);
                 PlayerPrefs.SetString("SaveKeyOne", saveDataKey[2]);
                 PlayerPrefs.SetString("SaveKeyTwo", saveDataKey[3]);
                 PlayerPrefs.SetString("SaveKeyThree", saveDataKey[4]);
@@ -450,7 +458,8 @@ namespace Fungus
 
         public virtual void Load(int i)
         {
-
+            saveDataKey[0] = PlayerPrefs.GetString("SaveKeyAuto", "0");
+            saveDataKey[1] = PlayerPrefs.GetString("SaveKeyQuick", "0");
             var saveManager = FungusManager.Instance.SaveManager;
 
             if (saveManager.SaveDataExists(saveDataKey[i]))
