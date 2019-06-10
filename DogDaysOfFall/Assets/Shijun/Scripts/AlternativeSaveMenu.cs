@@ -187,7 +187,8 @@ namespace Fungus
                     string dates = splittime[0].Replace('Z', '/');
                     saveDate[s].text = dates;
                     string minutes = splittime[1].Replace('Z', ':');
-                    saveMinuet[s].text = minutes + splittime[2];
+                    saveMinuet[s].text = minutes;
+                        //+splittime[2];
                     GetImage(x);
                     saveImages[s].sprite = GetSprite(x);
                     Debug.Log("Show Information");
@@ -282,7 +283,7 @@ namespace Fungus
                     string dates = splittime[0].Replace('Z', '/');
                     saveDate[s].text = dates;
                     string minutes = splittime[1].Replace('Z', ':');
-                    saveMinuet[s].text = minutes + splittime[2];
+                    saveMinuet[s].text = minutes;// + splittime[2];
                     GetImage(x);
                     saveImages[s].sprite = GetSprite(x);
                     Debug.Log("Show Information");
