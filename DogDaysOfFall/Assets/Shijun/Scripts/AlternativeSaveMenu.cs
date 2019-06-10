@@ -288,6 +288,11 @@ namespace Fungus
             if (saveManager.NumSavePoints > 0)
             {
                 //SaveSystemTime(i);
+                if (saveManager.SaveDataExists(saveDataKey[i]))
+                {
+                    saveManager.Delete(saveDataKey[i]);
+                }
+
                 Rect newRect = new Rect(0, 0, 800, 640);
                 ScreenShot = CaptureCamera(Camera.main, newRect,i);
                 GetImage(i);
