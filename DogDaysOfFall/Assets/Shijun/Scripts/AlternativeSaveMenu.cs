@@ -121,9 +121,11 @@ namespace Fungus
                 // Switch menu off
                 LeanTween.value(saveMenuGroup.gameObject, saveMenuGroup.alpha, 0f, 0.2f)
                     .setEase(LeanTweenType.easeOutQuint)
-                    .setOnUpdate((t) => {
+                    .setOnUpdate((t) =>
+                    {
                         saveMenuGroup.alpha = t;
-                    }).setOnComplete(() => {
+                    }).setOnComplete(() =>
+                    {
                         saveMenuGroup.alpha = 0f;
                     });
             }
@@ -132,9 +134,11 @@ namespace Fungus
                 // Switch menu on
                 LeanTween.value(saveMenuGroup.gameObject, saveMenuGroup.alpha, 1f, 0.2f)
                     .setEase(LeanTweenType.easeOutQuint)
-                    .setOnUpdate((t) => {
+                    .setOnUpdate((t) =>
+                    {
                         saveMenuGroup.alpha = t;
-                    }).setOnComplete(() => {
+                    }).setOnComplete(() =>
+                    {
                         saveMenuGroup.alpha = 1f;
                     });
             }
@@ -168,13 +172,13 @@ namespace Fungus
         public void EnableSaveOrLoadPanel()
         {
             var saveManager = FungusManager.Instance.SaveManager;
-            saveDataKey[2] = PlayerPrefs.GetString("SaveKeyOne","0");
+            saveDataKey[2] = PlayerPrefs.GetString("SaveKeyOne", "0");
             saveDataKey[3] = PlayerPrefs.GetString("SaveKeyTwo", "0");
             saveDataKey[4] = PlayerPrefs.GetString("SaveKeyThree", "0");
             for (int s = 0; s < 3; s++)
             {
                 Debug.Log("Show");
-                if (saveManager.SaveDataExists(saveDataKey[s+2]) && saveDataKey[s + 2] != "0")
+                if (saveManager.SaveDataExists(saveDataKey[s + 2]) && saveDataKey[s + 2] != "0")
                 {
                     int n = s + 1;
                     int x = s + 2;
@@ -182,7 +186,7 @@ namespace Fungus
                     splittime = saveDataKey[x].Split('Y');
                     string dates = splittime[0].Replace('Z', '/');
                     saveDate[s].text = dates;
-                    string minutes = splittime[1].Replace('Z',':');
+                    string minutes = splittime[1].Replace('Z', ':');
                     saveMinuet[s].text = minutes + splittime[2];
                     GetImage(x);
                     saveImages[s].sprite = GetSprite(x);
@@ -260,6 +264,32 @@ namespace Fungus
             SavePanel.SetActive(false);
         }
 
+        public void mainMenuLoad()
+        {
+            var saveManager = FungusManager.Instance.SaveManager;
+            saveDataKey[2] = PlayerPrefs.GetString("SaveKeyOne", "0");
+            saveDataKey[3] = PlayerPrefs.GetString("SaveKeyTwo", "0");
+            saveDataKey[4] = PlayerPrefs.GetString("SaveKeyThree", "0");
+            for (int s = 0; s < 3; s++)
+            {
+                Debug.Log("Show");
+                if (saveManager.SaveDataExists(saveDataKey[s + 2]) && saveDataKey[s + 2] != "0")
+                {
+                    int n = s + 1;
+                    int x = s + 2;
+                    saveTitle[s].text = "Save Data" + " " + n.ToString();
+                    splittime = saveDataKey[x].Split('Y');
+                    string dates = splittime[0].Replace('Z', '/');
+                    saveDate[s].text = dates;
+                    string minutes = splittime[1].Replace('Z', ':');
+                    saveMinuet[s].text = minutes + splittime[2];
+                    GetImage(x);
+                    saveImages[s].sprite = GetSprite(x);
+                    Debug.Log("Show Information");
+                }
+
+            }
+        }
         #endregion
 
         #region Save and Load Function
@@ -294,7 +324,7 @@ namespace Fungus
                 }
 
                 Rect newRect = new Rect(0, 0, 800, 640);
-                ScreenShot = CaptureCamera(Camera.main, newRect,i);
+                ScreenShot = CaptureCamera(Camera.main, newRect, i);
                 GetImage(i);
                 saveDataKey[i] = readTime;
                 PlayerPrefs.SetString("SaveKeyOne", saveDataKey[2]);
@@ -305,9 +335,9 @@ namespace Fungus
             }
         }
 
-        Sprite GetSprite(int num) 
+        Sprite GetSprite(int num)
         {
-            string filename = Application.dataPath + "/Screenshot" + num + ".png"; 
+            string filename = Application.dataPath + "/Screenshot" + num + ".png";
             FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
             fs.Seek(0, SeekOrigin.Begin);
             imageByte = new byte[fs.Length];
@@ -328,7 +358,7 @@ namespace Fungus
         void GetImage(int num)
         {
             //string filename = "/Project/DogDaysOfFall/DogDaysOfFall/Assets/Screenshot.png";
-            string filename = Application.dataPath + "/Screenshot"+num+".png";
+            string filename = Application.dataPath + "/Screenshot" + num + ".png";
             //Texture2D _tex = (Texture2D)Resources.Load("Lighthouse");
             FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
             FileInfo fi = new FileInfo(Application.dataPath + "/Screenshot" + num + ".png");
@@ -420,7 +450,7 @@ namespace Fungus
 
         public void ActivateFastForward()
         {
-            
+
             hasStartedFastForward = true;
         }
 
@@ -436,7 +466,7 @@ namespace Fungus
                 dialogInput.SetNextLineFlag();
                 Invoke("toOK", 3f);
             }
-            
+
         }
 
         private void toOK()
