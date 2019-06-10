@@ -450,17 +450,18 @@ namespace Fungus
 
         public virtual void Load(int i)
         {
-            if (SavePanel.activeInHierarchy)
-            {
-                SavePanel.GetComponentInChildren<Animator>().SetBool("LClose", false);
-                Invoke("closeSavePanel", 0.4f);
-            }
 
             var saveManager = FungusManager.Instance.SaveManager;
 
             if (saveManager.SaveDataExists(saveDataKey[i]))
             {
                 saveManager.Load(saveDataKey[i]);
+
+                if (SavePanel.activeInHierarchy)
+                {
+                    SavePanel.GetComponentInChildren<Animator>().SetBool("LClose", false);
+                    Invoke("closeSavePanel", 0.4f);
+                }
             }
 
         }
