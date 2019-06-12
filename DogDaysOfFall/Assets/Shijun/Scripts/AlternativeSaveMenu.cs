@@ -37,6 +37,8 @@ namespace Fungus
         // new --------------------------------------
         [Tooltip("The CanvasGroup containing the save menu buttons")]
         [SerializeField] protected CanvasGroup saveMenuGroup;
+
+        [SerializeField] protected GameObject buttonsPanel;
         [Tooltip("Put Save Panel over there")]
         [SerializeField] protected GameObject SavePanel;
         public static bool SaveMenuActive { get { return saveMenuActive; } set { saveMenuActive = value; } }
@@ -82,6 +84,7 @@ namespace Fungus
             if (!saveMenuActive)
             {
                 saveMenuGroup.alpha = 0f;
+                buttonsPanel.SetActive(false);
             }
         }
 
@@ -124,12 +127,14 @@ namespace Fungus
 
             if (saveMenuActive)
             {
+                buttonsPanel.SetActive(false);
                 // Switch menu off
                 LeanTween.value(saveMenuGroup.gameObject, saveMenuGroup.alpha, 0f, 0.2f)
                     .setEase(LeanTweenType.easeOutQuint)
                     .setOnUpdate((t) =>
                     {
                         saveMenuGroup.alpha = t;
+
                     }).setOnComplete(() =>
                     {
                         saveMenuGroup.alpha = 0f;
@@ -137,6 +142,7 @@ namespace Fungus
             }
             else
             {
+                buttonsPanel.SetActive(true);
                 // Switch menu on
                 LeanTween.value(saveMenuGroup.gameObject, saveMenuGroup.alpha, 1f, 0.2f)
                     .setEase(LeanTweenType.easeOutQuint)
