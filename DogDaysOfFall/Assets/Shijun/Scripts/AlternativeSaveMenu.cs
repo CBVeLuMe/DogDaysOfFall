@@ -452,7 +452,7 @@ namespace Fungus
         public void ActivateAutoPlay()
         {
             hasStartedAutoPlay = true;
-            StartCoroutine("AutoPlayButton");h
+            StartCoroutine("AutoPlayButton");
         }
 
         public void DeactivateAutoPlay()
