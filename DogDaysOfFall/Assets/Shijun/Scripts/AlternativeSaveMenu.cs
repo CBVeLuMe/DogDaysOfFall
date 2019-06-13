@@ -54,7 +54,6 @@ namespace Fungus
 
         protected static bool hasLoadedOnStart = false;
 
-        protected bool oktoDe = false;
 
         protected virtual void Awake()
         {
@@ -417,87 +416,82 @@ namespace Fungus
         #region Fastforward and AutoPlay
 
         [HideInInspector]
-        [SerializeField] protected bool hasStartedFastForward = false;
+        [SerializeField] private bool hasSkippedDialog = false;
+        
+        [HideInInspector]
+        [SerializeField] private bool hasAutoplayedDialog = false;
+
+        [HideInInspector]
+        [SerializeField] private bool canResetButton = false;
 
         private void Update()
         {
-            var saveManager = FungusManager.Instance.SaveManager;
+            SaveManager saveManager = FungusManager.Instance.SaveManager;
 
-            SkipSkipButton();
+            //InvokeSkipDialog();
+            //InvokeAutoplayDialog();
 
-            if (oktoDe)
+            if (canResetButton)
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    DeactivateFastForward();
-                    oktoDe = false;
+                    DeactivateSkipDialog();
+                    DeactivateAutoPlay();
+                    canResetButton = false;
                 }
-
             }
-            //StartFastForward(hasStartedFastForward);
         }
 
-        public void ActivateFastForward()
+        public void ActivateSkipDialog()
         {
-            hasStartedFastForward = true;
-            StartCoroutine("SkipSkipButton");
+            hasSkippedDialog = true;
+            StartCoroutine("InvokeSkipDialog");
         }
 
-        public void DeactivateFastForward()
+        public void DeactivateSkipDialog()
         {
-            hasStartedFastForward = false;
+            hasSkippedDialog = false;
         }
 
-        private bool hasStartedAutoPlay = false;
+        IEnumerator InvokeSkipDialog()
+        {
+            Debug.Log("Skip1");
+            Invoke("ResetButton", 0.1f);
+            while (hasSkippedDialog)
+            {
+                Debug.Log("Skip2");
+                dialogInput.SetNextLineFlag();
+                yield return new WaitForSeconds(0.1f);
+            }
+        }
+
         public void ActivateAutoPlay()
         {
-            hasStartedAutoPlay = true;
-            StartCoroutine("AutoPlayButton");
+            hasAutoplayedDialog = true;
+            StartCoroutine("InvokeAutoplayDialog");
         }
 
         public void DeactivateAutoPlay()
         {
-            hasStartedAutoPlay = false;
+            hasAutoplayedDialog = false;
         }
 
-
-
-        IEnumerator SkipSkipButton()
+        IEnumerator InvokeAutoplayDialog()
         {
-            while (hasStartedFastForward)
+            Debug.Log("Skip3");
+            Invoke("ResetButton", 0.1f);
+            while (hasAutoplayedDialog)
             {
-                dialogInput.SetNextLineFlag();
-                yield return new WaitForSeconds(0.1f);
-            }
-            //yield return null;
-        }
-        IEnumerator AutoPlayButton()
-        {
-            while (hasStartedAutoPlay)
-            {
+                Debug.Log("Skip4");
                 dialogInput.SetNextLineFlag();
                 yield return new WaitForSeconds(2f);
             }
-            //yield return null;
         }
 
-        protected void StartFastForward(bool hasStarted)
+        private void ResetButton()
         {
-
-            if (hasStarted)
-            {
-                dialogInput.SetNextLineFlag();
-                Invoke("toOK", 3f);
-            }
-
+            canResetButton = true;
         }
-
-        private void toOK()
-        {
-            oktoDe = true;
-        }
-
-
         #endregion
     }
 
