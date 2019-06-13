@@ -87,6 +87,8 @@ namespace Fungus
             }
         }
 
+
+
         public virtual void ToggleSaveMenu()
         {
             if (fadeTween != null)
@@ -415,7 +417,7 @@ namespace Fungus
 
         [HideInInspector]
         [SerializeField] private bool hasSkippedDialog = false;
-
+        
         [HideInInspector]
         [SerializeField] private bool hasAutoplayedDialog = false;
 
@@ -453,10 +455,11 @@ namespace Fungus
 
         IEnumerator InvokeSkipDialog()
         {
-            ToggleSaveMenu();
+            Debug.Log("Skip1");
             Invoke("ResetButton", 0.1f);
             while (hasSkippedDialog)
             {
+                Debug.Log("Skip2");
                 dialogInput.SetNextLineFlag();
                 yield return new WaitForSeconds(0.1f);
             }
@@ -475,10 +478,11 @@ namespace Fungus
 
         IEnumerator InvokeAutoplayDialog()
         {
-            ToggleSaveMenu();
+            Debug.Log("Skip3");
             Invoke("ResetButton", 0.1f);
             while (hasAutoplayedDialog)
             {
+                Debug.Log("Skip4");
                 dialogInput.SetNextLineFlag();
                 yield return new WaitForSeconds(2f);
             }
