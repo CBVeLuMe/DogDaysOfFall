@@ -88,33 +88,6 @@ namespace Fungus
             }
         }
 
-        float waitingClick = 0f;
-        private void SetupTimer()
-        {
-            waitingClick -= Time.deltaTime;
-        }
-
-        private void Update()
-        {
-            //SetupTimer();
-
-            var saveManager = FungusManager.Instance.SaveManager;
-
-            SkipSkipButton();
-
-            if (oktoDe)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    DeactivateFastForward();
-                    oktoDe = false;
-                }
-
-            }
-            //StartFastForward(hasStartedFastForward);
-
-
-        }
 
 
         public virtual void ToggleSaveMenu()
@@ -209,49 +182,8 @@ namespace Fungus
                 }
 
             }
-            /*
-            for (int i = 0; i < saveDataKey.Length; i++)
-            {
-                if (saveManager.SaveDataExists(saveDataKey[i]))
-                {
-                    if (i > 1)
-                    {
-                        for (int s = 0; s < 3; s++)
-                        {
-                            if (saveDataKey[s+2] != "0")
-                            {
-                                int n = s + 1;
-                                int x = s + 2;
-                                saveTitle[s].text = "Save Data"+ " "+ n.ToString();
-                                splittime = saveDataKey[s+2].Split(' ');
-                                saveDate[s].text = splittime[0];
-                                saveMinuet[s].text = splittime[1]+splittime[2];
-                                //GetImage(x);
-                                //saveImages[s].sprite = GetSprite(x);
-                            }
-                            
-                        }
-                    }
-                }
-               
-            }
-            */
             SavePanel.SetActive(true);
 
-            //if (SaveOrLoad)
-            //{
-            //    Debug.Log("1");
-            //    saveButtons[0].onClick.AddListener(() => Save(2));
-            //    saveButtons[1].onClick.AddListener(() => Save(3));
-            //    saveButtons[2].onClick.AddListener(() => Save(4));
-
-            //}
-            //else
-            //{
-            //    saveButtons[0].onClick.AddListener(() => Load(2));
-            //    saveButtons[1].onClick.AddListener(() => Load(3));
-            //    saveButtons[2].onClick.AddListener(() => Load(4));
-            //}
             SavePanel.GetComponentInChildren<Animator>().SetBool("LClose", true);
         }
 
@@ -487,6 +419,23 @@ namespace Fungus
         [HideInInspector]
         [SerializeField] protected bool hasStartedFastForward = false;
 
+        private void Update()
+        {
+            var saveManager = FungusManager.Instance.SaveManager;
+
+            SkipSkipButton();
+
+            if (oktoDe)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    DeactivateFastForward();
+                    oktoDe = false;
+                }
+
+            }
+            //StartFastForward(hasStartedFastForward);
+        }
 
         public void ActivateFastForward()
         {
@@ -503,7 +452,7 @@ namespace Fungus
         public void ActivateAutoPlay()
         {
             hasStartedAutoPlay = true;
-            StartCoroutine("AutoPlayButton");
+            StartCoroutine("AutoPlayButton");h
         }
 
         public void DeactivateAutoPlay()
@@ -513,13 +462,10 @@ namespace Fungus
 
 
 
-        //private
         IEnumerator SkipSkipButton()
         {
-            Debug.Log("skip1");
             while (hasStartedFastForward)
             {
-                Debug.Log("skip2");
                 dialogInput.SetNextLineFlag();
                 yield return new WaitForSeconds(0.1f);
             }
@@ -527,10 +473,8 @@ namespace Fungus
         }
         IEnumerator AutoPlayButton()
         {
-            Debug.Log("skip3");
             while (hasStartedAutoPlay)
             {
-                Debug.Log("skip4");
                 dialogInput.SetNextLineFlag();
                 yield return new WaitForSeconds(2f);
             }
