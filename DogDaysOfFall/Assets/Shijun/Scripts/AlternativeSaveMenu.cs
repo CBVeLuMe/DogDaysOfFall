@@ -87,6 +87,33 @@ namespace Fungus
             }
         }
 
+        float waitingClick = 0f;
+        private void SetupTimer()
+        {
+            waitingClick -= Time.deltaTime;
+        }
+
+        private void Update()
+        {
+            //SetupTimer();
+
+            var saveManager = FungusManager.Instance.SaveManager;
+
+            SkipSkipButton();
+
+            if (oktoDe)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    DeactivateFastForward();
+                    oktoDe = false;
+                }
+
+            }
+            //StartFastForward(hasStartedFastForward);
+
+
+        }
 
 
         public virtual void ToggleSaveMenu()
@@ -181,8 +208,49 @@ namespace Fungus
                 }
 
             }
+            /*
+            for (int i = 0; i < saveDataKey.Length; i++)
+            {
+                if (saveManager.SaveDataExists(saveDataKey[i]))
+                {
+                    if (i > 1)
+                    {
+                        for (int s = 0; s < 3; s++)
+                        {
+                            if (saveDataKey[s+2] != "0")
+                            {
+                                int n = s + 1;
+                                int x = s + 2;
+                                saveTitle[s].text = "Save Data"+ " "+ n.ToString();
+                                splittime = saveDataKey[s+2].Split(' ');
+                                saveDate[s].text = splittime[0];
+                                saveMinuet[s].text = splittime[1]+splittime[2];
+                                //GetImage(x);
+                                //saveImages[s].sprite = GetSprite(x);
+                            }
+                            
+                        }
+                    }
+                }
+               
+            }
+            */
             SavePanel.SetActive(true);
 
+            //if (SaveOrLoad)
+            //{
+            //    Debug.Log("1");
+            //    saveButtons[0].onClick.AddListener(() => Save(2));
+            //    saveButtons[1].onClick.AddListener(() => Save(3));
+            //    saveButtons[2].onClick.AddListener(() => Save(4));
+
+            //}
+            //else
+            //{
+            //    saveButtons[0].onClick.AddListener(() => Load(2));
+            //    saveButtons[1].onClick.AddListener(() => Load(3));
+            //    saveButtons[2].onClick.AddListener(() => Load(4));
+            //}
             SavePanel.GetComponentInChildren<Animator>().SetBool("LClose", true);
         }
 
@@ -424,6 +492,7 @@ namespace Fungus
         [HideInInspector]
         [SerializeField] private bool canResetButton = false;
 
+<<<<<<< HEAD
         private void Update()
         {
             SaveManager saveManager = FungusManager.Instance.SaveManager;
@@ -440,6 +509,13 @@ namespace Fungus
                     canResetButton = false;
                 }
             }
+=======
+
+        public void ActivateFastForward()
+        {
+            hasStartedFastForward = true;
+            StartCoroutine("SkipSkipButton");
+>>>>>>> parent of 151fe73... Update AlternativeSaveMenu.cs
         }
 
         public void ActivateSkipDialog()
@@ -450,6 +526,7 @@ namespace Fungus
 
         public void DeactivateSkipDialog()
         {
+<<<<<<< HEAD
             hasSkippedDialog = false;
         }
 
@@ -460,6 +537,26 @@ namespace Fungus
             while (hasSkippedDialog)
             {
                 Debug.Log("Skip2");
+=======
+            hasStartedAutoPlay = true;
+            StartCoroutine("AutoPlayButton");
+        }
+
+        public void DeactivateAutoPlay()
+        {
+            hasStartedAutoPlay = false;
+        }
+
+
+
+        //private
+        IEnumerator SkipSkipButton()
+        {
+            Debug.Log("skip1");
+            while (hasStartedFastForward)
+            {
+                Debug.Log("skip2");
+>>>>>>> parent of 151fe73... Update AlternativeSaveMenu.cs
                 dialogInput.SetNextLineFlag();
                 yield return new WaitForSeconds(0.1f);
             }
@@ -467,8 +564,19 @@ namespace Fungus
 
         public void ActivateAutoPlay()
         {
+<<<<<<< HEAD
             hasAutoplayedDialog = true;
             StartCoroutine("InvokeAutoplayDialog");
+=======
+            Debug.Log("skip3");
+            while (hasStartedAutoPlay)
+            {
+                Debug.Log("skip4");
+                dialogInput.SetNextLineFlag();
+                yield return new WaitForSeconds(2f);
+            }
+            //yield return null;
+>>>>>>> parent of 151fe73... Update AlternativeSaveMenu.cs
         }
 
         public void DeactivateAutoPlay()
