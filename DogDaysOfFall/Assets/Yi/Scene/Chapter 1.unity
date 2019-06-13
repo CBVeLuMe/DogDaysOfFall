@@ -1074,10 +1074,8 @@ GameObject:
   - component: {fileID: 817489724}
   - component: {fileID: 817489723}
   - component: {fileID: 817489722}
-  - component: {fileID: 817489721}
   - component: {fileID: 817489720}
   - component: {fileID: 817489719}
-  - component: {fileID: 817489656}
   - component: {fileID: 817489651}
   - component: {fileID: 817489548}
   - component: {fileID: 817489390}
@@ -1153,6 +1151,9 @@ GameObject:
   - component: {fileID: 817489736}
   - component: {fileID: 817489735}
   - component: {fileID: 817489734}
+  - component: {fileID: 817489794}
+  - component: {fileID: 817489656}
+  - component: {fileID: 817489721}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1196,8 +1197,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 56.700684
-    y: 74.86224
-    width: 150.25705
+    y: 75.93983
+    width: 132.8877
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1223,11 +1224,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -36.999676, y: -248.79465}
+  scrollPos: {x: -13.820852, y: -136.79736}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 669
-  zoom: 0.7780001
+  blockViewHeight: 433
+  zoom: 0.74799997
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -1237,7 +1238,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 817489408}
   selectedCommands:
-  - {fileID: 817489789}
+  - {fileID: 817489695}
   variables:
   - {fileID: 817489381}
   - {fileID: 817489698}
@@ -1353,7 +1354,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 69.26828
     y: 238.36588
-    width: 121.97942
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1379,9 +1380,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 59.713287
-    y: 324.63583
-    width: 142.54498
+    x: 60.790874
+    y: 325.7134
+    width: 124.86631
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1749,11 +1750,11 @@ MonoBehaviour:
   - {fileID: 817489389}
   - {fileID: 817489544}
   - {fileID: 817489546}
-  - {fileID: 817489545}
   - {fileID: 817489547}
   - {fileID: 817489552}
   - {fileID: 817489533}
   - {fileID: 817489701}
+  - {fileID: 817489545}
   - {fileID: 817489398}
   - {fileID: 817489531}
   - {fileID: 817489560}
@@ -1978,7 +1979,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 262.0606
     y: 337.2889
-    width: 161.82516
+    width: 142.246
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2002,14 +2003,15 @@ MonoBehaviour:
   - {fileID: 817489693}
   - {fileID: 817489692}
   - {fileID: 817489411}
+  - {fileID: 817489543}
   - {fileID: 817489530}
-  - {fileID: 817489523}
   - {fileID: 817489525}
+  - {fileID: 817489523}
+  - {fileID: 817489794}
   - {fileID: 817489438}
   - {fileID: 817489526}
   - {fileID: 817489731}
   - {fileID: 817489573}
-  - {fileID: 817489543}
   - {fileID: 817489632}
   - {fileID: 817489619}
   - {fileID: 817489542}
@@ -2176,7 +2178,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1324.7081
     y: 347.2333
-    width: 174.67865
+    width: 152.94118
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2260,7 +2262,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 688.52673
     y: 337.27698
-    width: 197.81488
+    width: 171.65776
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2636,7 +2638,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 473.7975
     y: 434.66547
-    width: 156.68379
+    width: 139.5722
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2664,7 +2666,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 471.2649
     y: 384.01666
-    width: 123.26477
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2692,7 +2694,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 469.99902
     y: 339.6987
-    width: 147.68637
+    width: 132.8877
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2720,7 +2722,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 468.5726
     y: 281.5589
-    width: 151.5424
+    width: 135.5615
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3049,7 +3051,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1130.5172
     y: 397.30118
-    width: 157.96915
+    width: 142.246
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3078,7 +3080,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1134.2184
     y: 312.51166
-    width: 141.25963
+    width: 128.87701
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3538,9 +3540,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 932.3895
-    y: 354.22858
-    width: 174.67865
+    x: 933.72644
+    y: 358.23926
+    width: 152.94118
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3707,7 +3709,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 697.6936
     y: 395.39206
-    width: 128.40616
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3755,7 +3757,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1530.4764
     y: 345.0933
-    width: 161.82516
+    width: 142.246
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3768,15 +3770,17 @@ MonoBehaviour:
   - {fileID: 817489734}
   - {fileID: 817489481}
   - {fileID: 817489671}
-  - {fileID: 817489541}
   - {fileID: 817489540}
   - {fileID: 817489479}
+  - {fileID: 817489541}
   - {fileID: 817489529}
   - {fileID: 817489478}
   - {fileID: 817489528}
   - {fileID: 817489649}
-  - {fileID: 817489539}
+  - {fileID: 817489721}
   - {fileID: 817489476}
+  - {fileID: 817489539}
+  - {fileID: 817489656}
   - {fileID: 817489538}
   - {fileID: 817489532}
   - {fileID: 817489648}
@@ -3961,7 +3965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 144
   indentLevel: 0
-  storyText: "I\u2019m home. Heh, this place always feels a little depressing."
+  storyText: "I\u2019m home."
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -4028,10 +4032,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 142
   indentLevel: 0
-  duration: 1
+  duration: 2
   fadeOut: 1
   targetView: {fileID: 1142237096}
-  waitUntilFinished: 1
+  waitUntilFinished: 0
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTexture: {fileID: 0}
   targetCamera: {fileID: 0}
@@ -4176,7 +4180,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1329.4423
     y: 291.7251
-    width: 127.12081
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5217,7 +5221,7 @@ MonoBehaviour:
   indentLevel: 0
   _duration:
     floatRef: {fileID: 0}
-    floatVal: 1.6
+    floatVal: 0.5
   durationOLD: 0
 --- !u!114 &817489526
 MonoBehaviour:
@@ -5511,13 +5515,13 @@ MonoBehaviour:
   portrait: {fileID: 0}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 1825565117}
+  toPosition: {fileID: 0}
   facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
-  move: 1
+  move: 0
   shiftIntoPlace: 0
   waitUntilFinished: 1
 --- !u!114 &817489539
@@ -5540,14 +5544,14 @@ MonoBehaviour:
   replacedCharacter: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5c57a00dffbf37b4a8ddfec07874abbc, type: 3}
   offset: 0
-  fromPosition: {fileID: 1825565117}
+  fromPosition: {fileID: 0}
   toPosition: {fileID: 1327676456}
   facing: 2
   useDefaultSettings: 1
   fadeDuration: 0.5
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
-  move: 1
+  move: 0
   shiftIntoPlace: 0
   waitUntilFinished: 1
 --- !u!114 &817489540
@@ -5601,13 +5605,13 @@ MonoBehaviour:
   portrait: {fileID: 0}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 737509901}
+  toPosition: {fileID: 0}
   facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
-  move: 1
+  move: 0
   shiftIntoPlace: 0
   waitUntilFinished: 1
 --- !u!114 &817489542
@@ -5823,7 +5827,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -140.40166
     y: 58.05368
-    width: 160.53983
+    width: 140.90909
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6809,7 +6813,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 691.10504
     y: 285.30258
-    width: 123.26477
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7230,7 +7234,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 946.1999
     y: 288.99023
-    width: 127.12081
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7727,8 +7731,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 266
   indentLevel: 0
-  storyText: "That\u2019s just your memory going bad, there\u2019s no way I would
-    complain about the same thing on more than one occasion. "
+  storyText: "That\u2019s just your memory going bad, there\u2019s {i}no way{/i} I
+    would complain about the same thing on more than one occasion. "
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -7868,8 +7872,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 261
   indentLevel: 0
-  storyText: Now, I have another hole in my favorite sweater, and I got thrown through
-    a door.
+  storyText: Now, I have another hole in my favorite sweater, {i}and{/i} I got thrown
+    through a door.
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -8403,7 +8407,6 @@ MonoBehaviour:
   - {fileID: 817489673}
   - {fileID: 817489653}
   - {fileID: 817489652}
-  - {fileID: 817489656}
   - {fileID: 817489719}
   - {fileID: 817489651}
 --- !u!114 &817489651
@@ -8541,34 +8544,31 @@ MonoBehaviour:
   - Leila's apartment_3
 --- !u!114 &817489656
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817489376}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 415
+  itemId: 492
   indentLevel: 0
-  display: 1
-  stage: {fileID: 0}
+  storyText: Heh, this place always feels a little depressing.
+  description: 
   character: {fileID: 166583802}
-  replacedCharacter: {fileID: 0}
   portrait: {fileID: 0}
-  offset: 0
-  fromPosition: {fileID: 0}
-  toPosition: {fileID: 1327676456}
-  facing: 2
-  useDefaultSettings: 1
-  fadeDuration: 0.5
-  moveDuration: 1
-  shiftOffset: {x: 0, y: 0}
-  move: 0
-  shiftIntoPlace: 0
-  waitUntilFinished: 1
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &817489657
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -8634,7 +8634,6 @@ MonoBehaviour:
   - {fileID: 817489675}
   - {fileID: 817489658}
   - {fileID: 817489657}
-  - {fileID: 817489721}
   - {fileID: 817489722}
   - {fileID: 817489720}
 --- !u!114 &817489660
@@ -8944,7 +8943,7 @@ MonoBehaviour:
   indentLevel: 0
   _duration:
     floatRef: {fileID: 0}
-    floatVal: 2
+    floatVal: 1
   durationOLD: 0
 --- !u!114 &817489672
 MonoBehaviour:
@@ -9603,7 +9602,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 166583802}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: e93186d34224ae74eb98ad836c977191, type: 3}
+  portrait: {fileID: 21300000, guid: a93c886344f42d84e8012b478af1218f, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 1327676456}
@@ -9630,8 +9629,7 @@ MonoBehaviour:
   itemId: 368
   indentLevel: 0
   storyText: "Of course, but let\u2019s wait to cross that bridge \u2018til we get
-    there -if we ever do. Since we seem to have this same conversation every time
-    you actually have to do work."
+    there -if we ever do."
   description: 
   character: {fileID: 1995605269}
   portrait: {fileID: 0}
@@ -10884,7 +10882,7 @@ MonoBehaviour:
     vector3Val: {x: 0, y: 0, z: 0}
 --- !u!114 &817489721
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -10894,22 +10892,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 412
+  itemId: 493
   indentLevel: 0
   display: 1
   stage: {fileID: 0}
   character: {fileID: 166583802}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 213556eb989deb64a951a719f361e8c4, type: 3}
+  portrait: {fileID: 21300000, guid: 29d5c917fa1dafd49af651d0a86343c4, type: 3}
   offset: 0
-  fromPosition: {fileID: 0}
+  fromPosition: {fileID: 1825565117}
   toPosition: {fileID: 1327676456}
   facing: 2
   useDefaultSettings: 1
   fadeDuration: 0.5
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
-  move: 0
+  move: 1
   shiftIntoPlace: 0
   waitUntilFinished: 1
 --- !u!114 &817489722
@@ -12255,7 +12253,7 @@ MonoBehaviour:
   itemId: 460
   indentLevel: 0
   storyText: "I know I only took on the patrol job because I need to supplement my
-    food allotment.. I still can\u2019t believe this bar and its watered down drinks
+    food allotment. I still can\u2019t believe this bar and its watered down drinks
     keeps you afloat."
   description: 
   character: {fileID: 166583802}
@@ -13120,6 +13118,24 @@ MonoBehaviour:
   move: 0
   shiftIntoPlace: 0
   waitUntilFinished: 0
+--- !u!114 &817489794
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817489376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 491
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 1
+  durationOLD: 0
 --- !u!1001 &845152681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13485,7 +13501,7 @@ PrefabInstance:
     - target: {fileID: 3881509357167130389, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000030517578
+      value: 0.0008544922
       objectReference: {fileID: 0}
     - target: {fileID: 3881509357167130389, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}

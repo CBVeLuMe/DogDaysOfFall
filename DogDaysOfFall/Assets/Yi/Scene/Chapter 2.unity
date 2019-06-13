@@ -448,6 +448,107 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 534642157091520460}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &166583800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 166583801}
+  - component: {fileID: 166583802}
+  m_Layer: 0
+  m_Name: Leila
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &166583801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166583800}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -237.8172, y: -36.396675, z: -7.625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 747671429}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &166583802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166583800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Leila
+  nameColor: {r: 1, g: 0.61538076, b: 0, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: 5d49d03d25fc08041a9fb77067929236, type: 3}
+  - {fileID: 21300000, guid: b6a9c6957c6df1d4f92d7e2bd0904505, type: 3}
+  - {fileID: 21300000, guid: af4e062c335051349ac6d0d12451e5d1, type: 3}
+  - {fileID: 21300000, guid: b397429908b6ddc458e4bccc7196f920, type: 3}
+  - {fileID: 21300000, guid: 72124711cca8b374c9a897233d5ff219, type: 3}
+  - {fileID: 21300000, guid: 3e0a76eaf55a23241b278456185c51ad, type: 3}
+  - {fileID: 21300000, guid: 96b25f852420a53498830e3e0bf69102, type: 3}
+  - {fileID: 21300000, guid: 0d95a2d494d1dba49b3a55ecca8a25ff, type: 3}
+  - {fileID: 21300000, guid: 275b94c962462564b880bc53dcd3aec3, type: 3}
+  - {fileID: 21300000, guid: 9e1f0f8f7bef55f4b87fcd741c372ed2, type: 3}
+  - {fileID: 21300000, guid: 97ab323451d9e674fb19c1cc4cffb3aa, type: 3}
+  - {fileID: 21300000, guid: f8de1b029b3508548a9e0a1d638ca06c, type: 3}
+  - {fileID: 21300000, guid: 1aae1ca1983a61340a949260ca5fa0b0, type: 3}
+  - {fileID: 21300000, guid: 228ac8dff22f5974f8e7563ea4fb17a3, type: 3}
+  - {fileID: 21300000, guid: 9a4ccb14f12d8fd45b3d973f6fc9440e, type: 3}
+  - {fileID: 21300000, guid: 29d5c917fa1dafd49af651d0a86343c4, type: 3}
+  - {fileID: 21300000, guid: 6df4c7718e6d6da46ac804b6e0e38eb6, type: 3}
+  - {fileID: 21300000, guid: ff85f22fc801f1540aef87c9873cbabd, type: 3}
+  - {fileID: 21300000, guid: bf5114680b48f7849b72855b645d16ec, type: 3}
+  - {fileID: 21300000, guid: 9d07dcb554aad5a45ba148fd5b102392, type: 3}
+  - {fileID: 21300000, guid: c8ddfb36c5fee484cb525dad7963bf3c, type: 3}
+  - {fileID: 21300000, guid: f407f03d289e0464a9babd668c6f608f, type: 3}
+  - {fileID: 21300000, guid: 1c57fac97e1b77446ae531cfcc7a040b, type: 3}
+  - {fileID: 21300000, guid: c66626f92d908e145996d006f9c638a5, type: 3}
+  - {fileID: 21300000, guid: 67113fb52de40f2478ca51470931153e, type: 3}
+  - {fileID: 21300000, guid: 1ed9549329f33d04d8439cce64eb1e77, type: 3}
+  - {fileID: 21300000, guid: ce6a5744d015b9d4fb0abe09ce127f10, type: 3}
+  - {fileID: 21300000, guid: 32133c71d694bd142b1cfb5626306eee, type: 3}
+  - {fileID: 21300000, guid: 6becab443afa2324fadf4b368a27423b, type: 3}
+  - {fileID: 21300000, guid: 05792f36499e1c646a325d5a4682016d, type: 3}
+  - {fileID: 21300000, guid: cdb9099bcac5b8943b5fc03634edbeeb, type: 3}
+  - {fileID: 21300000, guid: 28b520d888103ae468c1ca748cf1d5e5, type: 3}
+  - {fileID: 21300000, guid: bf56367111b4e4842b40ac9271c7f59f, type: 3}
+  - {fileID: 21300000, guid: a9cabad44e6ac4e4cb8bfacd8e1c5ddd, type: 3}
+  - {fileID: 21300000, guid: 982c170fea931f7478a2c4f0df20b42a, type: 3}
+  - {fileID: 21300000, guid: ada4495c83e085e4fb5bfbb95de8c398, type: 3}
+  - {fileID: 21300000, guid: 5c57a00dffbf37b4a8ddfec07874abbc, type: 3}
+  - {fileID: 21300000, guid: 8a31a01353b71d240892dbad2cc7eda0, type: 3}
+  - {fileID: 21300000, guid: f6a0ccc8436a884498d00bc195b8092d, type: 3}
+  - {fileID: 21300000, guid: edf6ddbc1787d1f4cb00855ed9bf3864, type: 3}
+  - {fileID: 21300000, guid: 7c57f75102c746445a25376b65004375, type: 3}
+  - {fileID: 21300000, guid: 227cf0d48dccd774cbb0864b281f5ded, type: 3}
+  - {fileID: 21300000, guid: a93c886344f42d84e8012b478af1218f, type: 3}
+  - {fileID: 21300000, guid: e93186d34224ae74eb98ad836c977191, type: 3}
+  - {fileID: 21300000, guid: a390b0191af50bd4f9d08c5d08f010c7, type: 3}
+  - {fileID: 21300000, guid: 44cb34714aec8d34e98eba488aa8106c, type: 3}
+  - {fileID: 21300000, guid: 2cefbe8e3ef8ddc4383e45c18336ff43, type: 3}
+  - {fileID: 21300000, guid: 77ba9051f08184f4387b63ee100c49b2, type: 3}
+  - {fileID: 21300000, guid: 594570a03965ba74f9cb978f5050cb64, type: 3}
+  - {fileID: 21300000, guid: 51bf5a09241303f419013e3d45ba5e1f, type: 3}
+  - {fileID: 21300000, guid: 2d75e256da3c8a94987472b8d1573165, type: 3}
+  portraitsFace: 2
+  setSayDialog: {fileID: 0}
+  description: 
 --- !u!1 &210023699
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,77 +807,6 @@ MonoBehaviour:
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 
---- !u!1 &227273745
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 227273746}
-  - component: {fileID: 227273747}
-  m_Layer: 0
-  m_Name: Leila
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &227273746
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227273745}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -237.8172, y: -36.396675, z: -7.625}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 747671429}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &227273747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227273745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: Leila
-  nameColor: {r: 1, g: 0.61538076, b: 0, a: 1}
-  soundEffect: {fileID: 0}
-  portraits:
-  - {fileID: 21300000, guid: 29d5c917fa1dafd49af651d0a86343c4, type: 3}
-  - {fileID: 21300000, guid: 6df4c7718e6d6da46ac804b6e0e38eb6, type: 3}
-  - {fileID: 21300000, guid: 5d49d03d25fc08041a9fb77067929236, type: 3}
-  - {fileID: 21300000, guid: b397429908b6ddc458e4bccc7196f920, type: 3}
-  - {fileID: 21300000, guid: f8de1b029b3508548a9e0a1d638ca06c, type: 3}
-  - {fileID: 21300000, guid: 9a4ccb14f12d8fd45b3d973f6fc9440e, type: 3}
-  - {fileID: 21300000, guid: f407f03d289e0464a9babd668c6f608f, type: 3}
-  - {fileID: 21300000, guid: 1ed9549329f33d04d8439cce64eb1e77, type: 3}
-  - {fileID: 21300000, guid: ce6a5744d015b9d4fb0abe09ce127f10, type: 3}
-  - {fileID: 21300000, guid: 32133c71d694bd142b1cfb5626306eee, type: 3}
-  - {fileID: 21300000, guid: 05792f36499e1c646a325d5a4682016d, type: 3}
-  - {fileID: 21300000, guid: cdb9099bcac5b8943b5fc03634edbeeb, type: 3}
-  - {fileID: 21300000, guid: ada4495c83e085e4fb5bfbb95de8c398, type: 3}
-  - {fileID: 21300000, guid: 5c57a00dffbf37b4a8ddfec07874abbc, type: 3}
-  - {fileID: 21300000, guid: 8a31a01353b71d240892dbad2cc7eda0, type: 3}
-  - {fileID: 21300000, guid: f6a0ccc8436a884498d00bc195b8092d, type: 3}
-  - {fileID: 21300000, guid: edf6ddbc1787d1f4cb00855ed9bf3864, type: 3}
-  - {fileID: 21300000, guid: 7c57f75102c746445a25376b65004375, type: 3}
-  - {fileID: 21300000, guid: a93c886344f42d84e8012b478af1218f, type: 3}
-  - {fileID: 21300000, guid: e93186d34224ae74eb98ad836c977191, type: 3}
-  - {fileID: 21300000, guid: a390b0191af50bd4f9d08c5d08f010c7, type: 3}
-  portraitsFace: 2
-  setSayDialog: {fileID: 0}
-  description: 
 --- !u!1 &233576187
 GameObject:
   m_ObjectHideFlags: 1
@@ -821,57 +851,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &304509812
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 304509813}
-  - component: {fileID: 304509814}
-  m_Layer: 0
-  m_Name: Wild A
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &304509813
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 304509812}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -237.8172, y: -36.396675, z: -7.625}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 747671429}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &304509814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 304509812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: WILD A
-  nameColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
-  soundEffect: {fileID: 0}
-  portraits:
-  - {fileID: 21300000, guid: 85991150774e1c44d908aa87483c239e, type: 3}
-  portraitsFace: 2
-  setSayDialog: {fileID: 0}
-  description: 
 --- !u!1 &407609680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,9 +1561,9 @@ Transform:
   m_LocalPosition: {x: 237.8172, y: 36.396675, z: 7.625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 227273746}
-  - {fileID: 1316747727}
-  - {fileID: 304509813}
+  - {fileID: 166583801}
+  - {fileID: 1248199729}
+  - {fileID: 1995605268}
   - {fileID: 213342201}
   - {fileID: 499643686}
   m_Father: {fileID: 0}
@@ -2925,7 +2904,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 67
     y: 71.12644
-    width: 141.7647
+    width: 141.75258
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2988,11 +2967,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 111.38241, y: 120.01844}
+  scrollPos: {x: 180.45084, y: 44.490295}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 508
-  zoom: 0.8500001
+  zoom: 0.96999997
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -3070,7 +3049,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Mmmmmm...
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 611c26940af12c44ba63d0e1bfc15ed5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3169,7 +3148,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 406.63248
     y: 73.36346
-    width: 164.11765
+    width: 162.37114
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3299,7 +3278,7 @@ MonoBehaviour:
   storyText: 'Oh no, did they catch someone out here by themselves? Why on earth are
     people walking around here at night anyway. '
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3327,7 +3306,7 @@ MonoBehaviour:
   storyText: Found you. Oh great, three of them all together this time. Those better
     not be the same three from early.
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3486,7 +3465,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Be safe dear and thank you.
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 6c11c0e31dfdb004491cae3afe45e76f, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3514,7 +3493,7 @@ MonoBehaviour:
   storyText: "No Freeman, that doesn\u2019t make it any better, but good try. I\u2019ll
     be back soon."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3541,7 +3520,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Yeah, yeah, I always am.
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3569,7 +3548,7 @@ MonoBehaviour:
   storyText: "Fine, fine, fine. I\u2019ll do it. Ugh, remind me to quit this job tomorrow
     morning. Anyway, where were they spotted this time?"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 611c26940af12c44ba63d0e1bfc15ed5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3597,7 +3576,7 @@ MonoBehaviour:
   storyText: "Near the area I sent you this afternoon. I don\u2019t know what they
     are looking for over there, anything really useful was pilfered years ago."
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 541fc32bd7ead944d8358c5266882cbb, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3625,7 +3604,7 @@ MonoBehaviour:
   storyText: "Oh good! Sending a poor, tired girl by herself down a bunch of dark
     alleys to look for a bunch of crazy people. Why won\u2019t this day end already?"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 611c26940af12c44ba63d0e1bfc15ed5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3652,7 +3631,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "You\u2019ve got to be kidding me. Please tell me you\u2019re lying Freeman."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3682,7 +3661,7 @@ MonoBehaviour:
     you\u2019re the one I have to ask to do this. Remember, this is what we agreed
     upon when you started."
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 541fc32bd7ead944d8358c5266882cbb, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3763,7 +3742,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Alright, alright, I\u2019m coming! Give me second."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3790,7 +3769,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: What can I help you with Freeman?
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3820,7 +3799,7 @@ MonoBehaviour:
     are afraid they\u2019ll try and enter their homes tonight. Unfortunately, you\u2019re
     technically still on patrol duty until morning."
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 6c11c0e31dfdb004491cae3afe45e76f, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3847,7 +3826,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "If it makes you feel any better, it\u2019s technically a brand-new day."
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 6c11c0e31dfdb004491cae3afe45e76f, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3874,7 +3853,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Come back later, it\u2019s still dark!"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 611c26940af12c44ba63d0e1bfc15ed5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3915,7 +3894,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 55.636047
     y: 145.96053
-    width: 157.0588
+    width: 154.12372
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4091,7 +4070,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: ' <Whimpering>'
   description: 
-  character: {fileID: 304509814}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: e72b65520aad7f7449ffb1c75058f67b, type: 3}
   voiceOverClip: {fileID: 8300000, guid: e10a5db428b4528488d4806228ee7c7a, type: 3}
   showAlways: 1
@@ -4118,7 +4097,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 261.13763
     y: 146.1793
-    width: 122.94117
+    width: 123.19588
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4216,7 +4195,7 @@ MonoBehaviour:
   storyText: "Hello? Is someone else here? It\u2019s alright\u2026 I won\u2019t hurt
     you."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: a50a3ebe81ce33c49803e4d3cbf266ea, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4270,7 +4249,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Dammit, I\u2019m too late. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4300,7 +4279,7 @@ MonoBehaviour:
     them now. I can only imagine how much that narrow alley must\u2019ve intensified
     that. Now, to check on the poor soul that crossed their path."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 611c26940af12c44ba63d0e1bfc15ed5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4345,7 +4324,7 @@ MonoBehaviour:
   storyText: "Phew, that went about as well as I could\u2019ve hoped. I hope this
     battery has enough juice left in it to work the horn. Here goes nothing."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: a50a3ebe81ce33c49803e4d3cbf266ea, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4418,7 +4397,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 407.96906
     y: 236.40318
-    width: 182.94116
+    width: 180.92784
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4495,7 +4474,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 406.81418
     y: 183.84819
-    width: 178.23528
+    width: 179.89691
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4564,7 +4543,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 415.1866
     y: 133.628
-    width: 164.11765
+    width: 162.37114
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4631,7 +4610,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "It\u2019s okay, I\u2019m a friend. Can I take a look at you?"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4686,7 +4665,7 @@ MonoBehaviour:
   storyText: "Oh my gods, she\u2019s really human. How in the\u2026  Wait, nevermind,
     are you alright?"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4759,7 +4738,7 @@ MonoBehaviour:
   storyText: "The bad ones are gone now. Please, just stay where you are, I\u2019m
     coming to you."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: a50a3ebe81ce33c49803e4d3cbf266ea, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5015,7 +4994,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: 'Uhhh, what am I doing? '
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 611c26940af12c44ba63d0e1bfc15ed5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5104,7 +5083,7 @@ MonoBehaviour:
   storyText: "\u2026 I\u2019m sorry love, I know you probably don\u2019t want to talk
     to anyone right now. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: a50a3ebe81ce33c49803e4d3cbf266ea, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5131,7 +5110,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Make yourself at home.
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5210,7 +5189,7 @@ MonoBehaviour:
   storyText: "Here you go. I\u2019ll open the balcony door just a bit to help air
     the place out because it probably smells like dog. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5237,7 +5216,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Alright\u2026 how about something to eat. Are you hungry at all love?"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5292,7 +5271,7 @@ MonoBehaviour:
   storyText: "Why don\u2019t you take a seat over here. You must still be pretty cold
     from being outside for so long, I\u2019ll grab you a blanket."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5319,7 +5298,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Here we are. I\u2019m going to set you down so I can get the door."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: a50a3ebe81ce33c49803e4d3cbf266ea, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5442,7 +5421,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 985.8115
     y: 158.11401
-    width: 124.11764
+    width: 123.19588
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5522,7 +5501,7 @@ MonoBehaviour:
   storyText: "That stubborn streak of yours know no bounds. If you want to keep the
     girl, that\u2019s your choice, but she can\u2019t stay here."
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 57ab6dd2974c141428fc30dd2c661d95, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5549,7 +5528,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Fine, then I\u2019ll leave tomorrow."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5576,7 +5555,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Very well, best of luck to you.
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 57ab6dd2974c141428fc30dd2c661d95, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5603,7 +5582,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Thanks.
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5631,7 +5610,7 @@ MonoBehaviour:
   storyText: "It doesn\u2019t matter if I just met her, I\u2019m not backing down
     on this."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5658,7 +5637,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Why would you go so far over a child you just met?
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 57ab6dd2974c141428fc30dd2c661d95, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5823,7 +5802,7 @@ MonoBehaviour:
     and find out why she\u2019s here or where she was headed. {wc}\nIf she tells me
     anything I think the Mayor would need to know, I\u2019ll tell the scoundrel myself.\r\n"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: a50a3ebe81ce33c49803e4d3cbf266ea, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5851,7 +5830,7 @@ MonoBehaviour:
   storyText: "That would\u2019ve been more convincing without the scoundrel comment,
     but fine, I relent. I can\u2019t ever seem to win an argument with you."
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 57ab6dd2974c141428fc30dd2c661d95, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5878,7 +5857,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Thank you so much Freeman, I promise this won\u2019t bring you any trouble."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5905,7 +5884,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Yeah, yeah, now go, get on out here before anyone sees you.
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 57ab6dd2974c141428fc30dd2c661d95, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5932,7 +5911,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Thank you!
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -5959,7 +5938,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Hmmm\u2026 I still think what you\u2019re doing is wrong."
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 541fc32bd7ead944d8358c5266882cbb, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6009,7 +5988,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 793.51855
     y: 196.69579
-    width: 140.58823
+    width: 138.65979
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6049,7 +6028,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 789.06854
     y: 132.0399
-    width: 151.17645
+    width: 148.96909
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6141,7 +6120,7 @@ MonoBehaviour:
   storyText: "Freeman, you\u2019re a good man and I know you mean well, but the Mayor
     is an idiot. No way in hell am I taking her to him. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6169,7 +6148,7 @@ MonoBehaviour:
   storyText: "This is no time for one of your stubborn streaks. I don\u2019t care
     if you don\u2019t like the Mayor, that child can\u2019t stay here. "
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: ba85cf9ce26a9c84e8183a6c7bb486a6, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6197,7 +6176,7 @@ MonoBehaviour:
   storyText: "This is not me being stubborn. If I bring this poor girl to him, she\u2019ll
     end up as some kind of indentured servant or lab rat for them to poke and prod."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6225,7 +6204,7 @@ MonoBehaviour:
   storyText: "What other options do I have? I found her near two others that weren\u2019t
     so lucky. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6253,7 +6232,7 @@ MonoBehaviour:
   storyText: "The Mayor will know what to do, you should bring her to him. I\u2019m
     sure he can figure this out."
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 541fc32bd7ead944d8358c5266882cbb, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6280,7 +6259,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "If you don\u2019t bring her to him, then I\u2019ll bring him here myself."
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: ba85cf9ce26a9c84e8183a6c7bb486a6, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6308,7 +6287,7 @@ MonoBehaviour:
   storyText: "Freeman, I\u2019m so glad you\u2019re still up. We have a problem. I
     think I found what those Wilds were chasing."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: a50a3ebe81ce33c49803e4d3cbf266ea, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6335,7 +6314,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Good gods! Is that really what it looks like!
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: ba85cf9ce26a9c84e8183a6c7bb486a6, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6363,7 +6342,7 @@ MonoBehaviour:
   storyText: "Shhh, yes, it is, now keep it down. This poor thing has been through
     hell tonight and I don\u2019t need you scaring her anymore."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6390,7 +6369,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Bu.. Wha\u2026 How\u2026?"
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: ba85cf9ce26a9c84e8183a6c7bb486a6, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6417,7 +6396,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: I know, I know, crazy right, but I need you to pull it together.
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: a50a3ebe81ce33c49803e4d3cbf266ea, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6445,7 +6424,7 @@ MonoBehaviour:
   storyText: " I mean I\u2019ve heard rumors and tall tales, but.. wait what do you
     mean \u2018what to do with her?\u2019 Are you planning on keeping her here?"
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: ba85cf9ce26a9c84e8183a6c7bb486a6, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6473,7 +6452,7 @@ MonoBehaviour:
   storyText: "Oh thank heavens you\u2019re alright, I was so worried that I couldn\u2019t
     go back to sleep\u2026 What have you got there?"
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 6c11c0e31dfdb004491cae3afe45e76f, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6578,7 +6557,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 642.99316
     y: 173.39633
-    width: 120.58823
+    width: 120.103096
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6693,7 +6672,7 @@ MonoBehaviour:
   storyText: "Thank you love, my place isn\u2019t far. Don\u2019t worry, I can carry
     you."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6748,7 +6727,7 @@ MonoBehaviour:
   storyText: "That\u2019s good. Now, I know your scared, but we need to leave here
     before those scary ones come back. Will you come with me?"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6776,7 +6755,7 @@ MonoBehaviour:
   storyText: "Whoa, whoa ,whoa, it\u2019s okay. I\u2019m sorry if I look a little
     scary, but I promise I\u2019m not going to hurt you. I\u2019m a friend."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6830,7 +6809,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Please? I really just trying to help.
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6884,7 +6863,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Okay, I promise I won\u2019t hurt you. I\u2019m coming closer, alright?"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -6939,7 +6918,7 @@ MonoBehaviour:
   storyText: "Thank you love, alright let\u2019s see. You\u2019re a little dirty,
     but you don\u2019t seem to be hurt. Are you in pain anywhere?"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -7059,7 +7038,7 @@ MonoBehaviour:
   storyText: "Thank you love, my place isn\u2019t far. Don\u2019t worry, I can carry
     you."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -7114,7 +7093,7 @@ MonoBehaviour:
   storyText: "Thank you love. Hmm\u2026You\u2019re a little dirty, but you don\u2019t
     seem to be hurt. Are you in pain anywhere?"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -7169,7 +7148,7 @@ MonoBehaviour:
   storyText: "That\u2019s good. Now, I know your scared, but we need to leave here
     before those scary ones come back. Will you come with me?"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -7224,7 +7203,7 @@ MonoBehaviour:
   storyText: "Sorry, sorry, I\u2019m not going to hurt you. Promise. {wc}\nWill you
     let me take a look at you please?"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -7344,7 +7323,7 @@ MonoBehaviour:
   storyText: "That\u2019s good. Now, I know your scared, but we need to leave here
     before any of those bad ones come back. Will you come with me?"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -7398,7 +7377,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Thank you love, my place isn\u2019t far. If you want, I can carry you?"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -7453,7 +7432,7 @@ MonoBehaviour:
   storyText: "I promise, I\u2019m just trying to help. You\u2019re a little dirty,
     but you don\u2019t seem to be hurt. Are you in pain anywhere?"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -7551,7 +7530,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Hmm\u2026"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -7612,7 +7591,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: If you need anything, just let me know.
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -7667,7 +7646,7 @@ MonoBehaviour:
   storyText: "Alright love, this is the best I\u2019ve got at the moment. You don\u2019t
     have to eat it if you don\u2019t want to. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -7753,7 +7732,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "<chop> \r"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 611c26940af12c44ba63d0e1bfc15ed5, type: 3}
   voiceOverClip: {fileID: 8300000, guid: da2e46e6ed803ae489869e6eb1bdc7bf, type: 3}
   showAlways: 1
@@ -7925,7 +7904,7 @@ MonoBehaviour:
   storyText: ' I know you mean well old man, but this time you really are making a
     big mistake.'
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -7952,7 +7931,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: 'Oh, and where is that boy running to at this hour I wonder. '
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -8091,7 +8070,7 @@ MonoBehaviour:
     \u2026 {wc}\nUgh, I don\u2019t have a choice. I can only think of one place, but
     even that\u2019s not great. Not great at all."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -8626,7 +8605,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1325.1635
     y: 158.7118
-    width: 124.11764
+    width: 123.19588
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8781,7 +8760,7 @@ MonoBehaviour:
   storyText: "That\u2019a girl. I\u2019ll try keep an eye on you to make sure I\u2019m
     not moving too fast. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -8836,7 +8815,7 @@ MonoBehaviour:
   storyText: "I know I said I\u2019d let you rest by yourself for a while, but we
     have to go. This place is no longer safe. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: a50a3ebe81ce33c49803e4d3cbf266ea, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -9030,7 +9009,7 @@ MonoBehaviour:
   indentLevel: 1
   storyText: <Sigh> I guess one day was just too much to ask for.
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -9971,7 +9950,7 @@ MonoBehaviour:
     and debris, as long as I\u2019m not moving, I don\u2019t think they\u2019ll notice
     me."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -9998,7 +9977,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Hmmm\u2026that car might be useful. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -10026,7 +10005,7 @@ MonoBehaviour:
   storyText: "A direct approach is probably a bad idea, even if I\u2019m sneaking
     up on them\u2026"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -10054,7 +10033,7 @@ MonoBehaviour:
   storyText: "Bah, it\u2019s not the time to worry about that. First things first,
     I need to get them out of here and check on the poor soul they have pinned down. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -10082,7 +10061,7 @@ MonoBehaviour:
   storyText: "I hope to the gods we don\u2019t have a new city-state forming to fight
     for territory. That hasn\u2019t happened in years. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -10224,7 +10203,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 261.2544
     y: 310.15176
-    width: 120.58823
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -10521,7 +10500,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 261.33307
     y: 351.1862
-    width: 120.58823
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -10641,7 +10620,7 @@ MonoBehaviour:
   storyText: "That\u2019s odd\u2026 there isn\u2019t much fur\u2026 wait were they
     still hum--"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -10670,7 +10649,7 @@ MonoBehaviour:
     at all. I don\u2019t think I\u2019ll ever understand how far some people have
     fallen. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -10750,7 +10729,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 258.03485
     y: 270.089
-    width: 120.58823
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11067,7 +11046,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 423.0482
     y: 386.15775
-    width: 133.5294
+    width: 130.41238
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11116,7 +11095,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 424.833
     y: 338.05655
-    width: 127.64705
+    width: 129.38144
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11713,7 +11692,7 @@ MonoBehaviour:
   storyText: "From what you just said, that girl has trouble following her already.
     I don\u2019t want that near my building.\r\n"
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: ba85cf9ce26a9c84e8183a6c7bb486a6, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -11787,7 +11766,7 @@ MonoBehaviour:
   storyText: "I didn\u2019t say she was staying here forever, and I didn\u2019t I
     say anything about taking her in. \r\n"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -11838,7 +11817,7 @@ MonoBehaviour:
   storyText: "I don\u2019t know why she\u2019s still human, but I know the Mayor will
     do whatever it takes to try and figure that out. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -11911,7 +11890,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: What do you plan on doing? Bring her with you?
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: ba85cf9ce26a9c84e8183a6c7bb486a6, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -11962,7 +11941,7 @@ MonoBehaviour:
   storyText: "Do you really think you\u2019re in any position to be taking in a child?
     You spend your days walking around the city, occasionally chasing away Wilds. "
   description: 
-  character: {fileID: 1316747728}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: ba85cf9ce26a9c84e8183a6c7bb486a6, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -12082,7 +12061,7 @@ MonoBehaviour:
   storyText: "She hasn\u2019t really spoken yet, but if those two people were who
     I think they were, then I can\u2019t blame her.\r\n"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -12179,7 +12158,7 @@ MonoBehaviour:
   storyText: "I don\u2019t know of anyone who\u2019s seen a human in ten years and
     I have no idea what to do with her."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: a50a3ebe81ce33c49803e4d3cbf266ea, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -12618,7 +12597,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1142.4932
     y: 423.52753
-    width: 139.41176
+    width: 136.59793
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12692,7 +12671,7 @@ MonoBehaviour:
   storyText: "Freeman, you conniving old pug, you couldn\u2019t even give me a few
     hours to rest before sending for the Mayor."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -12774,7 +12753,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1145.0713
     y: 377.03302
-    width: 139.41176
+    width: 136.59793
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12916,7 +12895,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: 'Okay, think, think, think. '
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -12943,7 +12922,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Hmm\u2026 \u2026 \u2026"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -12971,7 +12950,7 @@ MonoBehaviour:
   storyText: "Ugh, I don\u2019t have a choice. I can only think of one place, but
     even that\u2019s not great. Not great at all."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -13114,7 +13093,7 @@ MonoBehaviour:
   storyText: "I know she can\u2019t stay here, but unless she starts talking, I can\u2019t
     figure out where she\u2019s headed."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -13142,7 +13121,7 @@ MonoBehaviour:
   storyText: 'If those bodies were her parents, she might not be talking for a while.
     Not that I blame her. '
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -13169,7 +13148,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: 'For now I just need to think of a safe place for us to stay. '
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -13197,7 +13176,7 @@ MonoBehaviour:
   storyText: "I don\u2019t think there\u2019s anywhere within the city that\u2019d
     be a good spot to lie low. The mayor would track us down eventually. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -13224,7 +13203,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Hmm\u2026"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -13366,7 +13345,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1146.1434
     y: 326.4454
-    width: 139.41176
+    width: 136.59793
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13463,7 +13442,7 @@ MonoBehaviour:
   storyText: "I\u2019m going to go sit on the patio, so you can have some space. Unfortunately,
     my apartment isn\u2019t very big."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -13629,7 +13608,7 @@ MonoBehaviour:
   storyText: "Let\u2019s see, what do I have that isn\u2019t dog food. Oh wait, I
     have those apple!"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 611c26940af12c44ba63d0e1bfc15ed5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -13656,7 +13635,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Now, dicer...dicer...dicer\u2026 there you are."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 611c26940af12c44ba63d0e1bfc15ed5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -13684,7 +13663,7 @@ MonoBehaviour:
   storyText: "I\u2019ve never taken care of a kid before and this is probably the
     worst way to start. \r"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 611c26940af12c44ba63d0e1bfc15ed5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -13713,7 +13692,7 @@ MonoBehaviour:
     I, also part dog, went and brought her home. I\u2019m a little surprised she didn\u2019t
     just run from me. \n"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 611c26940af12c44ba63d0e1bfc15ed5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -13740,7 +13719,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "Ah, focus! First things first, I can\u2019t let her starve at least. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 611c26940af12c44ba63d0e1bfc15ed5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -13803,7 +13782,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1144.9889
     y: 273.32162
-    width: 139.41176
+    width: 136.59793
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13869,7 +13848,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1145.3512
     y: 222.95042
-    width: 139.41176
+    width: 136.59793
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14138,7 +14117,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 987.4118
     y: 281.06335
-    width: 127.64705
+    width: 125.25774
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14216,7 +14195,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 987.1379
     y: 228.77704
-    width: 127.64705
+    width: 125.25774
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14244,7 +14223,7 @@ MonoBehaviour:
   storyText: "How about I go make you something to eat and give you some time, I\u2019ll
     be right over there if you need anything."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: a50a3ebe81ce33c49803e4d3cbf266ea, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -14898,7 +14877,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 798.86584
     y: 259.96564
-    width: 126.47058
+    width: 124.22681
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15089,7 +15068,7 @@ MonoBehaviour:
   storyText: "Unfortunately, time isn\u2019t our friend right now, so we need to get
     moving. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -15116,7 +15095,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "I\u2019ll just get you the backpack quick and we\u2019ll be off."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 5d618b82b79486849a3cd39af6eab7a9, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -15145,7 +15124,7 @@ MonoBehaviour:
     I have an old bag we can use, but we need some supplies that I don\u2019t have
     here."
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: a50a3ebe81ce33c49803e4d3cbf266ea, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -15173,7 +15152,7 @@ MonoBehaviour:
   storyText: "There\u2019s a large store in an abandoned section of the city. If we\u2019re
     lucky, there\u2019ll be some supplies in there that are usable. "
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: a50a3ebe81ce33c49803e4d3cbf266ea, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -15201,7 +15180,7 @@ MonoBehaviour:
   storyText: "I\u2019d carry you, but I think it\u2019d be faster if you run with
     me. Can you do that?"
   description: 
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   portrait: {fileID: 21300000, guid: a50a3ebe81ce33c49803e4d3cbf266ea, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -15286,7 +15265,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1308.645
     y: 221.5269
-    width: 157.0588
+    width: 155.15463
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15313,7 +15292,7 @@ MonoBehaviour:
   indentLevel: 0
   display: 1
   stage: {fileID: 0}
-  character: {fileID: 227273747}
+  character: {fileID: 0}
   replacedCharacter: {fileID: 0}
   portrait: {fileID: 21300000, guid: 29d5c917fa1dafd49af651d0a86343c4, type: 3}
   offset: 0
@@ -15534,6 +15513,58 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &1248199728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1248199729}
+  - component: {fileID: 1248199730}
+  m_Layer: 0
+  m_Name: Wild
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1248199729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248199728}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -237.8172, y: -36.396675, z: -7.625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 747671429}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1248199730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248199728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Wild
+  nameColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: 8dd3d6288ba217a40917ea3656411300, type: 3}
+  - {fileID: 21300000, guid: 78d6966a6b3d3c54981b1375be43277c, type: 3}
+  portraitsFace: 2
+  setSayDialog: {fileID: 0}
+  description: 
 --- !u!1 &1257238736
 GameObject:
   m_ObjectHideFlags: 0
@@ -15568,60 +15599,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1316747726
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1316747727}
-  - component: {fileID: 1316747728}
-  m_Layer: 0
-  m_Name: Freeman
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1316747727
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1316747726}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -237.8172, y: -36.396675, z: -7.625}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 747671429}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1316747728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1316747726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: FREEMAN
-  nameColor: {r: 0.036445353, g: 0.2043405, b: 0.3679245, a: 1}
-  soundEffect: {fileID: 0}
-  portraits:
-  - {fileID: 21300000, guid: 38808fa7e9a564d4f8767450ed6b0ebd, type: 3}
-  - {fileID: 21300000, guid: 53c85ea29c90c984a9f227d815988300, type: 3}
-  - {fileID: 21300000, guid: ee6ef0972a0e4df498e05787fc24e4aa, type: 3}
-  - {fileID: 21300000, guid: 4d580e0f7ac32554aada506af1e56e98, type: 3}
-  portraitsFace: 2
-  setSayDialog: {fileID: 0}
-  description: 
 --- !u!1 &1334748651
 GameObject:
   m_ObjectHideFlags: 0
@@ -16684,6 +16661,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1995605267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995605268}
+  - component: {fileID: 1995605269}
+  m_Layer: 0
+  m_Name: Freeman
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1995605268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995605267}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -237.8172, y: -36.396675, z: -7.625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 747671429}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1995605269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995605267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Freeman
+  nameColor: {r: 0.036445353, g: 0.2043405, b: 0.3679245, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: 38808fa7e9a564d4f8767450ed6b0ebd, type: 3}
+  - {fileID: 21300000, guid: 53c85ea29c90c984a9f227d815988300, type: 3}
+  - {fileID: 21300000, guid: ee6ef0972a0e4df498e05787fc24e4aa, type: 3}
+  - {fileID: 21300000, guid: 4d580e0f7ac32554aada506af1e56e98, type: 3}
+  - {fileID: 21300000, guid: 1dfac67dfe93c844386c1513074bad21, type: 3}
+  - {fileID: 21300000, guid: f20c1f3547346ad41a9b627ddad5aa7d, type: 3}
+  portraitsFace: 1
+  setSayDialog: {fileID: 0}
+  description: 
 --- !u!1 &2128207443
 GameObject:
   m_ObjectHideFlags: 0
