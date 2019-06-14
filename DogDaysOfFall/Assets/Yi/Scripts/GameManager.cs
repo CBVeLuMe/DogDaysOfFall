@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
         soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 0.75f);
-        textSlider.value = PlayerPrefs.GetFloat("WriteSpeed", 60);
+        textSlider.value = PlayerPrefs.GetFloat("WriteSpeed", 50);
         WSpeed = textSlider.value;
         audioMix.SetFloat("Music", Mathf.Log10(musicSlider.value) * 20);
         audioMix.SetFloat("SFX", Mathf.Log10(soundSlider.value) * 20);
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
         textSlider.onValueChanged.AddListener(delegate { SetWriteSpeed(); });
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
         soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 0.75f);
-        textSlider.value = PlayerPrefs.GetFloat("WriteSpeed", 60);
+        textSlider.value = PlayerPrefs.GetFloat("WriteSpeed", 50);
         WSpeed = textSlider.value;
         audioMix.SetFloat("Music", Mathf.Log10(musicSlider.value) * 20);
         audioMix.SetFloat("SFX", Mathf.Log10(soundSlider.value) * 20);

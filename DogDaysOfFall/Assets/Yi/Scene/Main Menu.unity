@@ -20202,7 +20202,7 @@ PrefabInstance:
     - target: {fileID: 3881509357167130389, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0008544922
+      value: 0.0005187988
       objectReference: {fileID: 0}
     - target: {fileID: 3881509356579411713, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
@@ -20446,6 +20446,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2645768945856874349, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 669484363}
+    - target: {fileID: 2645768945856874349, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetWriteSpeed
+      objectReference: {fileID: 0}
     - target: {fileID: 7514211025562231990, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -20461,6 +20471,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8628290366526244714, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 669484363}
+    - target: {fileID: 8628290366526244714, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855859220385375184, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 669484363}
+    - target: {fileID: 2855859220385375184, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusic
+      objectReference: {fileID: 0}
     - target: {fileID: 5546070078346417002, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -20476,6 +20506,24 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4001340624843825695, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5a15ba2a910802844a665db1040784cf,
+        type: 3}
+    - target: {fileID: 3600903685139752975, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5a15ba2a910802844a665db1040784cf,
+        type: 3}
+    - target: {fileID: 2680036778456987919, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5a15ba2a910802844a665db1040784cf,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36d20a233be88ef45bda4449d841b90c, type: 3}
 --- !u!1 &1076157218
