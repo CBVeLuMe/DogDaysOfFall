@@ -17,7 +17,7 @@ public class MoveCircle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private Vector3 aPosition;
 
     private Vector3 initial;
-    
+
 
 
     public void Awake()
@@ -42,7 +42,7 @@ public class MoveCircle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         backPosition = transform.position;
         startPosition = transform.position;
         //GetComponent<CanvasGroup>().blocksRaycasts = false;
-        
+
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -50,7 +50,11 @@ public class MoveCircle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         //Vector3 currentPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, initial.z);
         //Vector3 worldPosition = Camera.main.ScreenToWorldPoint(currentPosition);
-        this.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, initial.z);
+        if (this.name == "BluePrompt")
+        {
+
+            this.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, initial.z);
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -60,7 +64,7 @@ public class MoveCircle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         transform.position = startPosition;
         //GetComponent<CanvasGroup>().blocksRaycasts = true;
-        
+
     }
 
 
