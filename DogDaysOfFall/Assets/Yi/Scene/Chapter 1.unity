@@ -1188,7 +1188,7 @@ MonoBehaviour:
   fadeOut: 1
   targetView: {fileID: 1119498256}
   waitUntilFinished: 1
-  fadeColor: {r: 0, g: 0, b: 0, a: 0}
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTexture: {fileID: 0}
   targetCamera: {fileID: 1196295671}
 --- !u!114 &817489378
@@ -1233,7 +1233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -645.6891, y: -209.53087}
+  scrollPos: {x: 391.3109, y: -41.53087}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 670
@@ -1244,7 +1244,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 817489400}
   selectedCommands: []
   variables:
   - {fileID: 817489381}
@@ -1734,8 +1735,8 @@ MonoBehaviour:
   - {fileID: 817489544}
   - {fileID: 817489546}
   - {fileID: 817489547}
-  - {fileID: 817489552}
   - {fileID: 817489377}
+  - {fileID: 817489552}
   - {fileID: 817489533}
   - {fileID: 817489701}
   - {fileID: 817489545}
