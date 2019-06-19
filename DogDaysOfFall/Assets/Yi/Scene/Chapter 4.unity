@@ -1271,6 +1271,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 82461bf73d717f448a58046926c31e24, type: 3}
   - {fileID: 21300000, guid: cf8144d23108fec48bab7aa287c62513, type: 3}
   - {fileID: 21300000, guid: 93c156b7ed8197a458c7c61c68257cae, type: 3}
+  - {fileID: 21300000, guid: ed11e665b96136c44959c68de907a413, type: 3}
   portraitsFace: 1
   setSayDialog: {fileID: 0}
   description: 
@@ -3569,7 +3570,6 @@ GameObject:
   - component: {fileID: 1190123324}
   - component: {fileID: 1190123323}
   - component: {fileID: 1190123322}
-  - component: {fileID: 1190123321}
   - component: {fileID: 1190123320}
   - component: {fileID: 1190123319}
   - component: {fileID: 1190123318}
@@ -3736,7 +3736,6 @@ GameObject:
   - component: {fileID: 1190123501}
   - component: {fileID: 1190123500}
   - component: {fileID: 1190123481}
-  - component: {fileID: 1190123480}
   - component: {fileID: 1190123479}
   - component: {fileID: 1190123478}
   - component: {fileID: 1190123477}
@@ -4481,6 +4480,9 @@ GameObject:
   - component: {fileID: 1190123543}
   - component: {fileID: 1190123540}
   - component: {fileID: 1190123493}
+  - component: {fileID: 1190123321}
+  - component: {fileID: 1190123480}
+  - component: {fileID: 1190124217}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -4536,7 +4538,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -11.756546
     y: 65.40138
-    width: 138.57141
+    width: 139.37604
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4569,8 +4571,6 @@ MonoBehaviour:
   - {fileID: 1190123323}
   - {fileID: 1190123322}
   - {fileID: 1190123614}
-  - {fileID: 1190123480}
-  - {fileID: 1190123321}
   - {fileID: 1190123479}
   - {fileID: 1190123320}
   - {fileID: 1190123319}
@@ -4639,11 +4639,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 39.334927, y: -190.51492}
+  scrollPos: {x: 381.16412, y: 34.542446}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 421
-  zoom: 0.70000017
+  blockViewHeight: 423
+  zoom: 0.59300005
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -4651,7 +4651,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1190124059}
+  - {fileID: 1190123421}
   selectedCommands: []
   variables:
   - {fileID: 1190123325}
@@ -4814,7 +4814,7 @@ MonoBehaviour:
   itemId: 3
   indentLevel: 0
   storyText: He has a team of people that spend their days going around making sure
-    the engines still turn on.
+    the engines still turn run.
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -5055,7 +5055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 57
   indentLevel: 0
-  storyText: "I think you found it. Great job, now let\u2019s get this thing running
+  storyText: "I think you found it. Nice work, now let\u2019s get this thing running
     and get out of here."
   description: 
   character: {fileID: 166583802}
@@ -5191,8 +5191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 19
   indentLevel: 0
-  storyText: "It sounded like they were higher up, so let\u2019s start here and work
-    our way up."
+  storyText: "It sounded like they weren't too far in, so let\u2019s start here and
+    work our way down."
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -5219,7 +5219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 18
   indentLevel: 0
-  storyText: "Now let\u2019s see, what have we got?"
+  storyText: "Now let\u2019s see, what have we got on this floor..."
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -5364,24 +5364,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1190123289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 12
-  indentLevel: 1
-  storyText: '......'
-  description: 
-  character: {fileID: 629050614}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  itemId: 2260
+  indentLevel: 0
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 499643687}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: ed11e665b96136c44959c68de907a413, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 1114786290}
+  facing: 1
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
 --- !u!114 &1190123322
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6034,7 +6037,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 129.73236
     y: 137.06203
-    width: 129.99998
+    width: 132.63068
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6147,7 +6150,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 158.91286
     y: 69.02972
-    width: 127.14284
+    width: 129.258
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6352,8 +6355,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 70
   indentLevel: 0
-  storyText: "Thanks for the heads up back there. If he would\u2019ve caught me with
-    my back turned, things may not have turned out so well."
+  storyText: Thanks for the heads up back there. If you weren't there, things may
+    not have turned out so well.
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -6648,6 +6651,7 @@ MonoBehaviour:
   - {fileID: 1190123558}
   - {fileID: 1190123375}
   - {fileID: 1190123557}
+  - {fileID: 1190123321}
   - {fileID: 1190123374}
   - {fileID: 1190123556}
   - {fileID: 1190123747}
@@ -6671,12 +6675,14 @@ MonoBehaviour:
   - {fileID: 1190123550}
   - {fileID: 1190123368}
   - {fileID: 1190123458}
-  - {fileID: 1190123455}
   - {fileID: 1190123457}
+  - {fileID: 1190123480}
   - {fileID: 1190123535}
   - {fileID: 1190123741}
   - {fileID: 1190123452}
+  - {fileID: 1190123455}
   - {fileID: 1190123453}
+  - {fileID: 1190124217}
   - {fileID: 1190123534}
   - {fileID: 1190123740}
   - {fileID: 1190123454}
@@ -6758,7 +6764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 135
   indentLevel: 0
-  storyText: "{i}As long as I don\u2019t pass out, we should be good.{/i}"
+  storyText: "{i}As long as I don\u2019t fall asleep, we should be good.{/i}"
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -7158,7 +7164,7 @@ MonoBehaviour:
   itemId: 115
   indentLevel: 0
   storyText: Yeah, that was her nickname actually. We named her after a drink that
-    used to be around back then. No one can drink it anymore though.
+    was popular back then.
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -7788,7 +7794,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 549.3491
     y: 476.95514
-    width: 161.42854
+    width: 159.61212
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7835,7 +7841,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 523.5385
     y: 274.33023
-    width: 229.99995
+    width: 228.75209
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7880,7 +7886,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 529.57715
     y: 41.419064
-    width: 215.71425
+    width: 213.57503
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8001,7 +8007,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: I had a cat.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 499643687}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -8341,7 +8347,7 @@ MonoBehaviour:
   storyText: "{i}Only a little further, and then we can both get some much deserved
     rest. Come on body, don\u2019t give out on me now.{/i}"
   description: 
-  character: {fileID: 0}
+  character: {fileID: 166583802}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -8368,7 +8374,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Goodnight love.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 166583802}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -9093,7 +9099,7 @@ MonoBehaviour:
   indentLevel: 0
   soundClip: {fileID: 8300000, guid: 987f2c42c3e019e4ebc888ba02bd3df2, type: 3}
   volume: 1
-  waitUntilFinished: 1
+  waitUntilFinished: 0
 --- !u!114 &1190123454
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -9168,7 +9174,7 @@ MonoBehaviour:
   indentLevel: 0
   soundClip: {fileID: 8300000, guid: e50a9151347b038428d9ba8507c0834b, type: 3}
   volume: 1
-  waitUntilFinished: 1
+  waitUntilFinished: 0
 --- !u!114 &1190123458
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -9672,27 +9678,31 @@ MonoBehaviour:
   lengkuwuqing: 0
 --- !u!114 &1190123480
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190123289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b115619cb83b4d6ab8047d0e9407403, type: 3}
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 195
-  indentLevel: 1
-  isStartPoint: 0
-  keyMode: 2
-  customKey: 9
-  keySeparator: _
-  descriptionMode: 0
-  customDescription: 
-  fireEvent: 1
-  resumeOnLoad: 1
-  lengkuwuqing: 0
+  itemId: 2262
+  indentLevel: 0
+  storyText: <car stuttering>
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &1190123481
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -11228,7 +11238,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 824.4811
     y: 663.816
-    width: 120
+    width: 120.8263
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12181,7 +12191,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 567.98193
     y: 314.17984
-    width: 127.14284
+    width: 129.258
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12666,7 +12676,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 825.8976
     y: 626.34326
-    width: 120
+    width: 120.8263
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14527,7 +14537,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 264.47763
     y: -102.02146
-    width: 137.14284
+    width: 136.00336
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14799,7 +14809,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 119.0094
     y: -103.02149
-    width: 137.14284
+    width: 136.00336
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15559,7 +15569,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 533.5925
     y: -12.513726
-    width: 129.99998
+    width: 129.258
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15684,7 +15694,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 1190123691}
   savePointKeys:
-  - Chapter 4 Start_9
   - Chapter 4 Start_10
 --- !u!114 &1190123686
 MonoBehaviour:
@@ -15896,7 +15905,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 398.03607
     y: -14.199379
-    width: 129.99998
+    width: 129.258
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16108,7 +16117,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 260.2461
     y: -16.095345
-    width: 129.99998
+    width: 129.258
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16442,7 +16451,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 119.910255
     y: -15.288735
-    width: 129.99998
+    width: 129.258
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -20799,7 +20808,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 564.5983
     y: 234.80124
-    width: 127.14284
+    width: 129.258
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -21091,7 +21100,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 565.5983
     y: 198.99158
-    width: 127.14284
+    width: 129.258
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -21383,7 +21392,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 564.5983
     y: 158.99158
-    width: 127.14284
+    width: 129.258
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -21675,7 +21684,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 563.5983
     y: 120.99158
-    width: 127.14284
+    width: 129.258
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -21966,7 +21975,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 563.5983
     y: 81.99158
-    width: 127.14284
+    width: 129.258
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -23430,7 +23439,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 570.0275
     y: 435.64114
-    width: 127.14284
+    width: 129.258
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -23723,7 +23732,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 571.6184
     y: 395.9979
-    width: 127.14284
+    width: 129.258
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -24016,7 +24025,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 572.0728
     y: 356.22525
-    width: 127.14284
+    width: 129.258
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -24276,7 +24285,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 824.6326
     y: 586.2362
-    width: 120
+    width: 120.8263
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -24565,7 +24574,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 825.32227
     y: 547.8468
-    width: 120
+    width: 120.8263
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -32441,6 +32450,33 @@ MonoBehaviour:
   atTime: 0
   loop: 1
   fadeDuration: 1
+--- !u!114 &1190124217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190123289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 2263
+  indentLevel: 0
+  storyText: <engine dying>
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1 &1219405209
 GameObject:
   m_ObjectHideFlags: 0
@@ -33833,6 +33869,36 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1124690366}
+    - target: {fileID: 4432921999460416322, guid: 1be8363040519b3448f89264c0db0fb9,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432921999460416322, guid: 1be8363040519b3448f89264c0db0fb9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432921999460416322, guid: 1be8363040519b3448f89264c0db0fb9,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998967485105978810, guid: 1be8363040519b3448f89264c0db0fb9,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998967485105978810, guid: 1be8363040519b3448f89264c0db0fb9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998967485105978810, guid: 1be8363040519b3448f89264c0db0fb9,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1be8363040519b3448f89264c0db0fb9, type: 3}
 --- !u!4 &1739568544 stripped
