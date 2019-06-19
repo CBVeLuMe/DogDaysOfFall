@@ -3268,6 +3268,7 @@ GameObject:
   - component: {fileID: 1179316320}
   - component: {fileID: 1179316321}
   - component: {fileID: 1179316318}
+  - component: {fileID: 1179316322}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -3399,7 +3400,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1179315915}
   selectedCommands:
-  - {fileID: 1179316151}
+  - {fileID: 1179315901}
   variables:
   - {fileID: 1179315789}
   - {fileID: 1179315957}
@@ -6646,8 +6647,8 @@ MonoBehaviour:
   storyText: "What other options do I have? I found her near two others that weren\u2019t
     so lucky. "
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 1fb61667bebb8dd4fa308becee625256, type: 3}
+  character: {fileID: 166583802}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -6870,7 +6871,7 @@ MonoBehaviour:
     mean \u2018what to do with her?\u2019 Are you planning on keeping her here?"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: ba85cf9ce26a9c84e8183a6c7bb486a6, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -7035,7 +7036,7 @@ MonoBehaviour:
   - {fileID: 1179316318}
   - {fileID: 1179315907}
   - {fileID: 1179316153}
-  - {fileID: 1179316282}
+  - {fileID: 1179316322}
   - {fileID: 1179315908}
   - {fileID: 1179316152}
   - {fileID: 1179316151}
@@ -7043,6 +7044,7 @@ MonoBehaviour:
   - {fileID: 1179315905}
   - {fileID: 1179315909}
   - {fileID: 1179316149}
+  - {fileID: 1179316282}
   - {fileID: 1179315901}
   - {fileID: 1179316148}
   - {fileID: 1179316147}
@@ -15776,7 +15778,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 166583802}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 29d5c917fa1dafd49af651d0a86343c4, type: 3}
+  portrait: {fileID: 21300000, guid: 05792f36499e1c646a325d5a4682016d, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 572238016}
@@ -16878,6 +16880,36 @@ MonoBehaviour:
   moveDuration: 1
   shiftOffset: {x: 0, y: 0}
   move: 1
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &1179316322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179315777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 566
+  indentLevel: 0
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 166583802}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 29d5c917fa1dafd49af651d0a86343c4, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 572238016}
+  facing: 1
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
   shiftIntoPlace: 0
   waitUntilFinished: 0
 --- !u!1 &1219679489
