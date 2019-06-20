@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private GameObject BananaIdle;
     [SerializeField] private GameObject BananaTurn;
+    [SerializeField] private GameObject BananaTurn2;
     [SerializeField] private GameObject winButton;
     [SerializeField] private GameObject loseButton;
     [SerializeField] private GameObject timerS;
@@ -121,8 +122,8 @@ public class EnemyController : MonoBehaviour
             BananaIdle.SetActive(false);
             BananaTurn.SetActive(true);
             dieSFX.Play();
-            AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
-            AnimatedGifPlayer.Play();
+            //AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
+            //AnimatedGifPlayer.Play();
             Invoke("CheckPlayer", dieTime);
             Invoke("Restart", RestartTime);
             turnActivate = true;
@@ -141,8 +142,8 @@ public class EnemyController : MonoBehaviour
         BananaIdle.SetActive(false);
         BananaTurn.SetActive(true);
         dieSFX.Play();
-        AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
-        AnimatedGifPlayer.Play();
+        //AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
+        //AnimatedGifPlayer.Play();
         Invoke("CheckPlayer", dieTime);
         Invoke("Restart", RestartTime);
     }
@@ -159,8 +160,8 @@ public class EnemyController : MonoBehaviour
                 BananaIdle.SetActive(false);
                 BananaTurn.SetActive(true);
                 dieSFX.Play();
-                AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
-                AnimatedGifPlayer.Play();
+                //AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
+                //AnimatedGifPlayer.Play();
                 Invoke("CheckPlayer", dieTime);
                 Invoke("Restart", RestartTime);
                 turnActivate = true;
@@ -243,7 +244,8 @@ public class EnemyController : MonoBehaviour
     void CheckPlayer()
     {
         //BananaIdle.SetActive(false);
-        //BananaTurn.SetActive(true);
+        BananaTurn.SetActive(false);
+        BananaTurn2.SetActive(true);
         checkPlayer = true;
         
     }
@@ -255,6 +257,6 @@ public class EnemyController : MonoBehaviour
         checkPlayer = false;
         randomTimer = RandomNub[Random.Range(0, RandomNub.Count)];
         BananaIdle.SetActive(true);
-        BananaTurn.SetActive(false);
+        BananaTurn2.SetActive(false);
     }
 }
