@@ -4001,7 +4001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -140.2512, y: -56.2197}
+  scrollPos: {x: 173.1634, y: 32.804657}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 591
@@ -4013,8 +4013,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1179315873}
-  selectedCommands: []
+  - {fileID: 1179315779}
+  selectedCommands:
+  - {fileID: 1179316363}
   variables:
   - {fileID: 1179315789}
   - {fileID: 1179315957}
@@ -4181,7 +4182,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 411.3384
-    y: 67.481125
+    y: 68.70064
     width: 168.29266
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -16931,7 +16932,7 @@ MonoBehaviour:
   portrait: {fileID: 0}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 827391011}
+  toPosition: {fileID: 1779540748}
   facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
@@ -18819,7 +18820,7 @@ MonoBehaviour:
   portrait: {fileID: 0}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 1779540748}
+  toPosition: {fileID: 827391011}
   facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
@@ -21807,7 +21808,7 @@ PrefabInstance:
     - target: {fileID: 534642157104558935, guid: 607a7e6544ac4534a823b86964260119,
         type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 534642157120153366, guid: 607a7e6544ac4534a823b86964260119,
         type: 3}
@@ -21838,6 +21839,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 534642156860898042, guid: 607a7e6544ac4534a823b86964260119,
+        type: 3}
+      propertyPath: rightBlock
+      value: 33.455
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 607a7e6544ac4534a823b86964260119, type: 3}
