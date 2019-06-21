@@ -194,7 +194,6 @@ namespace Fungus
                 SetNextLineFlag();
             }
         }
-
         #endregion
     }
 }

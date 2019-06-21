@@ -429,9 +429,6 @@ namespace Fungus
         {
             var saveManager = FungusManager.Instance.SaveManager;
 
-            //InvokeSkipDialog();
-            //InvokeAutoplayDialog();
-
             if (canResetButton)
             {
                 if (Input.GetMouseButtonDown(0))
@@ -441,30 +438,6 @@ namespace Fungus
                     canResetButton = false;
                 }
             }
-
-            //Debug.Log(saveMenuActive);
-            //if (Input.GetMouseButton(0))
-            //{
-            //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //    RaycastHit hit;
-
-            //    if (Physics.Raycast(ray, out hit))
-            //    {
-
-            //        Debug.Log(hit);
-            //    }
-            //}
-
-
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-            {
-
-                Debug.Log(hit);
-            }
-
         }
 
         public void ActivateSkipDialog()
@@ -504,10 +477,23 @@ namespace Fungus
         {
             ToggleSaveMenu();
             Invoke("ResetButton", 0.1f);
+            bool hasSentMessage = false;
+            SayDialog sd = GameObject.FindGameObjectWithTag("SayDialogue").GetComponent<SayDialog>();
             while (hasAutoplayedDialog)
             {
-                dialogInput.SetNextLineFlag();
-                yield return new WaitForSeconds(2f);
+                if (sd.CheckIsWaitingForInput())
+                {
+                    if (!hasSentMessage)
+                    {
+                        dialogInput.SetNextLineFlag();
+                        hasSentMessage = true;
+                    }
+                }
+                else
+                {
+                    hasSentMessage = false;
+                }
+                yield return null;
             }
         }
 
