@@ -2827,11 +2827,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5386885622446076128, guid: 36d20a233be88ef45bda4449d841b90c,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -63.17993
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36d20a233be88ef45bda4449d841b90c, type: 3}
 --- !u!1 &1152591122
@@ -3877,6 +3872,11 @@ GameObject:
   - component: {fileID: 1179315914}
   - component: {fileID: 1179316162}
   - component: {fileID: 1179316161}
+  - component: {fileID: 1179316392}
+  - component: {fileID: 1179316165}
+  - component: {fileID: 1179316390}
+  - component: {fileID: 1179316166}
+  - component: {fileID: 1179316391}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -3921,7 +3921,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 67
     y: 72.30291
-    width: 146.5909
+    width: 146.59091
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3996,11 +3996,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -885.2378, y: -24.390335}
+  scrollPos: {x: -900.22406, y: -189.34894}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 591
-  zoom: 0.8800001
+  blockViewHeight: 554
+  zoom: 0.88000005
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -4008,9 +4008,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1179315853}
-  selectedCommands:
-  - {fileID: 1179316215}
+  - {fileID: 1179316165}
+  selectedCommands: []
   variables:
   - {fileID: 1179315789}
   - {fileID: 1179315957}
@@ -5134,7 +5133,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 261.13763
     y: 145.9598
-    width: 126.13635
+    width: 126.13636
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5444,7 +5443,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 407.96906
     y: 237.6227
-    width: 190.90907
+    width: 190.90909
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5534,7 +5533,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 406.81418
     y: 183.84819
-    width: 186.36362
+    width: 186.36363
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5840,7 +5839,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 251.35747
     y: 406.0282
-    width: 168.1818
+    width: 168.18181
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6034,11 +6033,12 @@ MonoBehaviour:
   - {fileID: 1179316187}
   - {fileID: 1179316196}
   - {fileID: 1179315979}
+  - {fileID: 1179316392}
   - {fileID: 1179316183}
-  - {fileID: 1179315978}
   - {fileID: 1179315950}
   - {fileID: 1179316182}
   - {fileID: 1179315977}
+  - {fileID: 1179315978}
   - {fileID: 1179316181}
   - {fileID: 1179316184}
   - {fileID: 1179316180}
@@ -7132,7 +7132,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 789.06854
     y: 133.1343
-    width: 159.0909
+    width: 159.09091
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7676,7 +7676,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 642.99316
     y: 173.39633
-    width: 123.863625
+    width: 123.86363
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8636,8 +8636,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "<Crunch>\r"
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 28f435c90077ef041bde0d108d6e7f52, type: 3}
+  character: {fileID: 629050614}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -8661,7 +8661,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 182
   indentLevel: 0
-  storyText: "Hmm\u2026"
+  storyText: "{i}Alright, I need a plan of some kind. Freeman isn\u2019t giving me
+    much time, so I need to find out what to do next.{/i}"
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -8751,8 +8752,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "\u2026"
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 28f435c90077ef041bde0d108d6e7f52, type: 3}
+  character: {fileID: 629050614}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -9034,11 +9035,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 218
   indentLevel: 1
-  storyText: ' I know you mean well old man, but this time you really are making a
-    big mistake.'
+  storyText: '{i}I know you mean well old man, but this time you really are making
+    a big mistake.{/i}'
   description: 
   character: {fileID: 166583802}
-  portrait: {fileID: 21300000, guid: a93c886344f42d84e8012b478af1218f, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -9062,10 +9063,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 219
   indentLevel: 0
-  storyText: 'Oh, and where is that boy running to at this hour I wonder. '
+  storyText: '{i}Oh, and where is that boy running to at this hour I wonder. {/i} '
   description: 
   character: {fileID: 166583802}
-  portrait: {fileID: 21300000, guid: edf6ddbc1787d1f4cb00855ed9bf3864, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -9198,10 +9199,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 217
   indentLevel: 0
-  storyText: "Good, at least she\u2019s eating something. I can try to find her some
-    better food tomorrow. {wc}\nOkay, think, think, think. {wc}\nHmm\u2026 \u2026
-    \u2026 {wc}\nUgh, I don\u2019t have a choice. I can only think of one place, but
-    even that\u2019s not great. Not great at all."
+  storyText: "{i}Good, at least she\u2019s eating something. I can try to find her
+    some better food tomorrow.{/i}"
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -9230,7 +9229,7 @@ MonoBehaviour:
   indentLevel: 0
   duration: 1
   fadeOut: 1
-  targetView: {fileID: 476899227}
+  targetView: {fileID: 1400706767}
   waitUntilFinished: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTexture: {fileID: 0}
@@ -10144,10 +10143,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 233
   indentLevel: 1
-  storyText: <Sigh> I guess one day was just too much to ask for.
+  storyText: '{i}<Sigh> I guess one day was just too much to ask for.{/i}'
   description: 
   character: {fileID: 166583802}
-  portrait: {fileID: 21300000, guid: a93c886344f42d84e8012b478af1218f, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -11340,7 +11339,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 263.31622
     y: 313.6812
-    width: 120.45454
+    width: 120.454544
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11632,7 +11631,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 261.33307
     y: 355.8921
-    width: 120.45454
+    width: 120.454544
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11861,7 +11860,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 258.03485
     y: 270.089
-    width: 120.45454
+    width: 120.454544
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12178,7 +12177,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 426.84564
     y: 412.7399
-    width: 134.0909
+    width: 134.09091
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13619,6 +13618,51 @@ MonoBehaviour:
   commandList:
   - {fileID: 1179316160}
   - {fileID: 1179316159}
+--- !u!114 &1179316165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179315777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 1129.8446
+    y: 429.30566
+    width: 188.63635
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 683
+  blockName: Block Kitchen4 (Copy)
+  description: 
+  eventHandler: {fileID: 1179316391}
+  commandList:
+  - {fileID: 1179316390}
+  - {fileID: 1179316166}
+--- !u!114 &1179316166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179315777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c952ea1ad444e479b570fa242679c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 682
+  indentLevel: 0
+  duration: 0
+  targetView: {fileID: 1400706767}
+  waitUntilFinished: 1
+  targetCamera: {fileID: 0}
 --- !u!114 &1179316167
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -13710,7 +13754,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 1142.4932
-    y: 423.52753
+    y: 486.02744
     width: 140.90909
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -13782,11 +13826,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 487
   indentLevel: 0
-  storyText: "Freeman, you conniving old pug, you couldn\u2019t even give me a few
-    hours to rest before sending for the Mayor."
+  storyText: "{i}Freeman, you conniving old pug, you couldn\u2019t even give me a
+    few hours to rest before sending for the Mayor.{/i}"
   description: 
   character: {fileID: 166583802}
-  portrait: {fileID: 21300000, guid: a93c886344f42d84e8012b478af1218f, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -13812,9 +13856,6 @@ MonoBehaviour:
   savePointKeys:
   - Kitchen 1_18
   - Kitchen 1_19
-  - Kitchen 1_20
-  - Kitchen 1_21
-  - Kitchen 1_22
 --- !u!114 &1179316176
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -14007,7 +14048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 478
   indentLevel: 0
-  storyText: 'Okay, think, think, think. '
+  storyText: '{i}Okay, think, think, think. {/i}'
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -14034,7 +14075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 477
   indentLevel: 0
-  storyText: "Hmm\u2026 \u2026 \u2026"
+  storyText: "{i}Hmm\u2026 \u2026 \u2026{/i}"
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -14061,8 +14102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 476
   indentLevel: 0
-  storyText: "Ugh, I don\u2019t have a choice. I can only think of one place, but
-    even that\u2019s not great. Not great at all."
+  storyText: "{i}Ugh, I don\u2019t have a choice. I can only think of one place, but
+    even that\u2019s not great. Not great at all.{/i}"
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -14204,8 +14245,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 470
   indentLevel: 0
-  storyText: "I know she can\u2019t stay here, but unless she starts talking, I can\u2019t
-    figure out where she\u2019s headed."
+  storyText: "{i}I know she can\u2019t stay here, but unless she starts talking, I
+    can\u2019t figure out where she\u2019s headed.{/i}"
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -14232,8 +14273,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 469
   indentLevel: 0
-  storyText: 'If those bodies were her parents, she might not be talking for a while.
-    Not that I blame her. '
+  storyText: '{i}If those bodies were her parents, she might not be talking for a
+    while. Not that I blame her. {/i}'
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -14260,7 +14301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 468
   indentLevel: 0
-  storyText: 'For now I just need to think of a safe place for us to stay. '
+  storyText: '{i}For now I just need to think of a safe place for us to stay. {/i}'
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -14287,8 +14328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 467
   indentLevel: 0
-  storyText: "I don\u2019t think there\u2019s anywhere within the city that\u2019d
-    be a good spot to lie low. The mayor would track us down eventually. "
+  storyText: "{i}I don\u2019t think there\u2019s anywhere within the city that\u2019d
+    be a good spot to lie low. The mayor would track us down eventually. {/i}"
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -14315,7 +14356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 466
   indentLevel: 0
-  storyText: "Hmm\u2026"
+  storyText: "{i}Hmm\u2026{/i}"
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -14720,7 +14761,7 @@ MonoBehaviour:
   itemId: 445
   indentLevel: 0
   storyText: "{i}Let\u2019s see, what do I have that isn\u2019t dog food. Oh wait,
-    I have those apple!{/i}"
+    I have those apples!{/i}"
   description: 
   character: {fileID: 166583802}
   portrait: {fileID: 0}
@@ -16380,7 +16421,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1308.645
     y: 221.5269
-    width: 161.36362
+    width: 161.36363
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -19562,6 +19603,62 @@ MonoBehaviour:
   move: 0
   shiftIntoPlace: 0
   waitUntilFinished: 0
+--- !u!114 &1179316390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179315777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1902400ccc99b45d69ad01cb86b57d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 681
+  indentLevel: 0
+  musicClip: {fileID: 8300000, guid: 7f7419ede392c074eabe4d076f625a78, type: 3}
+  atTime: 0
+  loop: 1
+  fadeDuration: 1
+--- !u!114 &1179316391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179315777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ca33a026786245d4b10323b87e84d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1179316165}
+  savePointKeys:
+  - Kitchen 1_21
+  - Kitchen 1_22
+  - Kitchen 1_20
+--- !u!114 &1179316392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179315777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437f9a4e3dbc647f9bdce95308418bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 679
+  indentLevel: 0
+  duration: 1
+  fadeOut: 1
+  targetView: {fileID: 476899227}
+  waitUntilFinished: 1
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
+  fadeTexture: {fileID: 0}
+  targetCamera: {fileID: 0}
 --- !u!114 &1179316395
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -21677,6 +21774,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6317410009554227633, guid: 92fbbaada063bab498555dba2a665b4c,
+        type: 3}
+      propertyPath: m_TagString
+      value: SayDialogue
+      objectReference: {fileID: 0}
     - target: {fileID: 6317410009624783550, guid: 92fbbaada063bab498555dba2a665b4c,
         type: 3}
       propertyPath: m_havePropertiesChanged
