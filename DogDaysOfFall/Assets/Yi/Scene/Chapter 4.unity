@@ -4483,6 +4483,7 @@ GameObject:
   - component: {fileID: 1190123321}
   - component: {fileID: 1190123480}
   - component: {fileID: 1190124217}
+  - component: {fileID: 1190124218}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -4538,7 +4539,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -11.756546
     y: 65.40138
-    width: 139.37604
+    width: 140.53915
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4639,11 +4640,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 381.16412, y: 34.542446}
+  scrollPos: {x: -138.92648, y: -405.75412}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 423
-  zoom: 0.59300005
+  zoom: 0.98300004
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -4651,8 +4652,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1190123421}
-  selectedCommands: []
+  - {fileID: 1190123544}
+  selectedCommands:
+  - {fileID: 1190123841}
   variables:
   - {fileID: 1190123325}
   - {fileID: 1190123341}
@@ -6037,7 +6039,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 129.73236
     y: 137.06203
-    width: 132.63068
+    width: 130.36623
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6150,7 +6152,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 158.91286
     y: 69.02972
-    width: 129.258
+    width: 128.33163
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7794,7 +7796,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 549.3491
     y: 476.95514
-    width: 159.61212
+    width: 161.90234
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7841,7 +7843,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 523.5385
     y: 274.33023
-    width: 228.75209
+    width: 228.02644
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7886,7 +7888,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 529.57715
     y: 41.419064
-    width: 213.57503
+    width: 213.78433
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8211,6 +8213,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1190123443}
+  - {fileID: 1190124218}
   - {fileID: 1190123444}
   - {fileID: 1190123761}
   - {fileID: 1190123442}
@@ -9678,7 +9681,7 @@ MonoBehaviour:
   lengkuwuqing: 0
 --- !u!114 &1190123480
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -11238,7 +11241,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 824.4811
     y: 663.816
-    width: 120.8263
+    width: 122.22787
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12191,7 +12194,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 567.98193
     y: 314.17984
-    width: 129.258
+    width: 128.33163
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12656,7 +12659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 234
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 6c30b65992286914f91e2d5666df667c, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -12676,7 +12679,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 825.8976
     y: 626.34326
-    width: 120.8263
+    width: 122.22787
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14537,7 +14540,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 264.47763
     y: -102.02146
-    width: 136.00336
+    width: 138.50458
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14809,7 +14812,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 119.0094
     y: -103.02149
-    width: 136.00336
+    width: 138.50458
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15569,7 +15572,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 533.5925
     y: -12.513726
-    width: 129.258
+    width: 131.38351
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15905,7 +15908,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 398.03607
     y: -14.199379
-    width: 129.258
+    width: 131.38351
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16117,7 +16120,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 260.2461
     y: -16.095345
-    width: 129.258
+    width: 131.38351
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16451,7 +16454,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 119.910255
     y: -15.288735
-    width: 129.258
+    width: 131.38351
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -18509,7 +18512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2181
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -18975,7 +18978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2180
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -19185,7 +19188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2179
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -19504,7 +19507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2178
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -19794,7 +19797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2177
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -20085,7 +20088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2176
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -20377,7 +20380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2175
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -20475,7 +20478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2246
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -20750,7 +20753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2244
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -20808,7 +20811,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 564.5983
     y: 234.80124
-    width: 129.258
+    width: 128.33163
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -21042,7 +21045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2242
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -21100,7 +21103,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 565.5983
     y: 198.99158
-    width: 129.258
+    width: 128.33163
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -21334,7 +21337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2240
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -21392,7 +21395,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 564.5983
     y: 158.99158
-    width: 129.258
+    width: 128.33163
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -21626,7 +21629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2238
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -21684,7 +21687,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 563.5983
     y: 120.99158
-    width: 129.258
+    width: 128.33163
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -21920,7 +21923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2236
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -21938,7 +21941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2235
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -21975,7 +21978,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 563.5983
     y: 81.99158
-    width: 129.258
+    width: 128.33163
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -22248,7 +22251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2233
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -22522,7 +22525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2231
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -22557,7 +22560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 574.25476
+    x: 572.7234
     y: 642.0891
     width: 120
     height: 40
@@ -22817,7 +22820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2229
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -23110,7 +23113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2227
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -23402,7 +23405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2225
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -23439,7 +23442,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 570.0275
     y: 435.64114
-    width: 129.258
+    width: 128.33163
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -23695,7 +23698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2223
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -23732,7 +23735,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 571.6184
     y: 395.9979
-    width: 129.258
+    width: 128.33163
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -23988,7 +23991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2221
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -24025,7 +24028,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 572.0728
     y: 356.22525
-    width: 129.258
+    width: 128.33163
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -24265,7 +24268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2219
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -24284,8 +24287,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 824.6326
-    y: 586.2362
-    width: 120.8263
+    y: 585.21893
+    width: 122.22787
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -24554,7 +24557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2217
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -24574,7 +24577,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 825.32227
     y: 547.8468
-    width: 120.8263
+    width: 122.22787
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -24814,7 +24817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2215
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -25073,7 +25076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2213
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -25637,7 +25640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2211
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -25929,7 +25932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2209
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -26221,7 +26224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2207
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -26514,7 +26517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2205
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -26808,7 +26811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2203
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -27472,7 +27475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2199
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -28347,7 +28350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2196
   indentLevel: 1
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
@@ -32446,13 +32449,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2174
   indentLevel: 0
-  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  musicClip: {fileID: 8300000, guid: 2c05f61fc8b9b7149980666538fb466f, type: 3}
   atTime: 0
   loop: 1
   fadeDuration: 1
 --- !u!114 &1190124217
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -32477,6 +32480,24 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &1190124218
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190123289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1902400ccc99b45d69ad01cb86b57d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 2264
+  indentLevel: 0
+  musicClip: {fileID: 8300000, guid: 864c591483a2475498487eab5a60377a, type: 3}
+  atTime: 0
+  loop: 1
+  fadeDuration: 1
 --- !u!1 &1219405209
 GameObject:
   m_ObjectHideFlags: 0
