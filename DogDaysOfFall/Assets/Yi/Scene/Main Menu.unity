@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19165,7 +19165,7 @@ MonoBehaviour:
   - {fileID: 988348103}
 --- !u!114 &988348149
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -19195,7 +19195,7 @@ MonoBehaviour:
     floatVal: 1
 --- !u!114 &988348150
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -20719,7 +20719,7 @@ PrefabInstance:
     - target: {fileID: 3881509357167130389, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00018310547
+      value: 0.0005493164
       objectReference: {fileID: 0}
     - target: {fileID: 3881509356579411713, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
@@ -20979,22 +20979,22 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7191420980260797742, guid: 36d20a233be88ef45bda4449d841b90c,
+    - target: {fileID: 3204033185770109248, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7191420980260797742, guid: 36d20a233be88ef45bda4449d841b90c,
+    - target: {fileID: 3204033185770109248, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3204033185770109248, guid: 36d20a233be88ef45bda4449d841b90c,
+    - target: {fileID: 7191420980260797742, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3204033185770109248, guid: 36d20a233be88ef45bda4449d841b90c,
+    - target: {fileID: 7191420980260797742, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
@@ -21008,6 +21008,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 960699349883045094, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_Name
+      value: SwitchMenuBarOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413226749199872286, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 929341132763255120, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 929341132763255120, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 929341132763255120, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 929341132763255120, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 131706567}
+    - target: {fileID: 929341132763255120, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseMenuBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 929341132763255120, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36d20a233be88ef45bda4449d841b90c, type: 3}
@@ -34814,11 +34854,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5738237045724382806, guid: 26a4de01753c8364098e099e255c3736,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5738237046397384934, guid: 26a4de01753c8364098e099e255c3736,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -34933,6 +34968,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RaycastTarget
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738237045724382806, guid: 26a4de01753c8364098e099e255c3736,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a4de01753c8364098e099e255c3736, type: 3}

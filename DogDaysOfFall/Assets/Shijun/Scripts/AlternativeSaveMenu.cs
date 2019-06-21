@@ -422,6 +422,9 @@ namespace Fungus
         [HideInInspector]
         [SerializeField] private bool canResetButton = false;
 
+        //[HideInInspector]
+        //[SerializeField] private bool canCloseMenuBar = false;
+
         private void Update()
         {
             var saveManager = FungusManager.Instance.SaveManager;
@@ -438,6 +441,30 @@ namespace Fungus
                     canResetButton = false;
                 }
             }
+
+            //Debug.Log(saveMenuActive);
+            //if (Input.GetMouseButton(0))
+            //{
+            //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //    RaycastHit hit;
+
+            //    if (Physics.Raycast(ray, out hit))
+            //    {
+
+            //        Debug.Log(hit);
+            //    }
+            //}
+
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+
+                Debug.Log(hit);
+            }
+
         }
 
         public void ActivateSkipDialog()
@@ -489,6 +516,16 @@ namespace Fungus
             canResetButton = true;
         }
         #endregion
+
+        public void CloseMenuBar()
+        {
+            if (saveMenuActive)
+            {
+                ToggleSaveMenu();
+            }
+
+            //Debug.Log("act closeMenuBar");
+        }
     }
 
 }
