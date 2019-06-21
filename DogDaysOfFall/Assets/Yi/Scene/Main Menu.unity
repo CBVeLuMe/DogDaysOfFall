@@ -6871,6 +6871,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528655511}
   m_CullTransparentMesh: 0
+--- !u!1 &540164963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 960699349883045094, guid: 36d20a233be88ef45bda4449d841b90c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1064629517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &550465500
 GameObject:
   m_ObjectHideFlags: 0
@@ -20811,6 +20817,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3881509357056631904, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: closeArea
+      value: 
+      objectReference: {fileID: 540164963}
     - target: {fileID: 7819997233528505546, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
       propertyPath: m_IsActive
@@ -21009,10 +21020,20 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5386885622446076128, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -63.17993
+      objectReference: {fileID: 0}
     - target: {fileID: 960699349883045094, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}
       propertyPath: m_Name
       value: SwitchMenuBarOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 960699349883045094, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1413226749199872286, guid: 36d20a233be88ef45bda4449d841b90c,
         type: 3}

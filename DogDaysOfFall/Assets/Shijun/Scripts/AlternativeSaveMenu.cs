@@ -109,6 +109,8 @@ namespace Fungus
                     {
                         saveMenuGroup.alpha = 0f;
                     });
+
+                closeArea.SetActive(false);
             }
             else
             {
@@ -123,6 +125,8 @@ namespace Fungus
                     {
                         saveMenuGroup.alpha = 1f;
                     });
+
+                closeArea.SetActive(true);
             }
 
             saveMenuActive = !saveMenuActive;
@@ -422,8 +426,7 @@ namespace Fungus
         [HideInInspector]
         [SerializeField] private bool canResetButton = false;
 
-        //[HideInInspector]
-        //[SerializeField] private bool canCloseMenuBar = false;
+        [SerializeField] private GameObject closeArea;
 
         private void Update()
         {
