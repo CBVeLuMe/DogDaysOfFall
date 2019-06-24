@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     private bool firstOpen = true;
 
+    [SerializeField] protected GameObject Parent;
     [SerializeField] protected GameObject Loadingbar;
     [SerializeField] protected GameObject LoadingBG;
     //Audio
@@ -82,7 +83,7 @@ public class GameManager : MonoBehaviour
         {
             if (firstOpen == false)
             {
-                LoadingBG.SetActive(false);
+                Destroy(Loadingbar);
                 StartCoroutine(WaitForRender());
                 
             }
@@ -130,8 +131,8 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
-        LoadingBG.SetActive(true);
-        Loadingbar.GetComponent<Animator>().SetBool("RPlay", true);
+        Loadingbar = Instantiate(LoadingBG, Parent.transform);
+        Loadingbar.GetComponentInChildren<Animator>().SetBool("RPlay", true);
         OptionMenuClose();
 
         StartCoroutine(WaitForSecondtoLoad());
@@ -158,7 +159,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitForSecondtoLoad()
     {
-        yield return new WaitForSeconds(2.4f);
+        yield return new WaitForSeconds(1.8f);
         LoadScene("Main Menu");
     }
 }
