@@ -62,7 +62,15 @@ public class GameManager : MonoBehaviour
         musicSlider = musicobj.GetComponent<Slider>();
         soundSlider = sondobj.GetComponent<Slider>();
         textSlider = textobj.GetComponent<Slider>();
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+        soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 0.75f);
+        textSlider.value = PlayerPrefs.GetFloat("WriteSpeed", 50);
     }
+    public void FindSliderMainMenu()
+    {
+        StartCoroutine(WaitForRender());
+    }
+
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name != "Main Menu")
