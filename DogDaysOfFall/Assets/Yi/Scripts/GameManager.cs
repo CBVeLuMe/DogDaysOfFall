@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using Fungus;
+using GameObject = UnityEngine.GameObject;
 
 public class GameManager : MonoBehaviour
 {
@@ -48,10 +49,24 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    void FindSliders()
+    {
+        GameObject root = GameObject.Find("MenuBar");
+        GameObject optionPanel = root.transform.Find("Option Panel For MenuBar").gameObject;
+        GameObject optionParent = optionPanel.transform.Find("Option Parent").gameObject;
+        GameObject optionWindow = optionParent.transform.Find("Option Window").gameObject;
+        GameObject musicobj = optionWindow.transform.Find("Music Slider").gameObject;
+        GameObject sondobj = optionWindow.transform.Find("Sound Slider").gameObject;
+        GameObject textobj = optionWindow.transform.Find("Text Speed").gameObject;
+        musicSlider = musicobj.GetComponent<Slider>();
+        soundSlider = sondobj.GetComponent<Slider>();
+        textSlider = textobj.GetComponent<Slider>();
+    }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name != "Main Menu")
         {
+            FindSliders();
             firstOpen = false;
             sayDialog = GameObject.FindGameObjectWithTag("SayDialogue");
             Debug.Log(sayDialog);

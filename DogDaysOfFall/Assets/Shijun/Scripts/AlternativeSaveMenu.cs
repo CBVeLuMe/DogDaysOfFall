@@ -3,6 +3,7 @@
 
 #if UNITY_5_3_OR_NEWER
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -476,28 +477,42 @@ namespace Fungus
             hasAutoplayedDialog = false;
         }
 
+        private SayDialog sd;
         IEnumerator InvokeAutoplayDialog()
         {
             ToggleSaveMenu();
             Invoke("ResetButton", 0.1f);
             bool hasSentMessage = false;
-            SayDialog sd = GameObject.FindGameObjectWithTag("SayDialogue").GetComponent<SayDialog>();
-            while (hasAutoplayedDialog)
+            try
             {
-                if (sd.CheckIsWaitingForInput())
-                {
-                    if (!hasSentMessage)
-                    {
-                        dialogInput.SetNextLineFlag();
-                        hasSentMessage = true;
-                    }
-                }
-                else
-                {
-                    hasSentMessage = false;
-                }
-                yield return null;
+                sd = GameObject.FindGameObjectWithTag("SayDialogue").GetComponent<SayDialog>();
             }
+            catch
+            {
+                sd = null;
+            }
+
+            if (sd != null)
+            {
+                while (hasAutoplayedDialog)
+                {
+                    if (sd.CheckIsWaitingForInput())
+                    {
+                        if (!hasSentMessage)
+                        {
+                            dialogInput.SetNextLineFlag();
+                            hasSentMessage = true;
+                        }
+                    }
+                    else
+                    {
+                        hasSentMessage = false;
+                    }
+                    yield return null;
+                }
+
+            }
+            yield return 0;
         }
 
         private void ResetButton()
