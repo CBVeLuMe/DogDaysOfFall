@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioMixer audioMix;
     [SerializeField] private GameObject optionMenu;
     private float WSpeed;
-    private void Start()
+    private void Awake()
     {
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
         soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 0.75f);
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
             FindSliders();
             firstOpen = false;
             sayDialog = GameObject.FindGameObjectWithTag("SayDialogue");
-            Debug.Log(sayDialog);
+            //Debug.Log(sayDialog);
             if (sayDialog)
             {
                 sayDialog.GetComponent<Writer>().WritingSpeed = WSpeed;
@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitForRender()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
         musicSlider = GameObject.FindGameObjectWithTag("MusicSlider").GetComponent<Slider>();
         musicSlider.onValueChanged.AddListener(delegate { SetMusic(); });
         soundSlider = GameObject.FindGameObjectWithTag("SoundSlider").GetComponent<Slider>();
@@ -135,6 +135,13 @@ public class GameManager : MonoBehaviour
     {
         WSpeed = textSlider.value;
         PlayerPrefs.SetFloat("WriteSpeed", textSlider.value);
+        if (sayDialog)
+        {
+            sayDialog.GetComponent<Writer>().WritingSpeed = WSpeed;
+            dialogInput = sayDialog.GetComponent<DialogInput>();
+        }
+        else
+            return;
     }
 
     public void ReturnToMainMenu()

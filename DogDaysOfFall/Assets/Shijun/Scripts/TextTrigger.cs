@@ -27,7 +27,7 @@ public class TextTrigger : MonoBehaviour
 
     private void SetAttemptsText()
     {
-        attemptsString = "Attempts: " + attemptsCounter.ToString();
+        attemptsString = "Rounds: " + attemptsCounter.ToString();
         attemptsText.text = attemptsString;
     }
 }
