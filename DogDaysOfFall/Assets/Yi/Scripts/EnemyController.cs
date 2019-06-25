@@ -14,6 +14,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject loseButton;
     [SerializeField] private GameObject timerS;
 
+    [SerializeField] private Sprite secondIdle;
+    [SerializeField] private Sprite secondTurn;
+    [SerializeField] private Sprite secondTurn2;
+
+    [SerializeField] private Sprite thirdIdle;
+    [SerializeField] private Sprite thirdTurn;
+    [SerializeField] private Sprite thirdTurn2;
+
     //[SerializeField] private TMP_InputField IPF1;
     //[SerializeField] private TMP_InputField IPF2;
     //[SerializeField] private TMP_InputField IPF3;
@@ -82,6 +90,7 @@ public class EnemyController : MonoBehaviour
 
         }
     }
+
 
     //void ChangeRandomValue()
     //{
@@ -190,6 +199,14 @@ public class EnemyController : MonoBehaviour
             checkPlayer = false;
         }
     }
+
+    public void SwitchSprite(Sprite idle, Sprite turn, Sprite turn2)
+    {
+        BananaIdle.GetComponent<SpriteRenderer>().sprite = idle;
+        BananaIdle.GetComponent<SpriteRenderer>().sprite = turn;
+        BananaIdle.GetComponent<SpriteRenderer>().sprite = turn2;
+    }
+
     public void ResetGameButton()
     {
         Time.timeScale = 1;
