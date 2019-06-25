@@ -478,11 +478,13 @@ namespace Fungus
         }
 
         private SayDialog sd;
+        bool hasSentMessage = false;
+        float leftTime;
         IEnumerator InvokeAutoplayDialog()
         {
             ToggleSaveMenu();
             Invoke("ResetButton", 0.1f);
-            bool hasSentMessage = false;
+            hasSentMessage = false;
             try
             {
                 sd = GameObject.FindGameObjectWithTag("SayDialogue").GetComponent<SayDialog>();
@@ -500,6 +502,12 @@ namespace Fungus
                     {
                         if (!hasSentMessage)
                         {
+                            leftTime = 0f;
+                            while (leftTime < 1f)
+                            {
+                                leftTime += Time.deltaTime;
+                                yield return null;
+                            }
                             dialogInput.SetNextLineFlag();
                             hasSentMessage = true;
                         }
@@ -510,7 +518,6 @@ namespace Fungus
                     }
                     yield return null;
                 }
-
             }
             yield return 0;
         }
