@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class L_FadeOut : MonoBehaviour
 {
+    [SerializeField] Animator fadeAnimator;
     private GameObject uiCanvas;
-    public Animator fadeAnimator;
+
     void OnEnable()
     {
         uiCanvas = this.transform.parent.gameObject;
@@ -14,7 +15,7 @@ public class L_FadeOut : MonoBehaviour
     public void FadeAnimationOut()
     {
         fadeAnimator.SetBool("PlayAnimation", false);
-        uiCanvas.SetActive(false);
-        
+        uiCanvas.SetActive(false);       
     }
+
 }
