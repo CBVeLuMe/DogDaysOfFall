@@ -1263,6 +1263,7 @@ GameObject:
   - component: {fileID: 817489821}
   - component: {fileID: 817489823}
   - component: {fileID: 817489822}
+  - component: {fileID: 817489824}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1333,7 +1334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -1107.7972, y: -142.5289}
+  scrollPos: {x: 292.20224, y: -85.94998}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 670
@@ -1345,9 +1346,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 817489469}
+  - {fileID: 817489386}
   selectedCommands:
-  - {fileID: 817489468}
+  - {fileID: 817489824}
   variables:
   - {fileID: 817489381}
   - {fileID: 817489698}
@@ -1503,6 +1504,7 @@ MonoBehaviour:
   - {fileID: 817489403}
   - {fileID: 817489691}
   - {fileID: 817489690}
+  - {fileID: 817489824}
   - {fileID: 817489401}
   - {fileID: 817489404}
   - {fileID: 817489382}
@@ -14029,7 +14031,7 @@ MonoBehaviour:
   targetCamera: {fileID: 0}
 --- !u!114 &817489822
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14047,7 +14049,7 @@ MonoBehaviour:
   durationOLD: 0
 --- !u!114 &817489823
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14070,6 +14072,23 @@ MonoBehaviour:
     booleanVal: 1
   animatorOLD: {fileID: 0}
   parameterNameOLD: 
+--- !u!114 &817489824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817489376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 1269
+  indentLevel: 1
+  targetObject: {fileID: 1980829081}
+  methodName: Restartgame
+  delay: 0
 --- !u!1 &990710916
 GameObject:
   m_ObjectHideFlags: 0
@@ -15683,6 +15702,12 @@ PrefabInstance:
       objectReference: {fileID: 817489379}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1be8363040519b3448f89264c0db0fb9, type: 3}
+--- !u!1 &1980829081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6577154192116118267, guid: 1be8363040519b3448f89264c0db0fb9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1980829080}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1995605267
 GameObject:
   m_ObjectHideFlags: 0

@@ -4726,6 +4726,7 @@ GameObject:
   - component: {fileID: 1179317029}
   - component: {fileID: 1179317027}
   - component: {fileID: 1179317028}
+  - component: {fileID: 1179317030}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -4843,7 +4844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -725.05865, y: -24.394897}
+  scrollPos: {x: 264.00247, y: 120.917404}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 512
@@ -4855,9 +4856,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1179316001}
+  - {fileID: 1179315814}
   selectedCommands:
-  - {fileID: 1179317027}
+  - {fileID: 1179315790}
   variables:
   - {fileID: 1179315789}
   - {fileID: 1179315957}
@@ -5796,6 +5797,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 1179316314}
   - {fileID: 1179315790}
+  - {fileID: 1179317030}
   - {fileID: 1179315816}
   - {fileID: 1179315815}
   - {fileID: 1179315832}
@@ -42920,7 +42922,7 @@ MonoBehaviour:
   waitUntilFinished: 0
 --- !u!114 &1179317027
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42945,7 +42947,7 @@ MonoBehaviour:
   parameterNameOLD: 
 --- !u!114 &1179317028
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42963,7 +42965,7 @@ MonoBehaviour:
   durationOLD: 0
 --- !u!114 &1179317029
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -42982,6 +42984,23 @@ MonoBehaviour:
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTexture: {fileID: 0}
   targetCamera: {fileID: 0}
+--- !u!114 &1179317030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179315777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 1538
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ResetGameTimer
+  delay: 0
 --- !u!1 &1219679489
 GameObject:
   m_ObjectHideFlags: 0
