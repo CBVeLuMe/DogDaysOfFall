@@ -34,6 +34,7 @@ public class EnemyController : MonoBehaviour
     private bool stopTimer = false;
     public bool checkPlayer = false;
     private bool isStart = false;
+    private bool stopStealth = false;
     private AnimatedGifPlayer AnimatedGifPlayer;
     private DragFunction dragFuc;
     private AudioSource dieSFX;
@@ -70,24 +71,27 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isStart)
+        if (!stopStealth)
         {
-            //如果改变了random值这个地方可以取消注释
-            if(!turnActivate)
-                TimerFunc();
-            if (checkPlayer)
-                lostGameCheck();
-        }
-        else
-            StartTimer();
+            if (isStart)
+            {
+                //如果改变了random值这个地方可以取消注释
+                if (!turnActivate)
+                    TimerFunc();
+                if (checkPlayer)
+                    lostGameCheck();
+            }
+            else
+                StartTimer();
 
-         //if (IPF1.text != "" && IPF2.text != "" && IPF3.text != "" && IPF4.text != "" && IPF5.text != "")
-         //       ChangeRandomValue();
-        if (dragFuc.triggerTurn == true&&!turnActivate)//new
-        {
-            //ActivateTurn();
-            StartCoroutine(TurnAround());
+            //if (IPF1.text != "" && IPF2.text != "" && IPF3.text != "" && IPF4.text != "" && IPF5.text != "")
+            //       ChangeRandomValue();
+            if (dragFuc.triggerTurn == true && !turnActivate)//new
+            {
+                //ActivateTurn();
+                StartCoroutine(TurnAround());
 
+            }
         }
     }
 
@@ -200,11 +204,21 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void SwitchSprite(Sprite idle, Sprite turn, Sprite turn2)
+    public void secondEnemy()
+    {
+        SwitchSprite(secondIdle, secondTurn, secondTurn2);
+    }
+
+    public void thirdEnemy()
+    {
+        SwitchSprite(thirdIdle, thirdTurn, thirdTurn2);
+    }
+
+    void SwitchSprite(Sprite idle, Sprite turn, Sprite turn2)
     {
         BananaIdle.GetComponent<SpriteRenderer>().sprite = idle;
-        BananaIdle.GetComponent<SpriteRenderer>().sprite = turn;
-        BananaIdle.GetComponent<SpriteRenderer>().sprite = turn2;
+        BananaTurn.GetComponent<SpriteRenderer>().sprite = turn;
+        BananaTurn2.GetComponent<SpriteRenderer>().sprite = turn2;
     }
 
     public void ResetGameButton()
@@ -244,16 +258,16 @@ public class EnemyController : MonoBehaviour
         //Time.timeScale = 0;
         //Debug.Log("WonFuc");
         winButton.SetActive(true);
-        Time.timeScale = 0;
+        stopStealth = true;
     }
     public void wonButton()
     {
-        winButton.GetComponent<Animator>().SetTrigger("LostClose");
-        Time.timeScale = 1;
+        winButton.GetComponent<Animator>().SetTrigger("LostClose");       
         Invoke("wonButton2", 1f);
     }
     private void wonButton2()
     {
+        stopStealth = false;
         stelthAssist.StelthOver();
         fcC1.SetBooleanVariable("StealthGameWon", true);
     }
