@@ -26,7 +26,7 @@ public class StelthGameAssist : MonoBehaviour
         GameObject menuBar = GameObject.Find("MenuBar");
         panelButton = menuBar.transform.Find("Panel").gameObject;
         //panelButton = GameObject.Find("/MenuBar/Panel");
-        narrative = GameObject.Find("/MenuBar/NarrativeLog");
+       // narrative = GameObject.Find("/MenuBar/NarrativeLog");
         /*
         menuButton = GameObject.Find("/SaveMenu/Buttons/MenuButton");
         if (menuButton == null)
@@ -46,13 +46,13 @@ public class StelthGameAssist : MonoBehaviour
         */
         menuButton.GetComponent<Button>().interactable = false;
         panelButton.SetActive(false);
-        narrative.SetActive(false);
+        //narrative.SetActive(false);
     }
 
     public void StelthOver()
     {
         menuButton.GetComponent<Button>().interactable = true;
         panelButton.SetActive(true);
-        narrative.SetActive(true);
+        //narrative.SetActive(true);
     }
 }
