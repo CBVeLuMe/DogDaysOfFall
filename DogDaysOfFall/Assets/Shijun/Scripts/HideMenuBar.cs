@@ -4,9 +4,10 @@ public class HideMenuBar : MonoBehaviour
 {
     private GameObject menuButton;
 
-    private void Start()
+    private void Awake()
     {
-        menuButton = GameObject.FindGameObjectWithTag("MenuButton");
+        GameObject menubar = GameObject.Find("MenuBar").gameObject;
+        menuButton = menubar.transform.Find("MenuButton").gameObject;
 
     }
 
