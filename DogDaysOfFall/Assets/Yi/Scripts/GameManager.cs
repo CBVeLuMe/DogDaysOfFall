@@ -81,6 +81,8 @@ public class GameManager : MonoBehaviour
             //Debug.Log(sayDialog);
             if (sayDialog)
             {
+                Debug.Log(WSpeed);
+                WSpeed = PlayerPrefs.GetFloat("WriteSpeed", 50);
                 sayDialog.GetComponent<Writer>().WritingSpeed = WSpeed;
                 dialogInput = sayDialog.GetComponent<DialogInput>();
             }
