@@ -4,6 +4,8 @@ public class HideMenuBar : MonoBehaviour
 {
     private GameObject menuButton;
 
+    public bool dontdisable;
+
     private void Awake()
     {
         GameObject menubar = GameObject.Find("MenuBar").gameObject;
@@ -17,7 +19,10 @@ public class HideMenuBar : MonoBehaviour
         {
             if (menuButton.activeSelf)
             {
-                menuButton.SetActive(false);
+                if (!dontdisable)
+                {
+                    menuButton.SetActive(false);
+                }
             }
             else
             {
