@@ -303,7 +303,7 @@ namespace Fungus
 
         public Sprite GetSprite(int num)
         {
-            string filename = Application.dataPath + "/Screenshot" + num + ".png";
+            string filename = Application.persistentDataPath + "/Screenshot" + num + ".png";
             FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
             fs.Seek(0, SeekOrigin.Begin);
             imageByte = new byte[fs.Length];
@@ -324,10 +324,10 @@ namespace Fungus
         public void GetImage(int num)
         {
             //string filename = "/Project/DogDaysOfFall/DogDaysOfFall/Assets/Screenshot.png";
-            string filename = Application.dataPath + "/Screenshot" + num + ".png";
+            string filename = Application.persistentDataPath + "/Screenshot" + num + ".png";
             //Texture2D _tex = (Texture2D)Resources.Load("Lighthouse");
             FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
-            FileInfo fi = new FileInfo(Application.dataPath + "/Screenshot" + num + ".png");
+            FileInfo fi = new FileInfo(Application.persistentDataPath + "/Screenshot" + num + ".png");
             readTime = fi.LastWriteTime.ToString();
             readTime = readTime.Replace('/', 'Z');
             readTime = readTime.Replace(':', 'Z');
@@ -378,7 +378,7 @@ namespace Fungus
             GameObject.Destroy(rt);
             // 最后将这些纹理数据，成一个png图片文件
             byte[] bytes = screenShot.EncodeToPNG();
-            string filename = Application.dataPath + "/Screenshot" + num + ".png";
+            string filename = Application.persistentDataPath + "/Screenshot" + num + ".png";
             System.IO.File.WriteAllBytes(filename, bytes);
             Debug.Log(string.Format("截屏了一张照片: {0}", filename));
 
@@ -387,7 +387,7 @@ namespace Fungus
         /*
         void TakeAPicture(string name)
         {
-            ScreenCapture.CaptureScreenshot(Application.persistentDataPath + name);
+            ScreenCapture.CaptureScreenshot(Application.persistentpersistentDataPath + name);
         }
         */
 
