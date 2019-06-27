@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using OldMoatGames;
 using Fungus;
 using TMPro;
 
@@ -27,7 +26,6 @@ public class EnemyControllerTest : MonoBehaviour
     private bool stopTimer = false;
     public bool checkPlayer = false;
     private bool isStart = false;
-    private AnimatedGifPlayer AnimatedGifPlayer;
     private DragFunctionTest dragFuc;
     private AudioSource dieSFX;
     private FillBarFunction fillFuc;
@@ -126,8 +124,6 @@ public class EnemyControllerTest : MonoBehaviour
             BananaIdle.SetActive(false);
             BananaTurn.SetActive(true);
             dieSFX.Play();
-            AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
-            AnimatedGifPlayer.Play();
             Invoke("CheckPlayer", dieTime);
             Invoke("Restart", RestartTime);
             turnActivate = true;
@@ -146,8 +142,6 @@ public class EnemyControllerTest : MonoBehaviour
         BananaIdle.SetActive(false);
         BananaTurn.SetActive(true);
         dieSFX.Play();
-        AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
-        AnimatedGifPlayer.Play();
         Invoke("CheckPlayer", dieTime);
         Invoke("Restart", RestartTime);
     }
@@ -164,8 +158,6 @@ public class EnemyControllerTest : MonoBehaviour
                 BananaIdle.SetActive(false);
                 BananaTurn.SetActive(true);
                 dieSFX.Play();
-                AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
-                AnimatedGifPlayer.Play();
                 Invoke("CheckPlayer", dieTime);
                 Invoke("Restart", RestartTime);
                 turnActivate = true;

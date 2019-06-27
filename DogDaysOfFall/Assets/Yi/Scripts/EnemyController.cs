@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using OldMoatGames;
 using Fungus;
 using TMPro;
 
@@ -35,7 +34,6 @@ public class EnemyController : MonoBehaviour
     public bool checkPlayer = false;
     private bool isStart = false;
     private bool stopStealth = false;
-    private AnimatedGifPlayer AnimatedGifPlayer;
     private DragFunction dragFuc;
     private AudioSource dieSFX;
     private FillBarFunction fillFuc;
