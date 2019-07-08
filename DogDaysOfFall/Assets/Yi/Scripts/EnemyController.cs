@@ -1,31 +1,28 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
 using TMPro;
+using System.Collections.Generic;
 
 public class EnemyController : MonoBehaviour
 {
+    [Header("Three phase of the guard")]
     [SerializeField] private GameObject BananaIdle;
     [SerializeField] private GameObject BananaTurn;
     [SerializeField] private GameObject BananaTurn2;
+    [Header("Buttons and text")]
     [SerializeField] private GameObject winButton;
     [SerializeField] private GameObject loseButton;
     [SerializeField] private GameObject timerS;
-
+    [SerializeField] private SpriteRenderer bar;
+    [Header("Second guard arts")]
     [SerializeField] private Sprite secondIdle;
     [SerializeField] private Sprite secondTurn;
     [SerializeField] private Sprite secondTurn2;
-
+    [Header("Third guard arts")]
     [SerializeField] private Sprite thirdIdle;
     [SerializeField] private Sprite thirdTurn;
-    [SerializeField] private Sprite thirdTurn2;
-
-    //[SerializeField] private TMP_InputField IPF1;
-    //[SerializeField] private TMP_InputField IPF2;
-    //[SerializeField] private TMP_InputField IPF3;
-    //[SerializeField] private TMP_InputField IPF4;
-    //[SerializeField] private TMP_InputField IPF5;
+    [SerializeField] private Sprite thirdTurn2;    
 
     private Vector3 startPos;
     private float Timer;
@@ -36,9 +33,9 @@ public class EnemyController : MonoBehaviour
     private bool stopStealth = false;
     private DragFunction dragFuc;
     private AudioSource dieSFX;
-    private FillBarFunction fillFuc;
-
-    [SerializeField] private List<float> RandomNub;//修改意见：增加了新的功能以后 random 的值可以都变大 现在暂时取消了原来的回头功能 详情可以咨询我
+    //private FillBarFunction fillFuc;
+    [Header("Balance Modifier")]
+    [SerializeField] private List<float> RandomNub;
     [SerializeField] private float RestartTime;
     [SerializeField] private float dieTime;
     [SerializeField] private float startTimer;
@@ -55,7 +52,7 @@ public class EnemyController : MonoBehaviour
     {
         dieSFX = GetComponent<AudioSource>();
         dragFuc = FindObjectOfType<DragFunction>();
-        fillFuc = FindObjectOfType<FillBarFunction>();
+        //fillFuc = FindObjectOfType<FillBarFunction>();
         stelthAssist = FindObjectOfType<StelthGameAssist>().GetComponent<StelthGameAssist>();
     }
 
@@ -73,7 +70,6 @@ public class EnemyController : MonoBehaviour
         {
             if (isStart)
             {
-                //如果改变了random值这个地方可以取消注释
                 if (!turnActivate)
                     TimerFunc();
                 if (checkPlayer)
@@ -82,8 +78,6 @@ public class EnemyController : MonoBehaviour
             else
                 StartTimer();
 
-            //if (IPF1.text != "" && IPF2.text != "" && IPF3.text != "" && IPF4.text != "" && IPF5.text != "")
-            //       ChangeRandomValue();
             if (dragFuc.triggerTurn == true && !turnActivate)//new
             {
                 //ActivateTurn();
@@ -92,21 +86,6 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
-
-
-    //void ChangeRandomValue()
-    //{
-    //    string random1 = IPF1.text;
-    //    RandomNub[0] = float.Parse(random1);
-    //    string random2 = IPF2.text;
-    //    RandomNub[1] = float.Parse(random2);
-    //    string random3 = IPF3.text;
-    //    RandomNub[2] = float.Parse(random3);
-    //    string random4 = IPF4.text;
-    //    RandomNub[3] = float.Parse(random4);
-    //    string random5 = IPF5.text;
-    //    dragFuc.moveSpeed = float.Parse(random5);
-    //}
 
     void StartTimer()
     {
@@ -133,8 +112,7 @@ public class EnemyController : MonoBehaviour
             BananaIdle.SetActive(false);
             BananaTurn.SetActive(true);
             dieSFX.Play();
-            //AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
-            //AnimatedGifPlayer.Play();
+            StartCoroutine(lerpColor(dieTime));
             Invoke("CheckPlayer", dieTime);
             Invoke("Restart", RestartTime);
             turnActivate = true;
@@ -150,14 +128,35 @@ public class EnemyController : MonoBehaviour
     void ActivateTurn()//new 
     {
         //Debug.Log("Direct Turn");
+        stopTimer = true;
+        Timer = 0;
         BananaIdle.SetActive(false);
         BananaTurn.SetActive(true);
         dieSFX.Play();
-        //AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
-        //AnimatedGifPlayer.Play();
+        StartCoroutine(lerpColor(dieTime));
         Invoke("CheckPlayer", dieTime);
         Invoke("Restart", RestartTime);
+        turnActivate = true;
     }
+
+    IEnumerator lerpColor(float waitTime)
+    {
+        float timer = 0;
+        while (timer < waitTime)
+        {
+            bar.color = Color32.Lerp(new Color32(0, 195, 104, 255), new Color32(255, 0, 0, 255), (timer /waitTime));
+            timer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+    }
+    // Start checking if the player is still pressing screen
+    void CheckPlayer()
+    {
+        BananaIdle.SetActive(false);
+        BananaTurn.SetActive(true);
+        checkPlayer = true;
+    }
+
     void TimerFunc()
     {
         if (!stopTimer)
@@ -166,35 +165,18 @@ public class EnemyController : MonoBehaviour
         {
             if (!turnActivate)
             {
-                stopTimer = true;
-                Timer = 0;
-                BananaIdle.SetActive(false);
-                BananaTurn.SetActive(true);
-                dieSFX.Play();
-                //AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
-                //AnimatedGifPlayer.Play();
-                Invoke("CheckPlayer", dieTime);
-                Invoke("Restart", RestartTime);
-                turnActivate = true;
+                ActivateTurn();
             }
-            /*
-            stopTimer = true;
-            Timer = 0;
-            BananaIdle.SetActive(false);
-            BananaTurn.SetActive(true);
-            dieSFX.Play();
-            AnimatedGifPlayer = BananaTurn.GetComponent<AnimatedGifPlayer>();
-            AnimatedGifPlayer.Play();
-            Invoke("CheckPlayer", dieTime);
-            Invoke("Restart", RestartTime);
-            */
         }
         
     }
+    // Check the player status
     void lostGameCheck()
     {
         if (dragFuc.MoveorNot)
         {
+            BananaTurn.SetActive(false);
+            BananaTurn2.SetActive(true);
             loseButton.SetActive(true);
             dragFuc.canMove = false;
             Time.timeScale = 0;
@@ -232,7 +214,6 @@ public class EnemyController : MonoBehaviour
         Restart();
         dragFuc.MoveorNot = false;
         dragFuc.canMove = true;
-        //fillFuc.ResetGreen();
     }
     private void ResetGameTimer()
     {
@@ -250,11 +231,6 @@ public class EnemyController : MonoBehaviour
 
     public void wonGameFuc()
     {
-        //youDiePic.SetActive(true);
-        //loseButton.SetActive(true);
-        //dragFuc.canMove = false;
-        //Time.timeScale = 0;
-        //Debug.Log("WonFuc");
         winButton.SetActive(true);
         stopStealth = true;
     }
@@ -270,22 +246,15 @@ public class EnemyController : MonoBehaviour
         fcC1.SetBooleanVariable("StealthGameWon", true);
     }
 
-    void CheckPlayer()
-    {
-        //BananaIdle.SetActive(false);
-        BananaTurn.SetActive(false);
-        BananaTurn2.SetActive(true);
-        checkPlayer = true;
-        
-    }
     void Restart()
     {
         turnActivate = false;
         dragFuc.triggerTurn = false;
         stopTimer = false;
         checkPlayer = false;
-        randomTimer = RandomNub[Random.Range(0, RandomNub.Count)];
         BananaIdle.SetActive(true);
+        BananaTurn.SetActive(false);
         BananaTurn2.SetActive(false);
+        bar.color = new Color32(0, 194, 104, 255);
     }
 }

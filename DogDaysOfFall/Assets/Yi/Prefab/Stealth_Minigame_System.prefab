@@ -76,7 +76,7 @@ SpriteRenderer:
   m_Size: {x: 4.32, y: 8.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &534642156860898040
@@ -225,7 +225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &534642156966271359
 Transform:
   m_ObjectHideFlags: 0
@@ -675,12 +675,12 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 480, y: 320}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -752,6 +752,13 @@ MonoBehaviour:
   winButton: {fileID: 1887088897832171371}
   loseButton: {fileID: 1656553672412710845}
   timerS: {fileID: 534642157120153364}
+  bar: {fileID: 3963263758465773892}
+  secondIdle: {fileID: 0}
+  secondTurn: {fileID: 0}
+  secondTurn2: {fileID: 0}
+  thirdIdle: {fileID: 0}
+  thirdTurn: {fileID: 0}
+  thirdTurn2: {fileID: 0}
   checkPlayer: 0
   RandomNub:
   - 2.75
@@ -1487,7 +1494,7 @@ SpriteRenderer:
   m_Size: {x: 4.08, y: 8.82}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &4254130725840684370
@@ -1515,8 +1522,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4254130725840684370}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -4.18, z: 0}
-  m_LocalScale: {x: 0.47253224, y: 0.31957245, z: 0.64822}
+  m_LocalPosition: {x: 1.0139, y: -4.1899, z: 0}
+  m_LocalScale: {x: 15.381625, y: 0.16848566, z: 0.64822}
   m_Children: []
   m_Father: {fileID: 534642156966271359}
   m_RootOrder: 8
@@ -1558,8 +1565,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: faab081b942b08f4082e0e5d78179cf8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 3cb7c35a750699348a04840d1ae1be5e, type: 3}
+  m_Color: {r: 0, g: 0.7607843, b: 0.40784314, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2113,7 +2120,7 @@ SpriteRenderer:
   m_Size: {x: 4.32, y: 9.02}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &7657710613943253388

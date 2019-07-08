@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 // © 2017 TheFlyingKeyboard and released under MIT License
 // theflyingkeyboard.net
