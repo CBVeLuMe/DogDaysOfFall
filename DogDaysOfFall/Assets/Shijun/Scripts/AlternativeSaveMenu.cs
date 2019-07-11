@@ -77,8 +77,16 @@ namespace Fungus
             }
 
             clickAudioSource = GetComponent<AudioSource>();
+            InitializedSaveDataKey();
         }
-
+        void InitializedSaveDataKey()
+        {
+            saveDataKey[0] = PlayerPrefs.GetString("SaveKeyAuto", "0");
+            saveDataKey[1] = PlayerPrefs.GetString("SaveKeyQuick", "0");
+            saveDataKey[2] = PlayerPrefs.GetString("SaveKeyOne", "0");
+            saveDataKey[3] = PlayerPrefs.GetString("SaveKeyTwo", "0");
+            saveDataKey[4] = PlayerPrefs.GetString("SaveKeyThree", "0");
+        }
         protected virtual void Start()
         {
             if (!saveMenuActive)

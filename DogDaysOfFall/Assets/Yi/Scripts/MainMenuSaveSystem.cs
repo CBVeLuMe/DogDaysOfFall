@@ -21,23 +21,23 @@ public class MainMenuSaveSystem : MonoBehaviour
     void Start()
     {
         ANSM = FindObjectOfType<Fungus.AlternativeSaveMenu>();
+        Invoke("FindSaveData",0.2f);
 
-
-        var saveManager = Fungus.FungusManager.Instance.SaveManager;
-
-        foreach (string savedata in ANSM.SaveDataKey)
-        {
-            if (!saveManager.SaveDataExists(savedata))
-            {
-                Continue.interactable = false;
-            }
-            else
-            {
-                Continue.interactable = true;
-            }
-        }
     }
 
+    void FindSaveData()
+    {
+        var saveManager = Fungus.FungusManager.Instance.SaveManager;
+        if (!saveManager.SaveDataExists(ANSM.SaveDataKey[0]))
+        {
+            Continue.interactable = false;
+        }
+        else
+        {
+            Continue.interactable = true;
+        }
+ 
+    }
 
     // Update is called once per frame
     void Update()
@@ -101,7 +101,8 @@ public class MainMenuSaveSystem : MonoBehaviour
 
     public void ContinueFunction()
     {
-        ANSM.Load(SaveDataNumber());
+        ANSM.Load(0);
+        //ANSM.Load(SaveDataNumber());
         //Destroy(ANSM.gameObject);
     }
 }
