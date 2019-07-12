@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 namespace Fungus
 {
@@ -424,11 +425,19 @@ namespace Fungus
         }
         #endregion Save and Load
 
+        public Button skipButton;
+        public EventTrigger skipEvent;
+        public void skipButtonSet(bool state)
+        {
+            skipButton.interactable = state;
+            skipEvent.enabled = state;
+        }
+
         #region Fastforward and AutoPlay
 
         [HideInInspector]
-        [SerializeField] private bool hasSkippedDialog = false;
-
+        //[SerializeField] private bool hasSkippedDialog = false;
+        public bool hasSkippedDialog = false;
         [HideInInspector]
         [SerializeField] private bool hasAutoplayedDialog = false;
 
@@ -546,6 +555,7 @@ namespace Fungus
             //Debug.Log("act closeMenuBar");
         }
     }
+    
 
 }
 

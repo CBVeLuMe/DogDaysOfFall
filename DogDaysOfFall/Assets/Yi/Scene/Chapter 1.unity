@@ -722,7 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 0}
+  selectedFlowchart: {fileID: 817489379}
 --- !u!4 &556730916
 Transform:
   m_ObjectHideFlags: 1
@@ -766,6 +766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45a1f3a84ae91840ba7ffb91a878245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chapterNumber: 1
 --- !u!4 &623473908
 Transform:
   m_ObjectHideFlags: 0
@@ -1416,6 +1417,7 @@ GameObject:
   - component: {fileID: 817489855}
   - component: {fileID: 817489857}
   - component: {fileID: 817489856}
+  - component: {fileID: 817489858}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1500,7 +1502,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 817489469}
   selectedCommands:
-  - {fileID: 817489856}
+  - {fileID: 817489858}
   variables:
   - {fileID: 817489381}
   - {fileID: 817489698}
@@ -4074,6 +4076,7 @@ MonoBehaviour:
   - {fileID: 817489477}
   - {fileID: 817489470}
   - {fileID: 817489856}
+  - {fileID: 817489858}
   - {fileID: 817489838}
   - {fileID: 817489474}
   - {fileID: 817489823}
@@ -15164,6 +15167,23 @@ MonoBehaviour:
   indentLevel: 0
   targetObject: {fileID: 623473906}
   methodName: CallSave
+  delay: 0
+--- !u!114 &817489858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817489376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 1316
+  indentLevel: 0
+  targetObject: {fileID: 623473906}
+  methodName: ChapterOneFinished
   delay: 0
 --- !u!1 &943257657
 GameObject:

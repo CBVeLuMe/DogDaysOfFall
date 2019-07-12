@@ -4426,6 +4426,7 @@ GameObject:
   - component: {fileID: 1179317055}
   - component: {fileID: 1179317054}
   - component: {fileID: 1179317053}
+  - component: {fileID: 1179317057}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -4560,7 +4561,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1179316001}
   selectedCommands:
-  - {fileID: 1179317053}
+  - {fileID: 1179317057}
   variables:
   - {fileID: 1179315789}
   - {fileID: 1179315957}
@@ -10390,6 +10391,7 @@ MonoBehaviour:
   - {fileID: 1179316324}
   - {fileID: 1179316323}
   - {fileID: 1179317053}
+  - {fileID: 1179317057}
   - {fileID: 1179316007}
   - {fileID: 1179316006}
   - {fileID: 1179316005}
@@ -43345,6 +43347,23 @@ MonoBehaviour:
   targetObject: {fileID: 1699109879}
   methodName: CallSave
   delay: 0
+--- !u!114 &1179317057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179315777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 1568
+  indentLevel: 0
+  targetObject: {fileID: 1699109879}
+  methodName: ChapterTwoFinished
+  delay: 0
 --- !u!1 &1219679489
 GameObject:
   m_ObjectHideFlags: 0
@@ -44496,6 +44515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45a1f3a84ae91840ba7ffb91a878245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chapterNumber: 2
 --- !u!4 &1699109881
 Transform:
   m_ObjectHideFlags: 0
@@ -46017,11 +46037,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -224.45312
       objectReference: {fileID: 0}
-    - target: {fileID: 6317410009554227631, guid: 92fbbaada063bab498555dba2a665b4c,
-        type: 3}
-      propertyPath: clickMode
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1735813396, guid: 92fbbaada063bab498555dba2a665b4c, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 923.0781
@@ -46035,6 +46050,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -38.94922
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317410009554227631, guid: 92fbbaada063bab498555dba2a665b4c,
+        type: 3}
+      propertyPath: clickMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5332305665687339079, guid: 92fbbaada063bab498555dba2a665b4c,
         type: 3}

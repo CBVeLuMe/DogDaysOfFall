@@ -3891,6 +3891,7 @@ GameObject:
   - component: {fileID: 1190123489}
   - component: {fileID: 1190123302}
   - component: {fileID: 1190123705}
+  - component: {fileID: 1190124229}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -4059,9 +4060,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1190123337}
+  - {fileID: 1190123421}
   selectedCommands:
-  - {fileID: 1190123705}
+  - {fileID: 1190124229}
   variables:
   - {fileID: 1190123325}
   - {fileID: 1190123341}
@@ -7672,6 +7673,7 @@ MonoBehaviour:
   - {fileID: 1190123425}
   - {fileID: 1190124050}
   - {fileID: 1190124049}
+  - {fileID: 1190124229}
   - {fileID: 1190124228}
   - {fileID: 1190124226}
   - {fileID: 1190123423}
@@ -32133,6 +32135,23 @@ MonoBehaviour:
   targetObject: {fileID: 1809467256}
   methodName: SwitchMenuBar
   delay: 0
+--- !u!114 &1190124229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190123289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 2286
+  indentLevel: 0
+  targetObject: {fileID: 1699109879}
+  methodName: ChapterFourFinished
+  delay: 0
 --- !u!1 &1219405209
 GameObject:
   m_ObjectHideFlags: 0
@@ -33245,6 +33264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45a1f3a84ae91840ba7ffb91a878245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chapterNumber: 4
 --- !u!4 &1699109881
 Transform:
   m_ObjectHideFlags: 0
