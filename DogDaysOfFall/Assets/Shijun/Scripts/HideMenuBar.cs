@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class HideMenuBar : MonoBehaviour
 {
@@ -31,3 +32,4 @@ public class HideMenuBar : MonoBehaviour
         }
     }
 }
+
