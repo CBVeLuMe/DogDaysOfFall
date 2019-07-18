@@ -22,9 +22,6 @@ namespace Fungus
         [Tooltip("Name of the method to call")]
         [SerializeField] protected string methodName = "";
 
-        //[Tooltip("Value of the method to pass")]
-        //[SerializeField] protected float methodVaule;
-
         [Tooltip("Delay (in seconds) before the method will be called")]
         [SerializeField] protected float delay;
 

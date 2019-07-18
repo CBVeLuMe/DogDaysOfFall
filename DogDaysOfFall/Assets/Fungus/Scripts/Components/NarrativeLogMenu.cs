@@ -158,7 +158,6 @@ namespace Fungus
             if (narrativeLogActive)
             {
                 // Switch menu off
-                narrativeLogMenuGroup.gameObject.SetActive(false);
                 LeanTween.value(narrativeLogMenuGroup.gameObject, narrativeLogMenuGroup.alpha, 0f, .2f)
                     .setEase(LeanTweenType.easeOutQuint)
                     .setOnUpdate((t) => {
@@ -171,7 +170,6 @@ namespace Fungus
             else
             {
                 // Switch menu on
-                narrativeLogMenuGroup.gameObject.SetActive(true);
                 LeanTween.value(narrativeLogMenuGroup.gameObject, narrativeLogMenuGroup.alpha, 1f, .2f)
                     .setEase(LeanTweenType.easeOutQuint)
                     .setOnUpdate((t) => {
