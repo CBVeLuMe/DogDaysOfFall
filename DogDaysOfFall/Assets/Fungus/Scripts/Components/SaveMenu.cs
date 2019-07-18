@@ -60,6 +60,8 @@ namespace Fungus
 
         protected static bool hasLoadedOnStart = false;
 
+        public static bool SaveMenuActive { get { return saveMenuActive;} set { saveMenuActive = value; } }
+
         protected virtual void Awake()
         {
             // Only one instance of SaveMenu may exist

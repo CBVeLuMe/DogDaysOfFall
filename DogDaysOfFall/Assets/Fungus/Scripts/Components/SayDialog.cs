@@ -547,6 +547,10 @@ namespace Fungus
             StopAllCoroutines();
         }
 
+        public bool CheckIsWaitingForInput()
+        {
+            return continueButton.isActiveAndEnabled;
+        }
         #endregion
     }
 }
