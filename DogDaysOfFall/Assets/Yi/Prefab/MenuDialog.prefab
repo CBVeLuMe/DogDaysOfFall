@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8319798392873381173}
   - component: {fileID: 4755779243050217504}
   - component: {fileID: 7017464222134480731}
+  - component: {fileID: 6030343319197163733}
   m_Layer: 5
   m_Name: MenuDialog
   m_TagString: Untagged
@@ -59,7 +60,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 1
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
@@ -76,11 +77,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 32
+  m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -127,6 +128,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoSelectFirstButton: 0
+--- !u!114 &6030343319197163733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684805682153888310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97afc556caea1c44969477eb7ddec74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConformX: 1
+  ConformY: 1
 --- !u!1 &703399629560370184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000018477, y: -2}
+  m_AnchoredPosition: {x: -0.000018477, y: 0}
   m_SizeDelta: {x: 1300, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4882154425560155176
