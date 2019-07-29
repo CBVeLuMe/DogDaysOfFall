@@ -12330,7 +12330,6 @@ GameObject:
   - component: {fileID: 962908548}
   - component: {fileID: 962908547}
   - component: {fileID: 962908546}
-  - component: {fileID: 962908550}
   m_Layer: 5
   m_Name: Menu UI
   m_TagString: Untagged
@@ -12425,20 +12424,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &962908550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962908545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c97afc556caea1c44969477eb7ddec74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ConformX: 1
-  ConformY: 1
 --- !u!1 &980279490
 GameObject:
   m_ObjectHideFlags: 0
@@ -22482,6 +22467,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038, guid: 36d20a233be88ef45bda4449d841b90c, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084, guid: 36d20a233be88ef45bda4449d841b90c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 65.21777
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084, guid: 36d20a233be88ef45bda4449d841b90c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -66.53601
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052, guid: 36d20a233be88ef45bda4449d841b90c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -147.7002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052, guid: 36d20a233be88ef45bda4449d841b90c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 43.850098
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971487468819394371, guid: 36d20a233be88ef45bda4449d841b90c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -112.049805
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36d20a233be88ef45bda4449d841b90c, type: 3}
@@ -34093,7 +34103,6 @@ GameObject:
   - component: {fileID: 1824070533}
   - component: {fileID: 1824070532}
   - component: {fileID: 1824070531}
-  - component: {fileID: 1824070535}
   m_Layer: 5
   m_Name: Splash UI
   m_TagString: Untagged
@@ -34184,20 +34193,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1824070535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824070530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c97afc556caea1c44969477eb7ddec74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ConformX: 1
-  ConformY: 1
 --- !u!1 &1838474588
 GameObject:
   m_ObjectHideFlags: 0
