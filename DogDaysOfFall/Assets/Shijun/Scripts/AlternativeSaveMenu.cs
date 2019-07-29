@@ -175,7 +175,7 @@ namespace Fungus
             saveDataKey[4] = PlayerPrefs.GetString("SaveKeyThree", "0");
             for (int s = 0; s < 3; s++)
             {
-                Debug.Log("Show");
+                //Debug.Log("Show");
                 if (saveManager.SaveDataExists(saveDataKey[s + 2]) && saveDataKey[s + 2] != "0")
                 {
                     int n = s + 1;
