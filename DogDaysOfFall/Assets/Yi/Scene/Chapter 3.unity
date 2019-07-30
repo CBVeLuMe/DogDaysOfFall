@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964127, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -90226,7 +90226,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 326
+  itemId: 3236
   blockName: Tea Box
   description: 
   eventHandler: {fileID: 81718106}
@@ -92600,8 +92600,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569739041}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.48, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.132, y: 0.073, z: 0}
+  m_LocalScale: {x: 1.036, y: 1.014, z: 1}
   m_Children: []
   m_Father: {fileID: 1382706357}
   m_RootOrder: 0
@@ -93655,7 +93655,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9585ea8291957e844b41008ae3ad658c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a3027a8a4bce19e4c9aa113c7bfaaf8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96579,7 +96579,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382706356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 86.84, y: -24.76, z: 10.117174}
+  m_LocalPosition: {x: 87.52, y: -24.76, z: 10.117174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 569739042}
@@ -96600,7 +96600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewSize: 5
   primaryAspectRatio: {x: 16, y: 9}
-  secondaryAspectRatio: {x: 4, y: 3}
+  secondaryAspectRatio: {x: 2, y: 1}
 --- !u!1 &1435833983
 GameObject:
   m_ObjectHideFlags: 0
@@ -97749,7 +97749,7 @@ GameObject:
   - component: {fileID: 1629108156}
   - component: {fileID: 1629108157}
   m_Layer: 0
-  m_Name: Grocery Department Goods 2
+  m_Name: Grocery Department Goods 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97806,7 +97806,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5c16a08733f32044885237e8cc8bb3d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e1e0bdd3f0f72e4c81f53a097c893b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100109,7 +100109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a56f2747f71827c4885f4b30179ddaa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchedSprite: {fileID: 21300000, guid: 014ed0d18d8553443a8b54783f46be13, type: 3}
+  switchedSprite: {fileID: 21300000, guid: 538a020c2c096fb43af384cd15ad6a3c, type: 3}
+  foodOneFlash: {fileID: 21300000, guid: 9585ea8291957e844b41008ae3ad658c, type: 3}
+  foodTwoFlash: {fileID: 21300000, guid: 5c16a08733f32044885237e8cc8bb3d5, type: 3}
+  groceryOne: {fileID: 762480225}
+  groceryTwo: {fileID: 2072799245}
+  groceryThree: {fileID: 1629108157}
 --- !u!1 &2072799243
 GameObject:
   m_ObjectHideFlags: 0
@@ -100178,7 +100183,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5c16a08733f32044885237e8cc8bb3d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e1e0bdd3f0f72e4c81f53a097c893b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
