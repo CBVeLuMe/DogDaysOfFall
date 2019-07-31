@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class HideMenuBar : MonoBehaviour
@@ -10,8 +11,15 @@ public class HideMenuBar : MonoBehaviour
     private void Awake()
     {
         GameObject menubar = GameObject.Find("MenuBar").gameObject;
-        menuButton = menubar.transform.Find("MenuButton").gameObject;
-
+        try
+        {
+            menuButton = menubar.transform.Find("MenuButton").gameObject;
+        }
+        catch
+        {
+            GameObject topGui = menubar.transform.Find("TopGUI").gameObject;
+            menuButton = topGui.transform.Find("MenuButton").gameObject;
+        }
     }
 
     public void SwitchMenuBar()

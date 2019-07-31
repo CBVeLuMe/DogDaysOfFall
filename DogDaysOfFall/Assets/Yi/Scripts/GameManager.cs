@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
@@ -52,18 +53,37 @@ public class GameManager : MonoBehaviour
     void FindSliders()
     {
         GameObject root = GameObject.Find("MenuBar");
-        GameObject optionPanel = root.transform.Find("Option Panel For MenuBar").gameObject;
-        GameObject optionParent = optionPanel.transform.Find("Option Parent").gameObject;
-        GameObject optionWindow = optionParent.transform.Find("Option Window").gameObject;
-        GameObject musicobj = optionWindow.transform.Find("Music Slider").gameObject;
-        GameObject sondobj = optionWindow.transform.Find("Sound Slider").gameObject;
-        GameObject textobj = optionWindow.transform.Find("Text Speed").gameObject;
-        musicSlider = musicobj.GetComponent<Slider>();
-        soundSlider = sondobj.GetComponent<Slider>();
-        textSlider = textobj.GetComponent<Slider>();
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
-        soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 0.75f);
-        textSlider.value = PlayerPrefs.GetFloat("WriteSpeed", 50);
+        try
+        {
+            GameObject optionPanel = root.transform.Find("Option Panel For MenuBar").gameObject;
+            GameObject optionParent = optionPanel.transform.Find("Option Parent").gameObject;
+            GameObject optionWindow = optionParent.transform.Find("Option Window").gameObject;
+            GameObject musicobj = optionWindow.transform.Find("Music Slider").gameObject;
+            GameObject sondobj = optionWindow.transform.Find("Sound Slider").gameObject;
+            GameObject textobj = optionWindow.transform.Find("Text Speed").gameObject;
+            musicSlider = musicobj.GetComponent<Slider>();
+            soundSlider = sondobj.GetComponent<Slider>();
+            textSlider = textobj.GetComponent<Slider>();
+            musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+            soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 0.75f);
+            textSlider.value = PlayerPrefs.GetFloat("WriteSpeed", 50);
+        }
+        catch
+        {
+            GameObject topGui = root.transform.Find("TopGUI").gameObject;
+            GameObject optionPanel = topGui.transform.Find("Option Panel For MenuBar").gameObject;
+            GameObject optionParent = optionPanel.transform.Find("Option Parent").gameObject;
+            GameObject optionWindow = optionParent.transform.Find("Option Window").gameObject;
+            GameObject musicobj = optionWindow.transform.Find("Music Slider").gameObject;
+            GameObject sondobj = optionWindow.transform.Find("Sound Slider").gameObject;
+            GameObject textobj = optionWindow.transform.Find("Text Speed").gameObject;
+            musicSlider = musicobj.GetComponent<Slider>();
+            soundSlider = sondobj.GetComponent<Slider>();
+            textSlider = textobj.GetComponent<Slider>();
+            musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+            soundSlider.value = PlayerPrefs.GetFloat("SoundVolume", 0.75f);
+            textSlider.value = PlayerPrefs.GetFloat("WriteSpeed", 50);
+        }              
     }
     public void FindSliderMainMenu()
     {

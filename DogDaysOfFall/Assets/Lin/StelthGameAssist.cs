@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class StelthGameAssist : MonoBehaviour
@@ -22,9 +23,22 @@ public class StelthGameAssist : MonoBehaviour
 
         menuButton = GameObject.Find("/MenuBar/MenuButton/MenuButton");
         GameObject menuBar = GameObject.Find("MenuBar");
-        panelButton = menuBar.transform.Find("Panel").gameObject;
+        try
+        {
+            panelButton = menuBar.transform.Find("Panel").gameObject;
+            menuButton.GetComponent<Button>().interactable = false;
+            panelButton.SetActive(false);
+        }
+        catch
+        {
+            GameObject topGui = menuBar.transform.Find("TopGUI").gameObject;
+            panelButton = topGui.transform.Find("Panel").gameObject;
+            menuButton.GetComponent<Button>().interactable = false;
+            panelButton.SetActive(false);
+        }
+       
         //panelButton = GameObject.Find("/MenuBar/Panel");
-       // narrative = GameObject.Find("/MenuBar/NarrativeLog");
+        // narrative = GameObject.Find("/MenuBar/NarrativeLog");
         /*
         menuButton = GameObject.Find("/SaveMenu/Buttons/MenuButton");
         if (menuButton == null)
@@ -42,8 +56,7 @@ public class StelthGameAssist : MonoBehaviour
             narrative = GameObject.Find("/MenuBar/NarrativeLog");
         }
         */
-        menuButton.GetComponent<Button>().interactable = false;
-        panelButton.SetActive(false);
+
         //narrative.SetActive(false);
     }
 

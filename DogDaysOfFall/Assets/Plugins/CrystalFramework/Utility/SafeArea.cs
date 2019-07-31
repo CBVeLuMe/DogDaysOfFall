@@ -72,6 +72,8 @@ namespace Crystal
 
         void Awake ()
         {
+            Sim = SimDevice.iPhoneX;
+
             Panel = GetComponent<RectTransform> ();
 
             if (Panel == null)
