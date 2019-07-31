@@ -30,7 +30,10 @@ public class HideMenuBar : MonoBehaviour
             {
                 if (!dontdisable)
                 {
-                    menuButton.SetActive(false);
+                    if (menuButton.activeSelf != true)
+                    {
+                        menuButton.SetActive(false);
+                    }
                 }
             }
             else
