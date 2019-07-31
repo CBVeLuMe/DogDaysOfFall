@@ -52,7 +52,7 @@ namespace Fungus
 
         protected LTDescr fadeTween;
 
-        protected static AlternativeSaveMenu instance;
+        public static AlternativeSaveMenu instance;
 
         protected static bool hasLoadedOnStart = false;
 
@@ -60,17 +60,17 @@ namespace Fungus
         protected virtual void Awake()
         {
             // Only one instance of SaveMenu may exist
-            if (instance != null)
+            if (Instance != null)
             {
                 Destroy(gameObject);
                 return;
             }
 
-            instance = this;
+            Instance = this;
 
             if (transform.parent == null)
             {
-                GameObject.DontDestroyOnLoad(this);
+                DontDestroyOnLoad(this);
             }
             else
             {
@@ -271,6 +271,9 @@ namespace Fungus
                 return saveDataKey;
             }
         }
+
+        protected static AlternativeSaveMenu Instance { get => instance; set => instance = value; }
+
         public Texture2D ScreenShot;
         public string readTime;
         private byte[] imageByte;
@@ -384,7 +387,7 @@ namespace Fungus
             camera.targetTexture = null;
             //ps: camera2.targetTexture = null;
             RenderTexture.active = null; // JC: added to avoid errors
-            GameObject.Destroy(rt);
+            Destroy(rt);
             // 最后将这些纹理数据，成一个png图片文件
             byte[] bytes = screenShot.EncodeToPNG();
             string filename = Application.persistentDataPath + "/Screenshot" + num + ".png";
@@ -437,12 +440,12 @@ namespace Fungus
 
         [HideInInspector]
         //[SerializeField] private bool hasSkippedDialog = false;
-        public bool hasSkippedDialog = false;
+        public bool hasSkippedDialog;
         [HideInInspector]
-        [SerializeField] private bool hasAutoplayedDialog = false;
+        [SerializeField] private bool hasAutoplayedDialog;
 
         [HideInInspector]
-        [SerializeField] private bool canResetButton = false;
+        [SerializeField] private bool canResetButton;
 
         [SerializeField] private GameObject closeArea;
 
@@ -495,7 +498,7 @@ namespace Fungus
         }
 
         private SayDialog sd;
-        bool hasSentMessage = false;
+        bool hasSentMessage;
         float leftTime;
         IEnumerator InvokeAutoplayDialog()
         {
