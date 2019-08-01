@@ -410,31 +410,31 @@ namespace Fungus
                 }
             }
 
-            // Adjust story text box to not overlap image rect
-            if (fitTextWithImage && 
-                StoryText != null &&
-                characterImage.gameObject.activeSelf)
-            {
-                if (Mathf.Approximately(startStoryTextWidth, 0f))
-                {
-                    startStoryTextWidth = StoryTextRectTrans.rect.width;
-                    startStoryTextInset = StoryTextRectTrans.offsetMin.x; 
-                }
+            //// Adjust story text box to not overlap image rect
+            //if (fitTextWithImage && 
+            //    StoryText != null &&
+            //    characterImage.gameObject.activeSelf)
+            //{
+            //    if (Mathf.Approximately(startStoryTextWidth, 0f))
+            //    {
+            //        startStoryTextWidth = StoryTextRectTrans.rect.width;
+            //        startStoryTextInset = StoryTextRectTrans.offsetMin.x; 
+            //    }
 
-                // Clamp story text to left or right depending on relative position of the character image
-                if (StoryTextRectTrans.position.x < characterImage.rectTransform.position.x)
-                {
-                    StoryTextRectTrans.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 
-                        startStoryTextInset, 
-                        startStoryTextWidth - characterImage.rectTransform.rect.width);
-                }
-                else
-                {
-                    StoryTextRectTrans.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Right, 
-                        startStoryTextInset, 
-                        startStoryTextWidth - characterImage.rectTransform.rect.width);
-                }
-            }
+            //    // Clamp story text to left or right depending on relative position of the character image
+            //    if (StoryTextRectTrans.position.x < characterImage.rectTransform.position.x)
+            //    {
+            //        StoryTextRectTrans.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 
+            //            startStoryTextInset, 
+            //            startStoryTextWidth - characterImage.rectTransform.rect.width);
+            //    }
+            //    else
+            //    {
+            //        StoryTextRectTrans.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Right, 
+            //            startStoryTextInset, 
+            //            startStoryTextWidth - characterImage.rectTransform.rect.width);
+            //    }
+            //}
         }
 
         /// <summary>
